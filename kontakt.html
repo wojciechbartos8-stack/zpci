@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Kontakt - ZPCI</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(135deg, #eef5ff, #ffffff);
+      color: #222;
+    }
+
+    header {
+      background: #1f3b73;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #333;
+      display: flex;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: block;
+    }
+
+    nav a:hover {
+      background: #444;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #1f3b73;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Kontakt</h1>
+</header>
+
+<nav>
+  <a href="index.html">Strona g³ówna</a>
+  <a href="szkoleniakursy.html">Szkolenia / Kursy</a>
+  <a href="kontakt.html">Kontakt</a>
+</nav>
+
+<main>
+
+  <div class="box">
+
+    <h2>Dane kontaktowe</h2>
+
+    <p><strong>Telefon:</strong> 503 840 567</p>
+
+    <p><strong>E-mail:</strong> 
+      <a href="mailto:biuro@zpci.pl">biuro@zpci.pl</a>
+    </p>
+
+    <h3>Biuro konsultacyjne</h3>
+
+    <p>
+      Szczecin<br>
+      ul. Boguchwa³y 18 lok. 2
+    </p>
+
+    <p>
+      W celu umówienia wizyty z konsultantem prosimy o wcze¶niejszy kontakt mailowy b±d¼ telefoniczny.
+    </p>
+
+  </div>
+
+</main>
+
+<footer>
+  <p>
+    © <span id="year"></span> Zachodniopomorskie Centrum Informatyki
+  </p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

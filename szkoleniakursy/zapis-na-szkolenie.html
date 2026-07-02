@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Zapis na szkolenie - ZPCI</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #eef5ff, #ffffff);
+}
+
+header {
+    background: #1f3b73;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.box {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    width: 420px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    background: #1f3b73;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #16305d;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    background: #1f3b73;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Zapis na szkolenie</h1>
+</header>
+
+<main>
+
+<div class="box">
+
+<form action="#" method="post">
+
+<label>Wybierz szkolenie</label>
+<select name="kurs" required>
+    <option value="">-- wybierz kurs --</option>
+    <option>MS Office - poziom 1</option>
+    <option>MS Office - poziom 2</option>
+    <option>MS Excel - podstawy</option>
+    <option>MS Excel VBA</option>
+    <option>Grafika komputerowa</option>
+    <option>CAD - podstawy</option>
+    <option>Programowanie Java</option>
+    <option>Tworzenie stron WWW (HTML/CSS)</option>
+    <option>PHP + MySQL</option>
+    <option>Kursy dla seniorów</option>
+</select>
+
+<label>Imiê</label>
+<input type="text" name="imie" required>
+
+<label>Nazwisko</label>
+<input type="text" name="nazwisko" required>
+
+<label>Miejscowo¶æ</label>
+<input type="text" name="miejscowosc" required>
+
+<label>Numer telefonu</label>
+<input type="tel" name="telefon" required placeholder="np. 600 700 800">
+
+<button type="submit">Wy¶lij zg³oszenie</button>
+
+</form>
+
+</div>
+
+</main>
+
+<footer>
+© <span id="year"></span> Zachodniopomorskie Centrum Informatyki
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

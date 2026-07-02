@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szkolenia i Kursy - Zachodniopomorskie Centrum Informatyki</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #eef5ff, #ffffff);
+            color: #222;
+        }
+
+        header {
+            background: #1f3b73;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background: #333;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: #444;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            max-width: 1000px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #1f3b73;
+        }
+
+        ul {
+            line-height: 1.8;
+        }
+
+        .course {
+            color: #1f3b73;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .course:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #1f3b73;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Szkolenia informatyczne - Kursy komputerowe</h1>
+</header>
+
+<nav>
+    <a href="index.html">Strona główna</a>
+    <a href="szkoleniakursy.html">Szkolenia / Kursy</a>
+    <a href="uslugit.html">Usługi IT</a>
+    <a href="kontakt.html">Kontakt</a>
+</nav>
+
+<main>
+
+<div class="box">
+
+<p>
+Zachodniopomorskie Centrum Informatyki realizuje kursy i szkolenia organizowane grupowo w salach wykładowych lub na miejscu u słuchaczy (np. w domu lub w firmie). Dla osób ceniących sobie pełen komfort pracy, elastyczność godzin oraz dopasowanie materiału do konkretnych potrzeb oferujemy również kursy zindywidualizowane. Dysponujemy nowoczesnym sprzętem przenośnym, który umożliwia realizację szkoleń praktycznie w dowolnym miejscu.
+</p>
+
+<h2>Zapraszamy na kursy i szkolenia z zakresu:</h2>
+
+<ul>
+    <li><a class="course" href="szkoleniakursy/ms-office-poziom-1.html">MS Office - poziom 1 (Word, Excel, PowerPoint, Outlook)</a></li>
+
+    <li><a class="course" href="szkoleniakursy/MSOffice2.html">MS Office - poziom 2 (Word, Excel, PowerPoint, Outlook, Access)</a></li>
+
+    <li>MS Excel – różne poziomy zaawansowania</li>
+    <li>MS Excel – VBA</li>
+    <li>Grafika komputerowa (CorelDRAW, GIMP, Photoshop i inne)</li>
+    <li>Narzędzia CAD – poziom podstawowy i zaawansowany</li>
+    <li>Bezwzrokowe pisanie na klawiaturze</li>
+    <li>Program Płatnik – warsztaty</li>
+    <li>Programowanie Java, C++, C# oraz wiele innych języków</li>
+    <li>Profesjonalne prezentacje w programie PowerPoint</li>
+    <li>E-learning w edukacji</li>
+    <li>Podstawy obsługi komputera i Internetu</li>
+    <li>MS Access – projektowanie baz danych z wykorzystaniem SQL</li>
+    <li>Programowanie baz danych PL/SQL</li>
+    <li>Tworzenie stron internetowych w oparciu o HTML i CSS</li>
+    <li>Programowanie stron internetowych przy użyciu PHP oraz MySQL</li>
+    <li>Kursy komputerowe dla Seniorów</li>
+    <li>Kursy komputerowe dla osób niepełnosprawnych</li>
+    <li>Oraz wiele, wiele więcej.</li>
+</ul>
+
+<p>
+Jeśli interesuje Cię szkolenie, którego nie ma na liście – napisz do nas wiadomość e-mail.
+</p>
+
+<p>
+Realizujemy również szkolenia typu <strong>custom trainings</strong>, dopasowane do potrzeb słuchacza lub konkretnej grupy.
+</p>
+
+<p>
+Nasza kadra to wysoce wykwalifikowani trenerzy posiadający odpowiednie kwalifikacje i doświadczenie. Każdy kurs kończy się otrzymaniem Certyfikatu Zachodniopomorskiego Centrum Informatyki. Na życzenie słuchaczy wystawiamy również certyfikaty w językach obcych.
+</p>
+
+</div>
+
+</main>
+
+<footer>
+    © <span id="year"></span> Zachodniopomorskie Centrum Informatyki
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
