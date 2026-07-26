@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Grafika komputerowa i projektowanie | ZPCI
+    </title>
+
+    <meta
+        name="description"
+        content="Szkolenia z grafiki komputerowej, obróbki zdjêæ, CorelDRAW, GIMP, Photoshop oraz projektowania technicznego CAD."
+    >
+
+    <style>
+        :root {
+            --primary: #1f3b73;
+            --primary-dark: #0b2148;
+            --primary-light: #eef4ff;
+            --accent: #f2b705;
+            --accent-hover: #ffd447;
+            --background: #f4f7fb;
+            --white: #ffffff;
+            --text: #29333d;
+            --muted: #5d6976;
+            --border: #dce5ef;
+            --radius: 18px;
+            --shadow: 0 14px 38px rgba(11, 33, 72, 0.12);
+            --shadow-hover: 0 22px 44px rgba(11, 33, 72, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf4ff 0%,
+                    #f8fbff 50%,
+                    #ffffff 100%
+                );
+            color: var(--text);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: calc(100% - 40px);
+            max-width: 1180px;
+            margin: 0 auto;
+        }
+
+        /* =========================
+           NAG£ÓWEK
+        ========================= */
+
+        .site-header {
+            position: relative;
+            overflow: hidden;
+            padding: 46px 20px;
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(255, 255, 255, 0.12),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--primary)
+                );
+            color: var(--white);
+            text-align: center;
+        }
+
+        .site-header::before {
+            content: "";
+            position: absolute;
+            top: -150px;
+            right: -100px;
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .site-header h1 {
+            margin-bottom: 10px;
+            font-size: clamp(31px, 5vw, 50px);
+            line-height: 1.15;
+        }
+
+        .site-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(17px, 2.5vw, 22px);
+        }
+
+        /* =========================
+           NAWIGACJA
+        ========================= */
+
+        .main-nav {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            background: #071b37;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .nav-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .main-nav a {
+            display: flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 21px;
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .main-nav a:hover,
+        .main-nav a:focus-visible {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        .main-nav a:focus-visible,
+        .training-card:focus-visible,
+        .btn:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        /* =========================
+           BANER
+        ========================= */
+
+        .banner-section {
+            padding: 32px 0 0;
+        }
+
+        .banner-box {
+            overflow: hidden;
+            border: 5px solid var(--white);
+            border-radius: 22px;
+            background: var(--white);
+            box-shadow: 0 20px 50px rgba(11, 33, 72, 0.2);
+        }
+
+        .banner-box img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* =========================
+           G£ÓWNA ZAWARTO¦Æ
+        ========================= */
+
+        main {
+            padding: 32px 0 55px;
+        }
+
+        .content-box {
+            padding: 42px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .section-intro {
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .section-intro h2 {
+            margin-bottom: 18px;
+            color: var(--primary-dark);
+            font-size: clamp(30px, 4.5vw, 44px);
+            line-height: 1.2;
+        }
+
+        .section-intro p {
+            max-width: 940px;
+            margin: 0 auto 15px;
+            color: var(--muted);
+        }
+
+        .section-intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-section {
+            margin-top: 42px;
+        }
+
+        .content-section > h3 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            color: var(--primary-dark);
+            font-size: clamp(24px, 3vw, 32px);
+            line-height: 1.3;
+        }
+
+        /* =========================
+           ZAKRES TEMATYCZNY
+        ========================= */
+
+        .topic-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 13px 18px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .topic-list li {
+            position: relative;
+            min-height: 62px;
+            padding: 15px 16px 15px 50px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #f8fbff;
+        }
+
+        .topic-list li::before {
+            content: "\2713";
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            display: flex;
+            width: 24px;
+            height: 24px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* =========================
+           KAFELKI SZKOLEÑ
+        ========================= */
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .training-card {
+            position: relative;
+            display: flex;
+            min-width: 0;
+            min-height: 235px;
+            overflow: hidden;
+            flex-direction: column;
+            padding: 27px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #eef5ff
+                );
+            box-shadow: 0 10px 28px rgba(11, 33, 72, 0.09);
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .training-card::before {
+            content: "";
+            position: absolute;
+            top: -65px;
+            right: -65px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(31, 59, 115, 0.08);
+            transition:
+                transform 0.3s ease,
+                background-color 0.3s ease;
+        }
+
+        .training-card:hover,
+        .training-card:focus-visible {
+            border-color: #b6cae2;
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-8px);
+        }
+
+        .training-card:hover::before,
+        .training-card:focus-visible::before {
+            background: rgba(242, 183, 5, 0.18);
+            transform: scale(1.2);
+        }
+
+        .training-icon {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            width: 58px;
+            height: 58px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            border-radius: 16px;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 28px;
+            box-shadow: 0 8px 18px rgba(31, 59, 115, 0.2);
+            transition:
+                background-color 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .training-card:hover .training-icon,
+        .training-card:focus-visible .training-icon {
+            background: var(--accent);
+            color: var(--primary-dark);
+            transform: rotate(-4deg) scale(1.06);
+        }
+
+        .training-card h4 {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+            font-size: 23px;
+            line-height: 1.25;
+        }
+
+        .training-card p {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .training-link {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .training-link::after {
+            content: "\2192";
+            font-size: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .training-card:hover .training-link::after,
+        .training-card:focus-visible .training-link::after {
+            transform: translateX(6px);
+        }
+
+        /* =========================
+           WIE / ROZUMIE / UMIE
+        ========================= */
+
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .outcome-card {
+            padding: 27px;
+            border: 1px solid var(--border);
+            border-top: 5px solid var(--primary);
+            border-radius: var(--radius);
+            background: #f9fbfe;
+        }
+
+        .outcome-card:nth-child(2) {
+            border-top-color: #187bbd;
+        }
+
+        .outcome-card:nth-child(3) {
+            border-top-color: var(--accent);
+        }
+
+        .outcome-card h4 {
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            font-size: 24px;
+        }
+
+        .outcome-card ul {
+            margin: 0;
+            padding-left: 22px;
+        }
+
+        .outcome-card li {
+            margin-bottom: 10px;
+            color: var(--muted);
+        }
+
+        .outcome-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           KORZY¦CI
+        ========================= */
+
+        .benefits-box {
+            padding: 30px;
+            border-left: 6px solid var(--accent);
+            border-radius: 15px;
+            background: var(--primary-light);
+        }
+
+        .benefits-box h3 {
+            margin-bottom: 16px;
+            color: var(--primary-dark);
+            font-size: clamp(24px, 3vw, 31px);
+            line-height: 1.3;
+        }
+
+        .benefits-box p {
+            margin-bottom: 15px;
+            color: #4e5e6d;
+        }
+
+        .benefits-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           PRZYCISKI
+        ========================= */
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-flex;
+            min-height: 52px;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 27px;
+            border: 2px solid transparent;
+            border-radius: 999px;
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 800;
+            line-height: 1.2;
+            text-align: center;
+            box-shadow: 0 9px 22px rgba(31, 59, 115, 0.22);
+            transition:
+                background-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            box-shadow: 0 13px 28px rgba(11, 33, 72, 0.28);
+            transform: translateY(-2px);
+        }
+
+        .btn-signup {
+            background: var(--accent);
+            color: var(--primary-dark);
+            box-shadow: 0 9px 22px rgba(242, 183, 5, 0.25);
+        }
+
+        .btn-signup:hover {
+            background: var(--accent-hover);
+        }
+
+        /* =========================
+           STOPKA
+        ========================= */
+
+        footer {
+            padding: 28px 20px;
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.86);
+            text-align: center;
+        }
+
+        footer p + p {
+            margin-top: 5px;
+        }
+
+        /* =========================
+           RESPONSYWNO¦Æ
+        ========================= */
+
+        @media (max-width: 950px) {
+            .training-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .outcomes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 820px) {
+            .container {
+                width: calc(100% - 28px);
+            }
+
+            .content-box {
+                padding: 32px 24px;
+            }
+
+            .topic-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 17px;
+            }
+
+            .container {
+                width: calc(100% - 20px);
+            }
+
+            .site-header {
+                padding: 35px 14px;
+            }
+
+            .nav-inner {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .main-nav a {
+                min-height: 49px;
+                padding: 10px 8px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                font-size: 14px;
+            }
+
+            .banner-section {
+                padding-top: 20px;
+            }
+
+            .banner-box {
+                border-width: 3px;
+                border-radius: 14px;
+            }
+
+            main {
+                padding: 20px 0 36px;
+            }
+
+            .content-box {
+                padding: 24px 17px;
+                border-radius: 14px;
+            }
+
+            .section-intro {
+                padding-bottom: 25px;
+            }
+
+            .section-intro p {
+                font-size: 17px;
+            }
+
+            .training-grid {
+                grid-template-columns: 1fr;
+                gap: 17px;
+            }
+
+            .training-card {
+                min-height: auto;
+                padding: 23px 20px;
+            }
+
+            .outcome-card,
+            .benefits-box {
+                padding: 22px 18px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .buttons .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .nav-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .main-nav a {
+                min-height: 45px;
+            }
+
+            .training-card h4 {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-content">
+
+            <h1>
+                Grafika komputerowa i projektowanie
+            </h1>
+
+            <p>
+                Szkolenia z grafiki rastrowej, wektorowej,
+                cyfrowej obróbki zdjêæ oraz projektowania CAD
+            </p>
+
+        </div>
+    </header>
+
+    <nav
+        class="main-nav"
+        aria-label="G³ówna nawigacja"
+    >
+        <div class="container nav-inner">
+
+            <a href="../index.html">
+                Strona g³ówna
+            </a>
+
+            <a href="../szkoleniakursy.html">
+                Szkolenia / Kursy
+            </a>
+
+            <a href="../uslugit.html">
+                Us³ugi IT
+            </a>
+
+            <a href="../kontakt.html">
+                Kontakt
+            </a>
+
+        </div>
+    </nav>
+
+    <!-- BANER -->
+
+    <section
+        class="banner-section"
+        aria-label="Baner szkoleñ z grafiki komputerowej"
+    >
+        <div class="container">
+
+            <div class="banner-box">
+                <img
+                    src="../images/grafikakomputerowa.png"
+                    alt="Szkolenia z grafiki komputerowej i projektowania"
+                    loading="eager"
+                    fetchpriority="high"
+                >
+            </div>
+
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+
+            <article class="content-box">
+
+                <section class="section-intro">
+
+                    <h2>
+                        Grafika komputerowa i projektowanie
+                    </h2>
+
+                    <p>
+                        Szkolenia z grafiki komputerowej organizowane przez
+                        Zachodniopomorskie Centrum Informatyki przeznaczone
+                        s± dla osób, które chc± zdobyæ praktyczne
+                        umiejêtno¶ci zwi±zane z projektowaniem, obróbk±
+                        grafiki oraz przygotowaniem materia³ów do publikacji
+                        elektronicznych i druku.
+                    </p>
+
+                    <p>
+                        Programy szkoleniowe obejmuj± zarówno podstawy
+                        grafiki komputerowej, jak i zaawansowane techniki
+                        wykorzystywane przez grafików, projektantów,
+                        pracowników dzia³ów marketingu oraz osoby prowadz±ce
+                        w³asn± dzia³alno¶æ gospodarcz±.
+                    </p>
+
+                </section>
+
+                <section class="content-section">
+
+                    <h3>Zakres tematyczny szkoleñ</h3>
+
+                    <ul class="topic-list">
+                        <li>Grafika rastrowa i wektorowa</li>
+                        <li>Cyfrowa obróbka zdjêæ</li>
+                        <li>Retusz fotografii</li>
+                        <li>Projektowanie materia³ów reklamowych</li>
+                        <li>Tworzenie logotypów i identyfikacji wizualnej</li>
+                        <li>Przygotowanie materia³ów do druku</li>
+                        <li>Projektowanie techniczne CAD</li>
+                        <li>Tworzenie dokumentacji technicznej</li>
+                    </ul>
+
+                </section>
+
+                <!-- KAFELKI SZKOLEÑ -->
+
+                <section class="content-section">
+
+                    <h3>Dostêpne szkolenia</h3>
+
+                    <div class="training-grid">
+
+                        <a
+                            class="training-card"
+                            href="coreldraw.html"
+                        >
+                            <span
+                                class="training-icon"
+                                aria-hidden="true"
+                            >
+                                &#9998;
+                            </span>
+
+                            <h4>CorelDRAW</h4>
+
+                            <p>
+                                Grafika wektorowa, tworzenie logotypów,
+                                wizytówek, ulotek i materia³ów reklamowych.
+                            </p>
+
+                            <span class="training-link">
+                                Zobacz szkolenie
+                            </span>
+                        </a>
+
+                        <a
+                            class="training-card"
+                            href="gimp.html"
+                        >
+                            <span
+                                class="training-icon"
+                                aria-hidden="true"
+                            >
+                                &#127912;
+                            </span>
+
+                            <h4>GIMP</h4>
+
+                            <p>
+                                Podstawy obs³ugi darmowego programu
+                                do tworzenia i edycji grafiki rastrowej.
+                            </p>
+
+                            <span class="training-link">
+                                Zobacz szkolenie
+                            </span>
+                        </a>
+
+                        <a
+                            class="training-card"
+                            href="GIMP-Cyfrowa-Obrobka-Zdjec.html"
+                        >
+                            <span
+                                class="training-icon"
+                                aria-hidden="true"
+                            >
+                                &#128247;
+                            </span>
+
+                            <h4>
+                                GIMP – cyfrowa obróbka zdjêæ
+                            </h4>
+
+                            <p>
+                                Retusz fotografii, korekta kolorów,
+                                kadrowanie i przygotowanie zdjêæ
+                                do publikacji.
+                            </p>
+
+                            <span class="training-link">
+                                Zobacz szkolenie
+                            </span>
+                        </a>
+
+                        <a
+                            class="training-card"
+                            href="Photoshop-Cyfrowa-Obrobka-Zdjec.html"
+                        >
+                            <span
+                                class="training-icon"
+                                aria-hidden="true"
+                            >
+                                &#128444;
+                            </span>
+
+                            <h4>
+                                Photoshop – cyfrowa obróbka zdjêæ
+                            </h4>
+
+                            <p>
+                                Profesjonalna edycja fotografii,
+                                praca z warstwami, maskami i efektami.
+                            </p>
+
+                            <span class="training-link">
+                                Zobacz szkolenie
+                            </span>
+                        </a>
+
+                        <a
+                            class="training-card"
+                            href="CAD-poziom-1.html"
+                        >
+                            <span
+                                class="training-icon"
+                                aria-hidden="true"
+                            >
+                                &#128208;
+                            </span>
+
+                            <h4>CAD poziom 1</h4>
+
+                            <p>
+                                Podstawy projektowania technicznego,
+                                rysowanie precyzyjne, warstwy
+                                i wymiarowanie.
+                            </p>
+
+                            <span class="training-link">
+                                Zobacz szkolenie
+                            </span>
+                        </a>
+
+                        <a
+                            class="training-card"
+                            href="CAD-poziom-2.html"
+                        >
+                            <span
+                                class="training-icon"
+                                aria-hidden="true"
+                            >
+                                &#128736;
+                            </span>
+
+                            <h4>CAD poziom 2</h4>
+
+                            <p>
+                                Zaawansowane narzêdzia projektowania,
+                                bloki, arkusze i dokumentacja techniczna.
+                            </p>
+
+                            <span class="training-link">
+                                Zobacz szkolenie
+                            </span>
+                        </a>
+
+                    </div>
+
+                </section>
+
+                <section class="content-section">
+
+                    <h3>
+                        Po ukoñczeniu szkolenia uczestnik
+                    </h3>
+
+                    <div class="outcomes-grid">
+
+                        <article class="outcome-card">
+
+                            <h4>Wie</h4>
+
+                            <ul>
+                                <li>
+                                    Jakie s± podstawowe zasady projektowania
+                                    grafiki komputerowej.
+                                </li>
+
+                                <li>
+                                    Jak dzia³aj± programy graficzne
+                                    wykorzystywane w projektowaniu.
+                                </li>
+
+                                <li>
+                                    Jak przygotowaæ materia³y do publikacji
+                                    elektronicznych i druku.
+                                </li>
+                            </ul>
+
+                        </article>
+
+                        <article class="outcome-card">
+
+                            <h4>Rozumie</h4>
+
+                            <ul>
+                                <li>
+                                    Ró¿nice pomiêdzy grafik± rastrow±
+                                    i wektorow±.
+                                </li>
+
+                                <li>
+                                    Zasady kompozycji, kolorystyki
+                                    i estetyki projektów.
+                                </li>
+
+                                <li>
+                                    Znaczenie jako¶ci materia³ów graficznych
+                                    w komunikacji wizualnej.
+                                </li>
+                            </ul>
+
+                        </article>
+
+                        <article class="outcome-card">
+
+                            <h4>Umie</h4>
+
+                            <ul>
+                                <li>
+                                    Samodzielnie tworzyæ projekty graficzne.
+                                </li>
+
+                                <li>
+                                    Edytowaæ i retuszowaæ fotografie cyfrowe.
+                                </li>
+
+                                <li>
+                                    Projektowaæ ulotki, plakaty, wizytówki
+                                    i materia³y reklamowe.
+                                </li>
+
+                                <li>
+                                    Tworzyæ dokumentacjê techniczn± CAD.
+                                </li>
+
+                                <li>
+                                    Przygotowywaæ materia³y do Internetu
+                                    i druku.
+                                </li>
+
+                                <li>
+                                    Wykorzystywaæ zdobyte umiejêtno¶ci
+                                    w pracy zawodowej.
+                                </li>
+                            </ul>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <section class="content-section benefits-box">
+
+                    <h3>Korzy¶ci z ukoñczenia szkolenia</h3>
+
+                    <p>
+                        Zdobyte umiejêtno¶ci mog± zostaæ wykorzystane
+                        w pracy zwi±zanej z marketingiem, reklam±,
+                        projektowaniem graficznym, administracj± stron
+                        internetowych, przygotowaniem materia³ów
+                        promocyjnych, dokumentacj± techniczn± oraz
+                        prowadzeniem w³asnej dzia³alno¶ci gospodarczej.
+                    </p>
+
+                    <p>
+                        Szkolenia maj± charakter praktyczny i pozwalaj±
+                        zdobyæ wiedzê przydatn± zarówno osobom
+                        rozpoczynaj±cym naukê grafiki komputerowej,
+                        jak i uczestnikom chc±cym rozwin±æ swoje
+                        kwalifikacje zawodowe.
+                    </p>
+
+                </section>
+
+                <div class="buttons">
+
+                    <a
+                        href="../index.html"
+                        class="btn"
+                    >
+                        &lsaquo; Powrót do strony g³ównej
+                    </a>
+
+                    <a
+                        href="zapis-na-szkolenie.html"
+                        class="btn btn-signup"
+                    >
+                        Zapisz siê na szkolenie
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+
+        <p>
+            &copy; 2026 Zachodniopomorskie Centrum Informatyki
+        </p>
+
+        <p>
+            Szkolenia komputerowe &bull; Grafika &bull;
+            Projektowanie CAD
+        </p>
+
+    </footer>
+
+</body>
+</html>

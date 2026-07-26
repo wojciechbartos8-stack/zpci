@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Programowanie Java | Zachodniopomorskie Centrum Informatyki</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f6f9;
+    color:#333;
+    line-height:1.7;
+}
+
+header{
+    background:#1f3b73;
+    color:#fff;
+    text-align:center;
+    padding:30px 20px;
+}
+
+header h1{
+    color:#fff;
+    margin-bottom:10px;
+}
+
+nav{
+    background:#16315d;
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+.container{
+    max-width:1100px;
+    margin:30px auto;
+    background:#fff;
+    padding:35px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,.1);
+}
+
+.banner{
+    width:100%;
+    margin-bottom:30px;
+    overflow:hidden;
+    border-radius:10px;
+}
+
+.banner img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+h1{
+    color:#1f3b73;
+    margin-bottom:20px;
+}
+
+h2{
+    color:#1f3b73;
+    margin-top:30px;
+    margin-bottom:15px;
+    border-bottom:2px solid #1f3b73;
+    padding-bottom:8px;
+}
+
+p{
+    margin-bottom:15px;
+}
+
+ul{
+    margin-left:25px;
+    margin-bottom:20px;
+}
+
+li{
+    margin-bottom:8px;
+}
+
+.info-box{
+    background:#eef4ff;
+    border-left:5px solid #1f3b73;
+    padding:20px;
+    margin-top:30px;
+    border-radius:8px;
+}
+
+.button-center{
+    text-align:center;
+    margin:40px 0;
+}
+
+.print{
+    display:inline-block;
+    background:#1f3b73;
+    color:#fff;
+    text-decoration:none;
+    padding:16px 35px;
+    border-radius:10px;
+    font-size:20px;
+    font-weight:bold;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+.print:hover{
+    background:#16315d;
+    transform:translateY(-2px);
+}
+
+footer{
+    background:#1f3b73;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+footer p{
+    color:#fff;
+}
+
+@media (max-width:768px){
+
+header{
+    padding:20px;
+}
+
+header h1{
+    font-size:28px;
+}
+
+nav{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+nav a{
+    margin:0;
+}
+
+.container{
+    margin:15px;
+    padding:20px;
+}
+
+h1{
+    font-size:30px;
+}
+
+h2{
+    font-size:24px;
+}
+
+.print{
+    width:90%;
+    max-width:360px;
+    font-size:18px;
+    padding:15px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Zachodniopomorskie Centrum Informatyki</h1>
+
+<p>Szkolenia komputerowe i informatyczne</p>
+
+</header>
+
+<nav>
+
+<a href="../index.html">Strona główna</a>
+
+<a href="../szkoleniakursy.html">Szkolenia</a>
+
+<a href="../kontakt.html">Kontakt</a>
+
+</nav>
+
+<div class="container">
+
+<div class="banner">
+
+<img src="../images/szkolenieJava.png" alt="Programowanie Java">
+
+</div>
+
+<h1>Programowanie Java</h1>
+
+<h2>Kogo zapraszamy?</h2>
+
+<p>
+Szkolenie przeznaczone jest dla wszystkich osób chcących rozpocząć naukę programowania w języku <strong>Java</strong>.
+</p>
+
+<p>
+Uczestnik zdobywa praktyczne umiejętności tworzenia aplikacji oraz pracy z obiektowym podejściem do programowania.
+</p>
+
+<h2>Termin, organizacja i metodyka szkolenia</h2>
+
+<p>
+Zajęcia organizowane są indywidualnie lub dla grup zorganizowanych.
+Terminy ustalane są elastycznie i dopasowywane do uczestnika.
+</p>
+
+<p>
+Szkolenie prowadzone jest w formie praktycznych ćwiczeń komputerowych,
+nastawionych na zdobycie praktycznych umiejętności programistycznych.
+</p>
+
+<h2>Zakres szkolenia</h2>
+
+<ul>
+
+<li>Podstawy języka Java</li>
+
+<li>Zmienne i typy danych</li>
+
+<li>Operatory</li>
+
+<li>Instrukcje warunkowe</li>
+
+<li>Pętle</li>
+
+<li>Tablice</li>
+
+<li>Metody</li>
+
+<li>Programowanie obiektowe</li>
+
+<li>Klasy i obiekty</li>
+
+<li>Dziedziczenie</li>
+
+<li>Interfejsy</li>
+
+<li>Obsługa wyjątków</li>
+
+<li>Tworzenie aplikacji konsolowych</li>
+
+<li>Praca w środowisku IntelliJ IDEA lub Eclipse</li>
+
+</ul>
+
+<h2>Efekty szkolenia</h2>
+
+<p>
+Po ukończeniu szkolenia uczestnik potrafi samodzielnie tworzyć aplikacje w języku Java, zna zasady programowania obiektowego oraz jest przygotowany do dalszej nauki technologii Java wykorzystywanych przy tworzeniu aplikacji desktopowych i internetowych.
+</p>
+
+<div class="info-box">
+
+<strong>Certyfikat ukończenia szkolenia</strong>
+
+<p>
+Każdy uczestnik otrzymuje Certyfikat Zachodniopomorskiego Centrum Informatyki potwierdzający zdobyte umiejętności.
+</p>
+
+</div>
+
+</div>
+
+<div class="button-center">
+
+<a class="print" href="zapis-na-szkolenie.html">
+?? Zapisz się na szkolenie
+</a>
+
+</div>
+
+<footer>
+
+<div style="max-width:1100px;margin:auto;">
+
+<p><strong>Zachodniopomorskie Centrum Informatyki</strong></p>
+
+<p>
+ul. Przykładowa 1<br>
+70-000 Szczecin
+</p>
+
+<p>
+Tel.: +48 91 000 00 00
+</p>
+
+<p>
+E-mail: biuro@zpci.pl
+</p>
+
+<hr style="margin:20px 0;">
+
+<p>
+&copy; 2026 Zachodniopomorskie Centrum Informatyki. Wszelkie prawa zastrzeżone.
+</p>
+
+</div>
+
+</footer>
+
+</body>
+</html>

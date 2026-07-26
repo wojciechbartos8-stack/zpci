@@ -46,6 +46,16 @@ main {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+/* Grafika szkolenia */
+.training-image {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
 h2 {
     color: #1f3b73;
 }
@@ -83,51 +93,62 @@ footer {
 </header>
 
 <nav>
-<a href="../index.html">Strona g³ówna</a>
+<a href="../index.html">Strona gÅ‚Ã³wna</a>
 <a href="../szkoleniakursy.html">Szkolenia / Kursy</a>
-<a href="../uslugit.html">Us³ugi IT</a>
+<a href="../uslugit.html">UsÅ‚ugi IT</a>
 <a href="../kontakt.html">Kontakt</a>
 </nav>
+
 
 <main>
 
 <div class="box">
 
-<!-- PRZYCISKI -->
 <a class="print" href="javascript:window.print()">Drukuj</a>
-<a class="print" href="zapisz-sie-na-szkolenie.html">Zapisz siê na szkolenie</a>
+<a class="print" href="zapis-na-szkolenie.html">
+    Zapisz siÄ™ na szkolenie
+</a>
+
+<img src="../images/szkolenieExcel.png"
+     alt="Szkolenie MS Excel"
+     class="training-image">
+
 
 <h2>Kogo zapraszamy:</h2>
 <p>
-Szkolenie przeznaczone dla osób, które chc± rozpocz±æ lub przyspieszyæ pracê w MS Excel.
-Dostêpne poziomy: podstawowy, ¶redni i zaawansowany.
+Szkolenie przeznaczone dla osÃ³b, ktÃ³re chcÄ… rozpoczÄ…Ä‡ lub przyspieszyÄ‡ pracÄ™ w MS Excel.
+DostÄ™pne poziomy: podstawowy, Å›redni i zaawansowany.
 </p>
+
 
 <h2>Organizacja:</h2>
 <p>
-Zajêcia prowadzone s± indywidualnie lub grupowo, w formie praktycznych æwiczeñ komputerowych.
-Terminy dopasowywane s± do uczestników.
+ZajÄ™cia prowadzone sÄ… indywidualnie lub grupowo, w formie praktycznych Ä‡wiczeÅ„ komputerowych.
+Terminy dopasowywane sÄ… do uczestnikÃ³w.
 </p>
+
 
 <h2>Certyfikaty:</h2>
 <p>
-Certyfikat w jêzyku polskim i angielskim. Mo¿liwo¶æ dodatkowych wersji jêzykowych.
+Certyfikat w jÄ™zyku polskim i angielskim. MoÅ¼liwoÅ›Ä‡ dodatkowych wersji jÄ™zykowych.
 </p>
+
 
 <h2>Zakres szkolenia:</h2>
 
 <ul>
-<li>Ustawienia arkusza (kolumny, wiersze, komórki)</li>
+<li>Ustawienia arkusza: kolumny, wiersze, komÃ³rki</li>
 <li>Formatowanie standardowe i niestandardowe</li>
 <li>Funkcje podstawowe i zaawansowane</li>
 <li>Wykresy i analiza danych</li>
-<li>Funkcje tekstowe, logiczne, finansowe</li>
+<li>Funkcje tekstowe, logiczne i finansowe</li>
 <li>Filtry proste i zaawansowane</li>
 <li>Import i eksport danych</li>
-<li>Praca zespo³owa w arkuszach</li>
+<li>Praca zespoÅ‚owa w arkuszach</li>
 <li>Zabezpieczenia arkuszy</li>
-<li>£±czenie z bazami danych</li>
+<li>ÅÄ…czenie z bazami danych</li>
 </ul>
+
 
 <p>
 Kontakt: <strong>biuro@zpci.pl</strong>
@@ -137,13 +158,16 @@ Kontakt: <strong>biuro@zpci.pl</strong>
 
 </main>
 
+
 <footer>
-© <span id="year"></span> Zachodniopomorskie Centrum Informatyki
+Â© <span id="year"></span> Zachodniopomorskie Centrum Informatyki
 </footer>
+
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 
 </body>
 </html>

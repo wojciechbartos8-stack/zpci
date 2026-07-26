@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Naprawa i serwis komputerów | Zachodniopomorskie Centrum Informatyki
+</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f6f9;
+    color:#333;
+    line-height:1.7;
+}
+
+
+header{
+
+    background:#1f3b73;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:30px 20px;
+
+}
+
+
+header h1{
+
+    color:#fff;
+
+    margin-bottom:10px;
+
+}
+
+
+
+nav{
+
+    background:#16315d;
+
+    text-align:center;
+
+    padding:15px;
+
+}
+
+
+
+nav a{
+
+    color:#fff;
+
+    text-decoration:none;
+
+    margin:0 15px;
+
+    font-weight:bold;
+
+}
+
+
+
+nav a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+
+.container{
+
+    max-width:1100px;
+
+    margin:30px auto;
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:10px;
+
+    box-shadow:0 0 15px rgba(0,0,0,.1);
+
+}
+
+
+
+.banner{
+
+    width:100%;
+
+    margin-bottom:30px;
+
+    overflow:hidden;
+
+    border-radius:10px;
+
+}
+
+
+
+.banner img{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+}
+
+
+
+h1{
+
+    color:#1f3b73;
+
+    margin-bottom:20px;
+
+}
+
+
+
+h2{
+
+    color:#1f3b73;
+
+    margin-top:30px;
+
+    margin-bottom:15px;
+
+    border-bottom:2px solid #1f3b73;
+
+    padding-bottom:8px;
+
+}
+
+
+p{
+
+    margin-bottom:15px;
+
+}
+
+
+
+ul{
+
+    margin-left:25px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+li{
+
+    margin-bottom:8px;
+
+}
+
+
+.info-box{
+
+    background:#eef4ff;
+
+    border-left:5px solid #1f3b73;
+
+    padding:20px;
+
+    margin-top:30px;
+
+    border-radius:8px;
+
+}
+
+
+
+.button-center{
+
+    text-align:center;
+
+    margin:40px 0;
+
+}
+
+
+
+.print{
+
+    display:inline-block;
+
+    background:#1f3b73;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    padding:16px 35px;
+
+    border-radius:10px;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+
+}
+
+
+
+.print:hover{
+
+    background:#16315d;
+
+    transform:translateY(-2px);
+
+}
+footer{
+
+    background:#1f3b73;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:20px;
+
+    margin-top:40px;
+
+}
+
+
+footer p{
+
+    color:#fff;
+
+}
+
+
+
+
+/* =========================
+   RESPONSYWNOŚĆ
+========================= */
+
+
+@media (max-width:768px){
+
+
+header{
+
+    padding:20px;
+
+}
+
+
+
+header h1{
+
+    font-size:28px;
+
+}
+
+
+
+nav{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+
+
+nav a{
+
+    margin:0;
+
+}
+
+
+
+.container{
+
+    margin:15px;
+
+    padding:20px;
+
+}
+
+
+
+h1{
+
+    font-size:30px;
+
+}
+
+
+
+h2{
+
+    font-size:24px;
+
+}
+
+
+
+.print{
+
+    width:90%;
+
+    max-width:360px;
+
+    font-size:18px;
+
+    padding:15px;
+
+}
+
+
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<header>
+
+
+<h1>
+Zachodniopomorskie Centrum Informatyki
+</h1>
+
+
+<p>
+Usługi informatyczne i wsparcie IT
+</p>
+
+
+</header>
+
+
+
+
+<nav>
+
+
+<a href="../index.html">
+Strona główna
+</a>
+
+
+
+<a href="../uslugit.html">
+Usługi IT
+</a>
+
+
+
+<a href="../szkoleniakursy.html">
+Szkolenia
+</a>
+
+
+
+<a href="../kontakt.html">
+Kontakt
+</a>
+
+
+
+</nav>
+
+
+
+
+
+<div class="container">
+
+
+
+
+
+<div class="banner">
+
+
+<img src="../images/naprawaiserwis.png"
+alt="Naprawa i serwis komputerów">
+
+
+</div>
+
+
+
+
+
+<h1>
+Naprawa i serwis komputerów
+</h1>
+<h2>
+Dla kogo przeznaczona jest usługa?
+</h2>
+
+
+<p>
+
+Usługa naprawy i serwisu komputerowego skierowana jest
+do osób prywatnych, firm oraz instytucji potrzebujących
+profesjonalnej pomocy informatycznej.
+
+</p>
+
+
+<p>
+
+Pomagamy w rozwiązywaniu problemów ze sprzętem komputerowym,
+oprogramowaniem oraz konfiguracją urządzeń.
+
+</p>
+
+
+
+
+
+<h2>
+Zakres świadczonych usług
+</h2>
+
+
+<ul>
+
+
+<li>
+Diagnostyka komputerów stacjonarnych i laptopów
+</li>
+
+
+<li>
+Naprawa usterek sprzętowych
+</li>
+
+
+<li>
+Instalacja i konfiguracja systemów operacyjnych
+</li>
+
+
+<li>
+Instalacja sterowników oraz programów użytkowych
+</li>
+
+
+<li>
+Usuwanie wirusów i złośliwego oprogramowania
+</li>
+
+
+<li>
+Czyszczenie i konserwacja komputerów
+</li>
+
+
+<li>
+Modernizacja komputerów i laptopów
+</li>
+
+
+<li>
+Wymiana podzespołów komputerowych
+</li>
+
+
+<li>
+Konfiguracja drukarek i urządzeń peryferyjnych
+</li>
+
+
+<li>
+Konfiguracja sieci komputerowych
+</li>
+
+
+<li>
+Tworzenie kopii bezpieczeństwa danych
+</li>
+
+
+<li>
+Odzyskiwanie utraconych danych
+</li>
+
+
+</ul>
+
+
+
+
+
+
+
+<h2>
+Administracja i wsparcie informatyczne
+</h2>
+
+
+<p>
+
+Oferujemy również pomoc w konfiguracji stanowisk
+komputerowych, aktualizacji systemów oraz bieżącym
+rozwiązywaniu problemów informatycznych.
+
+</p>
+
+
+<p>
+
+Zakres usług może zostać indywidualnie dopasowany
+do potrzeb klienta.
+
+</p>
+
+
+
+
+
+
+
+<h2>
+Dlaczego warto wybrać ZPCI?
+</h2>
+
+
+<ul>
+
+
+<li>
+Profesjonalna diagnostyka problemów
+</li>
+
+
+<li>
+Indywidualne podejście do klienta
+</li>
+
+
+<li>
+Pomoc dla użytkowników prywatnych i firm
+</li>
+
+
+<li>
+Szybka realizacja usług
+</li>
+
+
+<li>
+Wsparcie techniczne po wykonaniu usługi
+</li>
+
+
+</ul>
+
+
+
+
+
+
+<div class="info-box">
+
+
+<strong>
+Zgłoszenie usługi
+</strong>
+
+
+<p>
+
+Aby zamówić naprawę lub uzyskać wycenę,
+wypełnij formularz zgłoszeniowy.
+
+</p>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+<div class="button-center">
+
+
+<a class="print" href="zglos-usluge.html">
+
+?? Zgłoś usługę
+
+</a>
+
+
+</div>
+<footer>
+
+
+<div style="max-width:1100px;margin:auto;">
+
+
+
+<p>
+<strong>
+Zachodniopomorskie Centrum Informatyki
+</strong>
+</p>
+
+
+
+
+<p>
+ul. Przykładowa 1<br>
+70-000 Szczecin
+</p>
+
+
+
+
+<p>
+Tel.: +48 91 000 00 00
+</p>
+
+
+
+
+<p>
+E-mail: biuro@zpci.pl
+</p>
+
+
+
+
+
+<hr style="margin:20px 0;">
+
+
+
+
+
+<p>
+
+&copy; <span id="year"></span>
+
+Zachodniopomorskie Centrum Informatyki.
+<br>
+
+Wszelkie prawa zastrzeżone.
+
+</p>
+
+
+
+</div>
+
+
+</footer>
+
+
+
+
+
+<script>
+
+
+document.getElementById("year").textContent =
+
+new Date().getFullYear();
+
+
+
+</script>
+
+
+
+
+
+</body>
+
+</html>

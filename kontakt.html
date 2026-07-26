@@ -1,110 +1,866 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <title>Kontakt - ZPCI</title>
+    <meta charset="UTF-8">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: linear-gradient(135deg, #eef5ff, #ffffff);
-      color: #222;
-    }
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    header {
-      background: #1f3b73;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+    <title>Kontakt | Zachodniopomorskie Centrum Informatyki</title>
 
-    nav {
-      background: #333;
-      display: flex;
-    }
+    <meta
+        name="description"
+        content="Kontakt z Zachodniopomorskim Centrum Informatyki. Telefon, adres e-mail oraz adres biura konsultacyjnego w Szczecinie."
+    >
 
-    nav a {
-      color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-      display: block;
-    }
+    <style>
+        :root {
+            --primary: #1f3b73;
+            --primary-dark: #0b2148;
+            --primary-medium: #2c65b0;
+            --primary-light: #eef5ff;
+            --accent: #f2b705;
+            --accent-hover: #ffd447;
+            --background: #f4f7fb;
+            --white: #ffffff;
+            --text: #29333d;
+            --muted: #5d6976;
+            --border: #dce5ef;
+            --radius: 18px;
+            --shadow: 0 14px 38px rgba(11, 33, 72, 0.12);
+            --shadow-hover: 0 21px 45px rgba(11, 33, 72, 0.2);
+        }
 
-    nav a:hover {
-      background: #444;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    main {
-      padding: 20px;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 600px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf4ff 0%,
+                    #f8fbff 52%,
+                    #ffffff 100%
+                );
+            color: var(--text);
+            font-size: 18px;
+            line-height: 1.7;
+        }
 
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #1f3b73;
-      color: white;
-      margin-top: 30px;
-    }
-  </style>
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page-container {
+            width: calc(100% - 40px);
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        /* =========================
+           NAG&#321;&Oacute;WEK
+        ========================= */
+
+        .site-header {
+            position: relative;
+            overflow: hidden;
+            padding: 42px 20px;
+            background:
+                radial-gradient(
+                    circle at 86% 18%,
+                    rgba(255, 255, 255, 0.13),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--primary-medium)
+                );
+            color: var(--white);
+            text-align: center;
+        }
+
+        .site-header::before {
+            content: "";
+            position: absolute;
+            top: -155px;
+            right: -100px;
+            width: 390px;
+            height: 390px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .site-header h1 {
+            margin-bottom: 10px;
+            color: var(--white);
+            font-size: clamp(34px, 5vw, 52px);
+            line-height: 1.15;
+        }
+
+        .site-header p {
+            max-width: 760px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(17px, 2.3vw, 21px);
+        }
+
+        /* =========================
+           NAWIGACJA
+        ========================= */
+
+        .main-nav {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: #071b37;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .nav-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .main-nav a {
+            display: flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 22px;
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .main-nav a:hover,
+        .main-nav a:focus-visible,
+        .main-nav a.active {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        .main-nav a:focus-visible,
+        .contact-link:focus-visible,
+        .button:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        /* =========================
+           BANER
+        ========================= */
+
+        .banner-section {
+            padding: 32px 0 0;
+        }
+
+        .banner-box {
+            position: relative;
+            overflow: hidden;
+            border: 5px solid var(--white);
+            border-radius: 24px;
+            background: var(--white);
+            box-shadow: 0 22px 52px rgba(11, 33, 72, 0.22);
+        }
+
+        .banner-box img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* =========================
+           G&#321;&Oacute;WNA TRE&#346;&#262;
+        ========================= */
+
+        main {
+            padding: 34px 0 58px;
+        }
+
+        .contact-wrapper {
+            padding: 42px;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .section-intro {
+            max-width: 840px;
+            margin: 0 auto 36px;
+            text-align: center;
+        }
+
+        .section-intro h2 {
+            margin-bottom: 14px;
+            color: var(--primary-dark);
+            font-size: clamp(29px, 4vw, 42px);
+            line-height: 1.2;
+        }
+
+        .section-intro p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           KARTY KONTAKTOWE
+        ========================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .contact-card {
+            position: relative;
+            display: flex;
+            min-width: 0;
+            min-height: 235px;
+            overflow: hidden;
+            flex-direction: column;
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #f1f6ff
+                );
+            box-shadow: 0 9px 25px rgba(11, 33, 72, 0.08);
+            transition:
+                transform 0.22s ease,
+                box-shadow 0.22s ease,
+                border-color 0.22s ease;
+        }
+
+        .contact-card::after {
+            content: "";
+            position: absolute;
+            top: -70px;
+            right: -70px;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: rgba(31, 59, 115, 0.07);
+            transition:
+                transform 0.25s ease,
+                background-color 0.25s ease;
+        }
+
+        .contact-card:hover {
+            border-color: #b7cbe3;
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-6px);
+        }
+
+        .contact-card:hover::after {
+            background: rgba(242, 183, 5, 0.16);
+            transform: scale(1.15);
+        }
+
+        .contact-icon {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            width: 58px;
+            height: 58px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            border-radius: 16px;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 28px;
+            box-shadow: 0 8px 20px rgba(31, 59, 115, 0.22);
+            transition:
+                background-color 0.22s ease,
+                color 0.22s ease,
+                transform 0.22s ease;
+        }
+
+        .contact-card:hover .contact-icon {
+            background: var(--accent);
+            color: var(--primary-dark);
+            transform: scale(1.06);
+        }
+
+        .contact-card h3 {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 9px;
+            color: var(--primary-dark);
+            font-size: 23px;
+            line-height: 1.25;
+        }
+
+        .contact-card p {
+            position: relative;
+            z-index: 1;
+            color: var(--muted);
+        }
+
+        .contact-link {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            overflow-wrap: anywhere;
+            margin-top: auto;
+            padding-top: 16px;
+            color: var(--primary);
+            font-size: 19px;
+            font-weight: 800;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+
+        .contact-link:hover {
+            color: var(--primary-dark);
+        }
+
+        .address {
+            position: relative;
+            z-index: 1;
+            margin-top: auto;
+            padding-top: 16px;
+            color: var(--primary-dark);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 1.55;
+        }
+
+        /* =========================
+           INFORMACJA O WIZYCIE
+        ========================= */
+
+        .appointment-box {
+            position: relative;
+            overflow: hidden;
+            margin-top: 32px;
+            padding: 32px 34px;
+            border-radius: 18px;
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+                );
+            color: var(--white);
+            box-shadow: 0 18px 42px rgba(11, 33, 72, 0.22);
+        }
+
+        .appointment-box::after {
+            content: "\1F4C5";
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            color: rgba(255, 255, 255, 0.08);
+            font-size: 125px;
+            line-height: 1;
+            transform: translateY(-50%);
+        }
+
+        .appointment-content {
+            position: relative;
+            z-index: 1;
+            max-width: 820px;
+        }
+
+        .appointment-box h2 {
+            margin-bottom: 12px;
+            color: var(--white);
+            font-size: clamp(25px, 3vw, 32px);
+            line-height: 1.3;
+        }
+
+        .appointment-box p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* =========================
+           PRZYCISKI
+        ========================= */
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 34px;
+        }
+
+        .button {
+            display: inline-flex;
+            min-height: 52px;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 27px;
+            border: 2px solid transparent;
+            border-radius: 999px;
+            background: var(--accent);
+            color: var(--primary-dark);
+            font-weight: 800;
+            line-height: 1.2;
+            text-align: center;
+            box-shadow: 0 9px 22px rgba(242, 183, 5, 0.25);
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .button:hover {
+            background: var(--accent-hover);
+            box-shadow: 0 13px 28px rgba(242, 183, 5, 0.32);
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 9px 22px rgba(31, 59, 115, 0.22);
+        }
+
+        .button-secondary:hover {
+            background: var(--primary-dark);
+        }
+
+        /* =========================
+           STOPKA
+        ========================= */
+
+        footer {
+            padding: 28px 20px;
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.87);
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer p + p {
+            margin-top: 5px;
+        }
+
+        footer a {
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        /* =========================
+           RESPONSYWNO&#346;&#262;
+        ========================= */
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .contact-card:last-child {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 720px) {
+            body {
+                font-size: 17px;
+            }
+
+            .page-container {
+                width: calc(100% - 28px);
+            }
+
+            .contact-wrapper {
+                padding: 32px 24px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .page-container {
+                width: calc(100% - 20px);
+            }
+
+            .site-header {
+                padding: 34px 14px;
+            }
+
+            .nav-inner {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .main-nav a {
+                min-height: 49px;
+                padding: 10px 8px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                font-size: 14px;
+            }
+
+            .banner-section {
+                padding-top: 20px;
+            }
+
+            .banner-box {
+                border-width: 3px;
+                border-radius: 14px;
+            }
+
+            main {
+                padding: 20px 0 38px;
+            }
+
+            .contact-wrapper {
+                padding: 24px 17px;
+                border-radius: 15px;
+            }
+
+            .section-intro {
+                margin-bottom: 26px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 17px;
+            }
+
+            .contact-card:last-child {
+                grid-column: auto;
+            }
+
+            .contact-card {
+                min-height: auto;
+                padding: 23px 20px;
+            }
+
+            .appointment-box {
+                padding: 25px 19px;
+            }
+
+            .appointment-box::after {
+                right: -10px;
+                font-size: 100px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .buttons .button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .nav-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .main-nav a {
+                min-height: 45px;
+            }
+
+            .site-header h1 {
+                font-size: 32px;
+            }
+
+            .contact-link {
+                font-size: 17px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Kontakt</h1>
-</header>
+    <!-- NAG&#321;&Oacute;WEK -->
 
-<nav>
-  <a href="index.html">Strona g³ówna</a>
-  <a href="szkoleniakursy.html">Szkolenia / Kursy</a>
-  <a href="kontakt.html">Kontakt</a>
-</nav>
+    <header class="site-header">
+        <div class="header-content">
 
-<main>
+            <h1>Kontakt</h1>
 
-  <div class="box">
+            <p>
+                Skontaktuj si&#281; z Zachodniopomorskim
+                Centrum Informatyki
+            </p>
 
-    <h2>Dane kontaktowe</h2>
+        </div>
+    </header>
 
-    <p><strong>Telefon:</strong> 503 840 567</p>
+    <!-- NAWIGACJA -->
 
-    <p><strong>E-mail:</strong> 
-      <a href="mailto:biuro@zpci.pl">biuro@zpci.pl</a>
-    </p>
+    <nav
+        class="main-nav"
+        aria-label="G&#322;&oacute;wna nawigacja"
+    >
+        <div class="page-container nav-inner">
 
-    <h3>Biuro konsultacyjne</h3>
+            <a href="index.html">
+                Strona g&#322;&oacute;wna
+            </a>
 
-    <p>
-      Szczecin<br>
-      ul. Boguchwa³y 18 lok. 2
-    </p>
+            <a href="szkoleniakursy.html">
+                Szkolenia / Kursy
+            </a>
 
-    <p>
-      W celu umówienia wizyty z konsultantem prosimy o wcze¶niejszy kontakt mailowy b±d¼ telefoniczny.
-    </p>
+            <a href="uslugit.html">
+                Us&#322;ugi IT
+            </a>
 
-  </div>
+            <a
+                href="kontakt.html"
+                class="active"
+                aria-current="page"
+            >
+                Kontakt
+            </a>
 
-</main>
+        </div>
+    </nav>
 
-<footer>
-  <p>
-    © <span id="year"></span> Zachodniopomorskie Centrum Informatyki
-  </p>
-</footer>
+    <!-- BANER -->
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    <section
+        class="banner-section"
+        aria-label="Baner kontaktowy ZPCI"
+    >
+        <div class="page-container">
+
+            <div class="banner-box">
+                <img
+                    src="images/kontakt.png"
+                    alt="Dane kontaktowe Zachodniopomorskiego Centrum Informatyki"
+                    width="1536"
+                    height="1024"
+                    loading="eager"
+                    fetchpriority="high"
+                >
+            </div>
+
+        </div>
+    </section>
+
+    <!-- G&#321;&Oacute;WNA TRE&#346;&#262; -->
+
+    <main>
+        <div class="page-container">
+
+            <article class="contact-wrapper">
+
+                <section class="section-intro">
+
+                    <h2>Dane kontaktowe</h2>
+
+                    <p>
+                        Jeste&#347;my do Twojej dyspozycji.
+                        Skontaktuj si&#281; z nami telefonicznie
+                        lub za pomoc&#261; poczty elektronicznej.
+                    </p>
+
+                </section>
+
+                <div class="contact-grid">
+
+                    <!-- TELEFON -->
+
+                    <article class="contact-card">
+
+                        <span
+                            class="contact-icon"
+                            aria-hidden="true"
+                        >
+                            &#9742;
+                        </span>
+
+                        <h3>Telefon</h3>
+
+                        <p>
+                            Zadzwo&#324; do naszego biura
+                            konsultacyjnego.
+                        </p>
+
+                        <a
+                            class="contact-link"
+                            href="tel:+48503840567"
+                        >
+                            503 840 567
+                        </a>
+
+                    </article>
+
+                    <!-- E-MAIL -->
+
+                    <article class="contact-card">
+
+                        <span
+                            class="contact-icon"
+                            aria-hidden="true"
+                        >
+                            &#9993;
+                        </span>
+
+                        <h3>Adres e-mail</h3>
+
+                        <p>
+                            Napisz wiadomo&#347;&#263; dotycz&#261;c&#261;
+                            szkole&#324; lub us&#322;ug IT.
+                        </p>
+
+                        <a
+                            class="contact-link"
+                            href="mailto:biuro@zpci.pl"
+                        >
+                            biuro@zpci.pl
+                        </a>
+
+                    </article>
+
+                    <!-- ADRES -->
+
+                    <article class="contact-card">
+
+                        <span
+                            class="contact-icon"
+                            aria-hidden="true"
+                        >
+                            &#128205;
+                        </span>
+
+                        <h3>Biuro konsultacyjne</h3>
+
+                        <p>
+                            Spotkania odbywaj&#261; si&#281;
+                            po wcze&#347;niejszym um&oacute;wieniu.
+                        </p>
+
+                        <address class="address">
+                            Szczecin<br>
+                            ul. Boguchwa&#322;y 18 lok. 2
+                        </address>
+
+                    </article>
+
+                </div>
+
+                <!-- INFORMACJA O WIZYCIE -->
+
+                <section class="appointment-box">
+
+                    <div class="appointment-content">
+
+                        <h2>
+                            Um&oacute;wienie wizyty z konsultantem
+                        </h2>
+
+                        <p>
+                            W celu um&oacute;wienia wizyty
+                            z konsultantem prosimy o wcze&#347;niejszy
+                            kontakt mailowy b&#261;d&#378; telefoniczny.
+                        </p>
+
+                    </div>
+
+                </section>
+
+                <div class="buttons">
+
+                    <a
+                        class="button"
+                        href="tel:+48503840567"
+                    >
+                        Zadzwo&#324;: 503 840 567
+                    </a>
+
+                    <a
+                        class="button button-secondary"
+                        href="mailto:biuro@zpci.pl"
+                    >
+                        Napisz wiadomo&#347;&#263;
+                    </a>
+
+                    <a
+                        class="button button-secondary"
+                        href="index.html"
+                    >
+                        Powr&oacute;t do strony g&#322;&oacute;wnej
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+    </main>
+
+    <!-- STOPKA -->
+
+    <footer>
+
+        <p>
+            &copy;
+            <span id="year">2026</span>
+            Zachodniopomorskie Centrum Informatyki
+        </p>
+
+        <p>
+            Telefon:
+            <a href="tel:+48503840567">
+                503 840 567
+            </a>
+            &bull;
+            E-mail:
+            <a href="mailto:biuro@zpci.pl">
+                biuro@zpci.pl
+            </a>
+        </p>
+
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
 
 </body>
 </html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dla Firm | Szkolenia IT i obs³uga informatyczna | ZPCI Szczecin</title>
+  <meta name="description" content="ZPCI Szczecin – szkolenia komputerowe, kursy IT, obs³uga informatyczna firm, wsparcie techniczne oraz doradztwo informatyczne dla przedsiêbiorstw." />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2933;
+      background: #ffffff;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #163f73, #1f5fa8);
+      color: #fff;
+      padding: 80px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      line-height: 1.1;
+      margin: 0 0 22px;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.2;
+      margin: 0 0 18px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin: 0 0 10px;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    .lead {
+      font-size: 22px;
+      max-width: 720px;
+      margin-bottom: 30px;
+    }
+
+    .hero-card,
+    .card {
+      background: #fff;
+      color: #1f2933;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .hero-card strong {
+      color: #1f5fa8;
+      font-size: 22px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #f2b705;
+      color: #1f2933;
+    }
+
+    .btn-primary:hover {
+      background: #ffd447;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: #1f5fa8;
+    }
+
+    .btn-secondary:hover {
+      background: #eef5ff;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-light {
+      background: #f7f9fc;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      margin-bottom: 36px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: #eaf2fb;
+      color: #1f5fa8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    ul {
+      padding-left: 22px;
+      margin: 12px 0 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .benefit {
+      background: #fff;
+      border-left: 6px solid #f2b705;
+      padding: 22px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      font-weight: 700;
+    }
+
+    .process {
+      counter-reset: process;
+      display: grid;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .process-step {
+      background: #fff;
+      padding: 24px;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 18px;
+    }
+
+    .process-step::before {
+      counter-increment: process;
+      content: counter(process);
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #1f5fa8;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, #163f73, #1f5fa8);
+      color: #fff;
+      border-radius: 18px;
+      padding: 42px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .contact-list li {
+      margin-bottom: 12px;
+    }
+
+    .contact-list a {
+      color: #fff;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #5f6b7a;
+      font-size: 15px;
+      padding: 30px 0;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .contact-box,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 17px;
+      }
+
+      .hero,
+      section {
+        padding: 50px 0;
+      }
+
+      .process-step {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        padding: 28px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">Oferta dla firm</span>
+        <h1>Szkolenia IT i wsparcie informatyczne dla firm</h1>
+        <p class="lead">
+          Pomagamy firmom rozwijaæ kompetencje cyfrowe pracowników,
+          usprawniaæ codzienn± pracê z komputerem oraz bezpiecznie korzystaæ
+          z nowoczesnych technologii.
+        </p>
+
+        <div class="btn-row">
+          <a href="#kontakt" class="btn btn-primary">Zapytaj o ofertê</a>
+          <a href="tel:503840567" class="btn btn-secondary">Zadzwoñ: 503 840 567</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <strong>Dla kogo?</strong>
+        <p>
+          Dla przedsiêbiorstw, instytucji i zespo³ów, które potrzebuj±
+          praktycznych szkoleñ komputerowych, wsparcia IT lub doradztwa
+          informatycznego.
+        </p>
+        <ul>
+          <li>szkolenia dla pracowników,</li>
+          <li>kursy indywidualne i grupowe,</li>
+          <li>wsparcie techniczne,</li>
+          <li>program dopasowany do potrzeb firmy.</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section>
+      <div class="container">
+        <div class="section-intro">
+          <h2>Co oferujemy firmom?</h2>
+          <p>
+            Przygotowujemy praktyczne rozwi±zania dla firm, które chc±
+            zwiêkszyæ efektywno¶æ pracy zespo³u i lepiej wykorzystywaæ
+            narzêdzia informatyczne.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">??</div>
+            <h3>Szkolenia komputerowe</h3>
+            <p>
+              Kursy obs³ugi komputera, systemu Windows, pakietów biurowych,
+              poczty elektronicznej oraz narzêdzi wykorzystywanych w pracy.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">??</div>
+            <h3>Excel i pakiet Office</h3>
+            <p>
+              Praktyczne szkolenia z Excela, Worda, PowerPointa oraz pracy
+              z dokumentami, tabelami, raportami i prezentacjami.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">??</div>
+            <h3>Bezpieczeñstwo IT</h3>
+            <p>
+              Szkolenia z bezpiecznego korzystania z Internetu, ochrony danych,
+              hase³, poczty firmowej oraz rozpoznawania zagro¿eñ online.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">???</div>
+            <h3>Wsparcie informatyczne</h3>
+            <p>
+              Pomoc w rozwi±zywaniu problemów technicznych, konfiguracji
+              sprzêtu, oprogramowania oraz codziennej pracy z komputerem.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">??</div>
+            <h3>Narzêdzia online</h3>
+            <p>
+              Wsparcie w korzystaniu z poczty, kalendarzy, komunikatorów,
+              dysków online, spotkañ zdalnych i narzêdzi do pracy zespo³owej.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">??</div>
+            <h3>Program na zamówienie</h3>
+            <p>
+              Zakres szkolenia dopasowujemy do bran¿y, poziomu pracowników
+              oraz konkretnych potrzeb organizacji.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Korzy¶ci dla Twojej firmy</h2>
+          <p>
+            Dobrze przeszkolony zespó³ pracuje sprawniej, bezpieczniej
+            i pewniej korzysta z narzêdzi cyfrowych.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="benefit">Wiêksza efektywno¶æ pracy pracowników</div>
+          <div class="benefit">Mniej problemów z codzienn± obs³ug± komputera</div>
+          <div class="benefit">Lepsze wykorzystanie programów biurowych</div>
+          <div class="benefit">Wiêksze bezpieczeñstwo danych firmowych</div>
+          <div class="benefit">Szkolenia dopasowane do realnych obowi±zków</div>
+          <div class="benefit">Mo¿liwo¶æ organizacji zajêæ dla ca³ych zespo³ów</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-intro">
+          <h2>Jak wygl±da wspó³praca?</h2>
+          <p>
+            Zaczynamy od rozmowy o potrzebach firmy, a nastêpnie przygotowujemy
+            zakres szkolenia lub wsparcia dopasowany do zespo³u.
+          </p>
+        </div>
+
+        <div class="process">
+          <div class="process-step">
+            <div>
+              <h3>Analiza potrzeb</h3>
+              <p>
+                Ustalamy, jakie kompetencje IT s± potrzebne pracownikom
+                i z jakimi problemami mierzy siê firma.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div>
+              <h3>Dobór programu</h3>
+              <p>
+                Przygotowujemy zakres szkolenia, poziom zaawansowania,
+                formê zajêæ oraz harmonogram.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div>
+              <h3>Realizacja szkolenia</h3>
+              <p>
+                Prowadzimy zajêcia w praktycznej formule — z przyk³adami
+                dopasowanymi do codziennej pracy uczestników.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div>
+              <h3>Wsparcie po szkoleniu</h3>
+              <p>
+                Pomagamy utrwaliæ zdobyt± wiedzê i wdro¿yæ nowe umiejêtno¶ci
+                w codziennej pracy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Przyk³adowe tematy szkoleñ</h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Microsoft Excel</h3>
+            <ul>
+              <li>tabele i formatowanie,</li>
+              <li>formu³y i funkcje,</li>
+              <li>raporty i zestawienia,</li>
+              <li>analiza danych.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Praca biurowa</h3>
+            <ul>
+              <li>Word i dokumenty,</li>
+              <li>PowerPoint i prezentacje,</li>
+              <li>poczta elektroniczna,</li>
+              <li>organizacja plików.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Bezpieczna firma</h3>
+            <ul>
+              <li>has³a i logowanie,</li>
+              <li>phishing i fa³szywe wiadomo¶ci,</li>
+              <li>ochrona danych,</li>
+              <li>bezpieczna praca online.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <h2>Zapytaj o ofertê dla firmy</h2>
+            <p>
+              Napisz lub zadzwoñ. Przygotujemy propozycjê szkolenia albo
+              wsparcia IT dopasowan± do potrzeb Twojej organizacji.
+            </p>
+          </div>
+
+          <div>
+            <ul class="contact-list">
+              <li><strong>Telefon:</strong> <a href="tel:503840567">503 840 567</a></li>
+              <li><strong>E-mail:</strong> <a href="mailto:biuro@zpci.pl">biuro@zpci.pl</a></li>
+              <li><strong>Adres:</strong> ul. Boguchwa³y 18/2, 71-531 Szczecin</li>
+            </ul>
+
+            <div class="btn-row">
+              <a href="mailto:biuro@zpci.pl?subject=Oferta%20dla%20firmy" class="btn btn-primary">
+                Napisz wiadomo¶æ
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer-note">
+    © Zachodniopomorskie Centrum Informatyki — Oferta dla firm
+  </footer>
+
+</body>
+</html>

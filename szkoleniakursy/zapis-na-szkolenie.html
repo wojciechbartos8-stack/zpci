@@ -1,131 +1,600 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Zapis na szkolenie - ZPCI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Zapis na szkolenie | Zachodniopomorskie Centrum Informatyki
+</title>
+
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: linear-gradient(135deg, #eef5ff, #ffffff);
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-header {
-    background: #1f3b73;
-    color: white;
-    text-align: center;
-    padding: 20px;
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#f4f7fb;
+
+    color:#333;
+
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+
+
+header{
+
+    background:#1f3b73;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
 }
 
-.box {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    width: 420px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+
+header h1{
+
+    margin-bottom:10px;
+
 }
 
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
+
+
+nav{
+
+    background:#333;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
 }
 
-input, select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 20px;
+
 }
 
-button {
-    margin-top: 15px;
-    width: 100%;
-    padding: 12px;
-    background: #1f3b73;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
+
+
+nav a:hover{
+
+    background:#444;
+
 }
 
-button:hover {
-    background: #16305d;
+
+
+.container{
+
+    max-width:900px;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:10px;
+
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+
 }
 
-footer {
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-    background: #1f3b73;
-    color: white;
+
+
+h2{
+
+    text-align:center;
+
+    color:#1f3b73;
+
+    margin-bottom:25px;
+
 }
+
+
+
+label{
+
+    display:block;
+
+    margin-top:18px;
+
+    font-weight:bold;
+
+}
+
+
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:6px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+    font-size:15px;
+
+}
+
+
+
+textarea{
+
+    min-height:120px;
+
+}
+
+
+
+button{
+
+    width:100%;
+
+    margin-top:30px;
+
+    padding:14px;
+
+    background:#1f3b73;
+
+    color:white;
+
+    border:none;
+
+    border-radius:6px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+}
+
+
+
+button:hover{
+
+    background:#16305d;
+
+}
+
+
+
+footer{
+
+    margin-top:40px;
+
+    background:#1f3b73;
+
+    color:white;
+
+    text-align:center;
+
+    padding:15px;
+
+}
+
+
+
+@media(max-width:700px){
+
+
+nav{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+
+.container{
+
+    margin:15px;
+
+    padding:20px;
+
+}
+
+
+}
+
 </style>
+
+
 </head>
+
 
 <body>
 
+
 <header>
-<h1>Zapis na szkolenie</h1>
+
+<h1>
+Zachodniopomorskie Centrum Informatyki
+</h1>
+
+
+<p>
+Zapis na szkolenie
+</p>
+
+
 </header>
 
-<main>
 
-<div class="box">
+<nav>
 
-<form action="#" method="post">
+<a href="../index.html">
+Strona główna
+</a>
 
-<label>Wybierz szkolenie</label>
-<select name="kurs" required>
-    <option value="">-- wybierz kurs --</option>
-    <option>MS Office - poziom 1</option>
-    <option>MS Office - poziom 2</option>
-    <option>MS Excel - podstawy</option>
-    <option>MS Excel VBA</option>
-    <option>Grafika komputerowa</option>
-    <option>CAD - podstawy</option>
-    <option>Programowanie Java</option>
-    <option>Tworzenie stron WWW (HTML/CSS)</option>
-    <option>PHP + MySQL</option>
-    <option>Kursy dla senior�w</option>
+
+<a href="../szkoleniakursy.html">
+Szkolenia i kursy
+</a>
+
+
+<a href="../uslugit.html">
+Usługi IT
+</a>
+
+
+<a href="../kontakt.html">
+Kontakt
+</a>
+
+
+</nav>
+<div class="container">
+
+
+<h2>
+Formularz zapisu na szkolenie
+</h2>
+
+
+
+<form action="../send.php" method="POST">
+
+
+
+<label for="szkolenie">
+Wybierz szkolenie
+</label>
+
+
+<select id="szkolenie" name="szkolenie" required>
+
+
+<option value="">
+-- Wybierz szkolenie --
+</option>
+
+
+
+<optgroup label="BIUROWE">
+
+
+<option value="MS Office - poziom 1">
+MS Office - poziom 1 (Word, Excel, PowerPoint, Outlook)
+</option>
+
+
+<option value="MS Office - poziom 2">
+MS Office - poziom 2 (Word, Excel, PowerPoint, Outlook)
+</option>
+
+
+<option value="MS Excel">
+MS Excel
+</option>
+
+
+<option value="MS Excel VBA">
+MS Excel VBA
+</option>
+
+
+<option value="PowerPoint">
+PowerPoint - prezentacje
+</option>
+
+
+</optgroup>
+
+
+
+
+<optgroup label="
+ksiegowe">
+
+
+<option value="platnik">
+obsluga programu ksiegowwego ZUS Płatnik 
+</option>
+
+
+<option value="Symfonia-Faktura">
+obsluga programu fakturowego
+</option>
+
+
+</optgroup>
+
+
+
+
+
+<optgroup label="PROGRAMOWANIE">
+
+
+<option value="Java">
+Java
+</option>
+
+
+<option value="C++">
+C++
+</option>
+
+
+<option value="C#">
+C#
+</option>
+
+
+<option value="HTML CSS">
+HTML + CSS - Projektowanie stron WWW
+</option>
+
+
+<option value="PHP MySQL">
+PHP + MySQL
+</option>
+
+
+<option value="JavaScript">
+JavaScript - dynamiczne strony WWW
+</option>
+
+
+</optgroup>
+
+
+
+
+
+
+<optgroup label="GRAFIKA">
+
+
+<option value="Photoshop">
+Photoshop - cyfrowa obróbka zdjęć
+</option>
+
+
+<option value="GIMP">
+GIMP - cyfrowa obróbka zdjęć
+</option>
+
+
+<option value="CorelDRAW">
+CorelDRAW
+</option>
+
+
+</optgroup>
+
+
+
+
+
+
+<optgroup label="CAD">
+
+
+<option value="CAD">
+CAD - poziom podstawowy i zaawansowany
+</option>
+
+
+</optgroup>
+
+
+
+
+
+
+<optgroup label="POZOSTAŁE">
+
+
+<option value="E-learning">
+E-learning
+</option>
+
+
+<option value="Seniorzy">
+Kursy dla Seniorów
+</option>
+
+
+<option value="Osoby niepełnosprawne">
+Kursy dla osób niepełnosprawnych
+</option>
+
+
+<option value="Podstawy komputera">
+Podstawy obsługi komputera i Internetu
+</option>
+
+
+<option value="Inne">
+Inne szkolenie
+</option>
+
+
+</optgroup>
+
+
+
 </select>
 
-<label>Imi�</label>
-<input type="text" name="imie" required>
 
-<label>Nazwisko</label>
-<input type="text" name="nazwisko" required>
 
-<label>Miejscowo��</label>
-<input type="text" name="miejscowosc" required>
 
-<label>Numer telefonu</label>
-<input type="tel" name="telefon" required placeholder="np. 600 700 800">
 
-<button type="submit">Wy�lij zg�oszenie</button>
+<label for="imie">
+Imię
+</label>
+
+
+<input 
+type="text"
+id="imie"
+name="imie"
+required>
+
+
+
+
+
+<label for="nazwisko">
+Nazwisko
+</label>
+
+
+<input
+type="text"
+id="nazwisko"
+name="nazwisko"
+required>
+
+
+
+
+
+<label for="email">
+E-mail
+</label>
+
+
+<input
+type="email"
+id="email"
+name="email"
+required>
+
+
+
+
+
+<label for="telefon">
+Telefon
+</label>
+
+
+<input
+type="tel"
+id="telefon"
+name="telefon">
+
+
+
+
+
+<label for="uwagi">
+Dodatkowe informacje
+</label>
+
+
+<textarea
+id="uwagi"
+name="wiadomosc"
+placeholder="Dodatkowe informacje lub pytania">
+</textarea>
+
+
+
+
+
+<button type="submit">
+
+Zapisz się na szkolenie
+
+</button>
+
+
 
 </form>
-
 </div>
 
-</main>
+
 
 <footer>
-� <span id="year"></span> Zachodniopomorskie Centrum Informatyki
+
+
+<p>
+
+&copy; <span id="rok"></span>
+
+Zachodniopomorskie Centrum Informatyki
+
+</p>
+
+
+<p>
+
+Wszelkie prawa zastrzeżone.
+
+</p>
+
+
 </footer>
 
+
+
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+
+
+document.getElementById("rok").textContent =
+new Date().getFullYear();
+
+
 </script>
 
+
+
 </body>
+
 </html>

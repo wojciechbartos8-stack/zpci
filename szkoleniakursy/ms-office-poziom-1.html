@@ -1,146 +1,400 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
+
 <meta charset="UTF-8">
-<title>MS Office - poziom 1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MS Office poziom 1 - ZPCI</title>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: linear-gradient(135deg, #eef5ff, #ffffff);
-    color: #222;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-header {
-    background: #1f3b73;
-    color: white;
-    padding: 20px;
-    text-align: center;
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#eef5ff,#ffffff);
+    color:#222;
 }
 
-nav {
-    background: #333;
-    display: flex;
+
+/* NAGŁÓWEK */
+
+header{
+    background:#1f3b73;
+    color:white;
+    text-align:center;
+    padding:25px;
 }
 
-nav a {
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
+
+header h1{
+    font-size:36px;
 }
 
-nav a:hover {
-    background: #444;
+
+/* MENU */
+
+nav{
+    background:#222;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
 }
 
-main {
-    padding: 20px;
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:15px 25px;
 }
 
-.box {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 1000px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+nav a:hover{
+    background:#1f3b73;
 }
 
-h2 {
-    color: #1f3b73;
+
+
+/* GŁÓWNA CZĘŚĆ */
+
+main{
+    width:100%;
+    padding:20px;
 }
 
-.print {
-    display: inline-block;
-    margin-top: 10px;
-    margin-right: 10px;
-    padding: 8px 12px;
-    background: #1f3b73;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+
+
+/* BANER */
+
+.banner{
+    width:100%;
+    max-width:1200px;
+    margin:20px auto;
+    position:relative;
+    z-index:10;
 }
 
-.print:hover {
-    background: #16305d;
+
+.banner img{
+    display:block;
+    width:100%;
+    height:auto;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
 }
 
-footer {
-    background: #1f3b73;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
+
+
+/* TREŚĆ */
+
+.box{
+
+    background:white;
+    max-width:1000px;
+    margin:20px auto;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,.15);
+    position:relative;
+    z-index:1;
+
 }
+
+
+
+h2{
+
+    color:#1f3b73;
+    margin-top:25px;
+
+}
+
+
+
+p{
+
+    line-height:1.6;
+    margin-top:10px;
+
+}
+
+
+
+ul{
+
+    margin-top:15px;
+    padding-left:30px;
+
+}
+
+
+li{
+
+    margin:8px;
+
+}
+
+
+
+/* PRZYCISKI */
+
+
+.print{
+
+    display:inline-block;
+    background:#1f3b73;
+    color:white;
+    padding:10px 18px;
+    margin:5px;
+    text-decoration:none;
+    border-radius:8px;
+
+}
+
+
+.print:hover{
+
+    background:#16305d;
+
+}
+
+
+
+/* STOPKA */
+
+
+footer{
+
+    background:#1f3b73;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+
+}
+
+
+
+/* TELEFON */
+
+@media(max-width:700px){
+
+
+header h1{
+
+    font-size:25px;
+
+}
+
+
+nav{
+
+    flex-direction:column;
+
+}
+
+
+nav a{
+
+    text-align:center;
+    border-bottom:1px solid #444;
+
+}
+
+
+.box{
+
+    padding:20px;
+
+}
+
+
+.print{
+
+    display:block;
+    text-align:center;
+
+}
+
+
+}
+
 </style>
 
 </head>
 
+
 <body>
 
+
 <header>
-<h1>MS Office - poziom 1 (Word, Excel, PowerPoint, Outlook)</h1>
+
+<h1>
+MS Office - poziom 1<br>
+Word, Excel, PowerPoint, Outlook
+</h1>
+
 </header>
 
+
+
 <nav>
-<a href="../index.html">Strona główna</a>
-<a href="../szkoleniakursy.html">Szkolenia / Kursy</a>
-<a href="../uslugit.html">Usługi IT</a>
-<a href="../kontakt.html">Kontakt</a>
+
+<a href="../index.html">
+Strona główna
+</a>
+
+<a href="../szkoleniakursy.html">
+Szkolenia / Kursy
+</a>
+
+<a href="../uslugit.html">
+Usługi IT
+</a>
+
+<a href="../kontakt.html">
+Kontakt
+</a>
+
 </nav>
+
+
 
 <main>
 
-<div class="box">
 
-<!-- PRZYCISKI -->
-<a class="print" href="javascript:window.print()">Drukuj</a>
-<a class="print" href="zapis-na-szkolenie.html">Zapisz się na szkolenie</a>
+<div class="banner">
 
-<h2>Kogo zapraszamy:</h2>
-
-<p>
-Szkolenie przeznaczone dla osób, planujących rozpocząć pracę przy użyciu pakietu MS Office.
-Osoby znające podstawy zapraszamy na MS Office – poziom 2.
-</p>
-
-<h2>Organizacja:</h2>
-
-<p>
-Zajęcia realizowane są w trybie indywidualnym lub grupowym.
-Nie narzucamy terminów – dopasowujemy je do uczestników.
-</p>
-
-<h2>Certyfikaty:</h2>
-
-<p>
-Certyfikat w języku polskim i angielskim. Możliwość dodatkowych wersji językowych.
-</p>
-
-<h2>Zakres szkolenia:</h2>
-
-<ul>
-<li>MS Word – dokumenty, formatowanie, nagłówki</li>
-<li>MS Excel – podstawy, funkcje, wykresy</li>
-<li>MS PowerPoint – prezentacje</li>
-<li>MS Outlook – poczta i kalendarz</li>
-</ul>
-
-<p>
-Kontakt: <strong>biuro@zpci.pl</strong>
-</p>
+<img src="../images/ms-office-poziom1.png"
+alt="Szkolenie MS Office poziom 1 ZPCI">
 
 </div>
 
+
+
+
+<div class="box">
+
+
+<a class="print" href="javascript:window.print()">
+Drukuj
+</a>
+
+
+<a class="print" href="zapis-na-szkolenie.html">
+    Zapisz się na szkolenie
+</a>
+
+
+<h2>
+Kogo zapraszamy:
+</h2>
+
+
+<p>
+Szkolenie przeznaczone jest dla osób,
+które chcą rozpocząć pracę z pakietem
+Microsoft Office.
+</p>
+
+
+
+<h2>
+Organizacja:
+</h2>
+
+
+<p>
+Zajęcia realizowane są indywidualnie
+lub grupowo. Terminy ustalane są
+z uczestnikami.
+</p>
+
+
+
+<h2>
+Certyfikat:
+</h2>
+
+
+<p>
+Po ukończeniu szkolenia uczestnik otrzymuje
+certyfikat w języku polskim i angielskim.
+</p>
+
+
+
+<h2>
+Zakres szkolenia:
+</h2>
+
+
+<ul>
+
+<li>
+Microsoft Word – tworzenie i formatowanie dokumentów
+</li>
+
+<li>
+Microsoft Excel – arkusze kalkulacyjne,
+formuły i wykresy
+</li>
+
+<li>
+Microsoft PowerPoint – przygotowanie prezentacji
+</li>
+
+<li>
+Microsoft Outlook – poczta elektroniczna,
+kontakty i kalendarz
+</li>
+
+</ul>
+
+
+
+<h2>
+Kontakt:
+</h2>
+
+
+<p>
+<strong>biuro@zpci.pl</strong>
+</p>
+
+
+
+</div>
+
+
 </main>
 
+
+
+
 <footer>
-© <span id="year"></span> Zachodniopomorskie Centrum Informatyki
+
+© <span id="year"></span>
+Zachodniopomorskie Centrum Informatyki
+
 </footer>
 
+
+
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
 </script>
 
+
 </body>
+
 </html>

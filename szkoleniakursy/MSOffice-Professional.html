@@ -1,141 +1,1031 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<title>MS Office Professional</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: linear-gradient(135deg, #eef5ff, #ffffff);
-    color: #222;
-}
+    <title>
+        MS Office Professional &ndash; Publisher, Access i VBA | ZPCI
+    </title>
 
-header {
-    background: #1f3b73;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+    <meta
+        name="description"
+        content="Szkolenie MS Office Professional obejmujƒÖce programy Publisher, Access oraz VBA. Praktyczne szkolenie komputerowe ZPCI."
+    >
 
-nav {
-    background: #333;
-    display: flex;
-}
+    <style>
+        :root {
+            --primary: #1f3b73;
+            --primary-dark: #0b2148;
+            --primary-light: #eef4ff;
+            --accent: #f2b705;
+            --accent-hover: #ffd447;
+            --background: #f4f7fb;
+            --white: #ffffff;
+            --text: #29333d;
+            --muted: #5d6976;
+            --border: #dce5ef;
+            --radius: 18px;
+            --shadow: 0 14px 38px rgba(11, 33, 72, 0.12);
+        }
 
-nav a {
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-nav a:hover {
-    background: #444;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-main {
-    padding: 20px;
-}
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef5ff 0%,
+                    #ffffff 55%,
+                    #f4f7fb 100%
+                );
+            color: var(--text);
+            font-size: 18px;
+            line-height: 1.7;
+        }
 
-.box {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 1000px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
 
-h2 {
-    color: #1f3b73;
-}
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-.print {
-    display: inline-block;
-    margin-top: 10px;
-    margin-right: 10px;
-    padding: 8px 12px;
-    background: #1f3b73;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
+        button {
+            font: inherit;
+        }
 
-.print:hover {
-    background: #16305d;
-}
+        .page-container {
+            width: calc(100% - 40px);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-footer {
-    background: #1f3b73;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-}
-</style>
+        /* =========================
+           NAG≈Å√ìWEK
+        ========================= */
 
+        .site-header {
+            position: relative;
+            overflow: hidden;
+            padding: 46px 20px;
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(255, 255, 255, 0.12),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--primary)
+                );
+            color: var(--white);
+            text-align: center;
+        }
+
+        .site-header::before {
+            content: "";
+            position: absolute;
+            top: -150px;
+            right: -100px;
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .site-header h1 {
+            margin-bottom: 12px;
+            font-size: clamp(30px, 5vw, 49px);
+            line-height: 1.15;
+        }
+
+        .site-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(17px, 2.4vw, 21px);
+        }
+
+        /* =========================
+           NAWIGACJA
+        ========================= */
+
+        .main-nav {
+            position: sticky;
+            top: 0;
+            z-index: 30;
+            background: #071b37;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .nav-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .main-nav a {
+            display: flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 21px;
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .main-nav a:hover,
+        .main-nav a:focus-visible {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        .main-nav a:focus-visible,
+        .button:focus-visible,
+        .print-button:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: -3px;
+        }
+
+        /* =========================
+           BANER
+        ========================= */
+
+        .banner-section {
+            padding: 32px 0 0;
+        }
+
+        .banner-box {
+            overflow: hidden;
+            border: 5px solid var(--white);
+            border-radius: 22px;
+            background: var(--white);
+            box-shadow: 0 20px 50px rgba(11, 33, 72, 0.2);
+        }
+
+        .banner-box img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* =========================
+           G≈Å√ìWNA TRE≈öƒÜ
+        ========================= */
+
+        main {
+            padding: 32px 0 55px;
+        }
+
+        .content-box {
+            padding: 42px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 13px;
+            margin-bottom: 30px;
+        }
+
+        .intro {
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .intro h1 {
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            font-size: clamp(30px, 4.5vw, 44px);
+            line-height: 1.15;
+        }
+
+        .intro p {
+            max-width: 900px;
+            color: var(--muted);
+            font-size: 19px;
+        }
+
+        .section {
+            margin-top: 38px;
+        }
+
+        .section h2 {
+            margin-bottom: 18px;
+            padding-bottom: 9px;
+            border-bottom: 2px solid var(--primary);
+            color: var(--primary-dark);
+            font-size: clamp(24px, 3vw, 31px);
+            line-height: 1.25;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            color: var(--muted);
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           INFORMACJE
+        ========================= */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 34px;
+        }
+
+        .info-card {
+            padding: 27px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary-light),
+                    #ffffff
+                );
+        }
+
+        .info-card h2 {
+            margin-bottom: 13px;
+            padding: 0;
+            border: 0;
+            color: var(--primary-dark);
+            font-size: 24px;
+        }
+
+        .info-card p {
+            margin-bottom: 13px;
+            color: var(--muted);
+        }
+
+        .info-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           PROGRAM SZKOLENIA
+        ========================= */
+
+        .program-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px 18px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .program-list li {
+            position: relative;
+            min-height: 68px;
+            padding: 15px 16px 15px 50px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #f8fbff;
+        }
+
+        .program-list li::before {
+            content: "\2713";
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            display: flex;
+            width: 24px;
+            height: 24px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .program-list strong {
+            color: var(--primary-dark);
+        }
+
+        /* =========================
+           EFEKTY SZKOLENIA
+        ========================= */
+
+        .outcomes-box {
+            padding: 30px;
+            border: 1px solid #ceddec;
+            border-radius: var(--radius);
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary-light),
+                    #ffffff
+                );
+        }
+
+        .outcomes-list {
+            display: grid;
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .outcomes-list li {
+            position: relative;
+            padding: 14px 16px 14px 50px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--white);
+        }
+
+        .outcomes-list li::before {
+            content: "\2713";
+            position: absolute;
+            top: 14px;
+            left: 16px;
+            display: flex;
+            width: 24px;
+            height: 24px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .outcomes-list strong {
+            color: var(--primary-dark);
+        }
+
+        /* =========================
+           KONTAKT
+        ========================= */
+
+        .contact-box {
+            padding: 30px;
+            border-left: 6px solid var(--accent);
+            border-radius: 15px;
+            background: var(--primary-light);
+        }
+
+        .contact-box h2 {
+            margin-top: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        .email-link {
+            color: var(--primary);
+            font-weight: 800;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* =========================
+           PRZYCISKI
+        ========================= */
+
+        .button,
+        .print-button {
+            display: inline-flex;
+            min-height: 50px;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 25px;
+            border: 2px solid transparent;
+            border-radius: 999px;
+            font-weight: 800;
+            line-height: 1.2;
+            text-align: center;
+            cursor: pointer;
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .button {
+            background: var(--accent);
+            color: var(--primary-dark);
+            box-shadow: 0 9px 22px rgba(242, 183, 5, 0.25);
+        }
+
+        .button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .print-button {
+            border: 0;
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 9px 22px rgba(31, 59, 115, 0.2);
+        }
+
+        .print-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .bottom-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 26px;
+        }
+
+        .back-button {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .back-button:hover {
+            background: var(--primary-dark);
+        }
+
+        /* =========================
+           STOPKA
+        ========================= */
+
+        footer {
+            padding: 28px 20px;
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.86);
+            text-align: center;
+        }
+
+        /* =========================
+           RESPONSYWNO≈öƒÜ
+        ========================= */
+
+        @media (max-width: 850px) {
+            .page-container {
+                width: calc(100% - 28px);
+            }
+
+            .content-box {
+                padding: 32px 24px;
+            }
+
+            .info-grid,
+            .program-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 17px;
+            }
+
+            .page-container {
+                width: calc(100% - 20px);
+            }
+
+            .site-header {
+                padding: 35px 14px;
+            }
+
+            .nav-inner {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .main-nav a {
+                min-height: 49px;
+                padding: 10px 8px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                font-size: 14px;
+            }
+
+            .banner-section {
+                padding-top: 20px;
+            }
+
+            .banner-box {
+                border-width: 3px;
+                border-radius: 14px;
+            }
+
+            main {
+                padding: 20px 0 36px;
+            }
+
+            .content-box {
+                padding: 24px 17px;
+                border-radius: 14px;
+            }
+
+            .button-row {
+                flex-direction: column;
+                margin-bottom: 25px;
+            }
+
+            .button-row .button,
+            .button-row .print-button {
+                width: 100%;
+            }
+
+            .intro p {
+                font-size: 17px;
+            }
+
+            .info-card,
+            .outcomes-box,
+            .contact-box {
+                padding: 22px 18px;
+            }
+
+            .bottom-buttons {
+                flex-direction: column;
+            }
+
+            .bottom-buttons .button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .nav-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .main-nav a {
+                min-height: 45px;
+            }
+        }
+
+        /* =========================
+           WYDRUK
+        ========================= */
+
+        @media print {
+            body {
+                background: #ffffff;
+                color: #000000;
+                font-size: 12pt;
+            }
+
+            .main-nav,
+            .banner-section,
+            .button-row,
+            .bottom-buttons,
+            footer {
+                display: none;
+            }
+
+            .site-header {
+                padding: 20px;
+                background: #ffffff;
+                color: #000000;
+            }
+
+            .site-header p {
+                color: #000000;
+            }
+
+            main {
+                padding: 0;
+            }
+
+            .page-container {
+                width: 100%;
+                max-width: none;
+            }
+
+            .content-box,
+            .info-card,
+            .outcomes-box,
+            .contact-box {
+                border: 0;
+                box-shadow: none;
+                background: #ffffff;
+            }
+
+            .content-box {
+                padding: 0;
+            }
+
+            .program-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-<h1>MS Office Professional (Publisher, Access, VBA)</h1>
-</header>
+    <header class="site-header">
+        <div class="header-content">
 
-<nav>
-<a href="../index.html">Strona g≥Ûwna</a>
-<a href="../szkoleniakursy.html">Szkolenia / Kursy</a>
-<a href="../uslugit.html">Us≥ugi IT</a>
-<a href="../kontakt.html">Kontakt</a>
-</nav>
+            <h1>
+                MS Office Professional
+            </h1>
 
-<main>
+            <p>
+                Publisher, Access oraz VBA
+            </p>
 
-<div class="box">
+        </div>
+    </header>
 
-<!-- PRZYCISKI -->
-<a class="print" href="javascript:window.print()">Drukuj</a>
-<a class="print" href="zapisz-sie-na-szkolenie.html">Zapisz siÍ na szkolenie</a>
+    <nav
+        class="main-nav"
+        aria-label="G&lstrok;&oacute;wna nawigacja"
+    >
+        <div class="page-container nav-inner">
 
-<h2>Kogo zapraszamy:</h2>
-<p>
-Szkolenie przeznaczone dla osÛb chc±cych rozszerzyÊ wiedzÍ o narzÍdzia MS Office: Publisher, Access oraz VBA.
-</p>
+            <a href="../index.html">
+                Strona g&#322;&oacute;wna
+            </a>
 
-<h2>Organizacja:</h2>
-<p>
-ZajÍcia realizowane s± indywidualnie lub grupowo. Terminy dopasowywane s± do uczestnikÛw.
-Szkolenie prowadzone jest w formie praktycznych ÊwiczeÒ komputerowych.
-</p>
+            <a href="../szkoleniakursy.html">
+                Szkolenia / Kursy
+            </a>
 
-<h2>Certyfikaty:</h2>
-<p>
-Certyfikat w jÍzyku polskim i angielskim. Moøliwo∂Ê dodatkowych wersji jÍzykowych.
-</p>
+            <a href="../uslugit.html">
+                Us&#322;ugi IT
+            </a>
 
-<h2>Zakres szkolenia:</h2>
+            <a href="../kontakt.html">
+                Kontakt
+            </a>
 
-<ul>
-<li>MS Access ñ bazy danych, tabele, formularze, kwerendy</li>
-<li>MS Publisher ñ materia≥y reklamowe i publikacje</li>
-<li>VBA ñ wprowadzenie do programowania makr</li>
-</ul>
+        </div>
+    </nav>
 
-<p>
-Kontakt: <strong>biuro@zpci.pl</strong>
-</p>
+    <!-- BANER SZKOLENIA -->
 
-</div>
+    <section
+        class="banner-section"
+        aria-label="Baner szkolenia MS Office Professional"
+    >
+        <div class="page-container">
 
-</main>
+            <div class="banner-box">
+                <img
+                    src="../images/szkoleniemsofficeproffesional(Publisher,Access,%20VBA).png"
+                    alt="Szkolenie MS Office Professional z program√≥w Publisher, Access i VBA"
+                    loading="eager"
+                    fetchpriority="high"
+                >
+            </div>
 
-<footer>
-© <span id="year"></span> Zachodniopomorskie Centrum Informatyki
-</footer>
+        </div>
+    </section>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    <main>
+        <div class="page-container">
+
+            <article class="content-box">
+
+                <div class="button-row">
+
+                    <button
+                        class="print-button"
+                        type="button"
+                        onclick="window.print()"
+                    >
+                        Drukuj program
+                    </button>
+
+                    <a
+                        class="button"
+                        href="zapis-na-szkolenie.html"
+                    >
+                        Zapisz si&#281; na szkolenie
+                    </a>
+
+                </div>
+
+                <section class="intro">
+
+                    <h1>
+                        MS Office Professional
+                        &ndash; Publisher, Access i VBA
+                    </h1>
+
+                    <p>
+                        Praktyczne szkolenie rozwijaj&#261;ce umiej&#281;tno&#347;ci
+                        pracy z zaawansowanymi narz&#281;dziami pakietu
+                        Microsoft Office.
+                    </p>
+
+                </section>
+
+                <div class="info-grid">
+
+                    <section class="info-card">
+
+                        <h2>Kogo zapraszamy?</h2>
+
+                        <p>
+                            Szkolenie przeznaczone jest dla os&oacute;b
+                            chc&#261;cych rozszerzy&#263; swoj&#261; wiedz&#281;
+                            o programy i narz&#281;dzia Microsoft Office:
+                            Publisher, Access oraz VBA.
+                        </p>
+
+                        <p>
+                            Kurs jest odpowiedni dla pracownik&oacute;w
+                            biurowych, administracyjnych, analityk&oacute;w
+                            oraz os&oacute;b przygotowuj&#261;cych materia&#322;y
+                            firmowe i bazy danych.
+                        </p>
+
+                    </section>
+
+                    <section class="info-card">
+
+                        <h2>Organizacja szkolenia</h2>
+
+                        <p>
+                            Zaj&#281;cia realizowane s&#261; indywidualnie
+                            lub grupowo.
+                        </p>
+
+                        <p>
+                            Terminy dopasowywane s&#261; do potrzeb
+                            uczestnik&oacute;w.
+                        </p>
+
+                        <p>
+                            Szkolenie prowadzone jest w formie praktycznych
+                            &#263;wicze&#324; wykonywanych przy komputerze.
+                        </p>
+
+                    </section>
+
+                </div>
+
+                <section class="section">
+
+                    <h2>Certyfikat</h2>
+
+                    <p>
+                        Po uko&#324;czeniu szkolenia uczestnik otrzymuje
+                        certyfikat w j&#281;zyku polskim i angielskim.
+                    </p>
+
+                    <p>
+                        Istnieje mo&#380;liwo&#347;&#263; przygotowania
+                        dodatkowych wersji j&#281;zykowych po wcze&#347;niejszym
+                        uzgodnieniu.
+                    </p>
+
+                </section>
+
+                <section class="section" id="program">
+
+                    <h2>Zakres szkolenia</h2>
+
+                    <ul class="program-list">
+
+                        <li>
+                            <strong>Microsoft Publisher</strong>
+                            &ndash; om&oacute;wienie interfejsu programu
+                        </li>
+
+                        <li>
+                            Tworzenie ulotek, wizyt&oacute;wek
+                            i materia&#322;&oacute;w reklamowych
+                        </li>
+
+                        <li>
+                            Projektowanie broszur, folder&oacute;w
+                            i publikacji firmowych
+                        </li>
+
+                        <li>
+                            Korzystanie z szablon&oacute;w publikacji
+                        </li>
+
+                        <li>
+                            Formatowanie tekstu, obraz&oacute;w
+                            i element&oacute;w graficznych
+                        </li>
+
+                        <li>
+                            Przygotowanie publikacji do wydruku
+                        </li>
+
+                        <li>
+                            <strong>Microsoft Access</strong>
+                            &ndash; wprowadzenie do baz danych
+                        </li>
+
+                        <li>
+                            Tworzenie tabel i definiowanie typ&oacute;w danych
+                        </li>
+
+                        <li>
+                            Klucze g&#322;&oacute;wne i relacje
+                            pomi&#281;dzy tabelami
+                        </li>
+
+                        <li>
+                            Tworzenie formularzy do wprowadzania danych
+                        </li>
+
+                        <li>
+                            Projektowanie kwerend i filtrowanie informacji
+                        </li>
+
+                        <li>
+                            Tworzenie raport&oacute;w i zestawie&#324;
+                        </li>
+
+                        <li>
+                            Importowanie i eksportowanie danych
+                        </li>
+
+                        <li>
+                            <strong>VBA</strong>
+                            &ndash; wprowadzenie do programowania makr
+                        </li>
+
+                        <li>
+                            Edytor Visual Basic for Applications
+                        </li>
+
+                        <li>
+                            Zmienne, typy danych i operatory
+                        </li>
+
+                        <li>
+                            Instrukcje warunkowe i p&#281;tle
+                        </li>
+
+                        <li>
+                            Tworzenie procedur i funkcji
+                        </li>
+
+                        <li>
+                            Automatyzacja powtarzalnych czynno&#347;ci
+                        </li>
+
+                        <li>
+                            Tworzenie prostych formularzy VBA
+                        </li>
+
+                    </ul>
+
+                </section>
+
+                <section class="section outcomes-box">
+
+                    <h2>
+                        Po uko&#324;czeniu szkolenia uczestnik
+                    </h2>
+
+                    <ul class="outcomes-list">
+
+                        <li>
+                            <strong>Wie,</strong> do czego s&#322;u&#380;&#261;
+                            programy Publisher, Access oraz VBA.
+                        </li>
+
+                        <li>
+                            <strong>Rozumie,</strong> zasady projektowania
+                            publikacji i materia&#322;&oacute;w firmowych.
+                        </li>
+
+                        <li>
+                            <strong>Umie</strong> tworzy&#263; ulotki,
+                            broszury, wizyt&oacute;wki i publikacje
+                            w programie Publisher.
+                        </li>
+
+                        <li>
+                            <strong>Potrafi</strong> samodzielnie utworzy&#263;
+                            podstawow&#261; relacyjn&#261; baz&#281; danych
+                            w programie Access.
+                        </li>
+
+                        <li>
+                            <strong>Umie</strong> przygotowywa&#263; tabele,
+                            formularze, kwerendy i raporty.
+                        </li>
+
+                        <li>
+                            <strong>Rozumie</strong> podstawowe zasady
+                            programowania w j&#281;zyku VBA.
+                        </li>
+
+                        <li>
+                            <strong>Potrafi</strong> tworzy&#263; proste makra,
+                            procedury i funkcje.
+                        </li>
+
+                        <li>
+                            <strong>Umie</strong> automatyzowa&#263;
+                            powtarzalne czynno&#347;ci wykonywane
+                            w pakiecie Microsoft Office.
+                        </li>
+
+                    </ul>
+
+                </section>
+
+                <section class="section contact-box">
+
+                    <h2>Kontakt</h2>
+
+                    <p>
+                        W celu uzyskania szczeg&oacute;&#322;owego programu,
+                        termin&oacute;w oraz informacji organizacyjnych
+                        prosimy o kontakt:
+                    </p>
+
+                    <p>
+                        <a
+                            class="email-link"
+                            href="mailto:biuro@zpci.pl"
+                        >
+                            biuro@zpci.pl
+                        </a>
+                    </p>
+
+                    <p>
+                        Program szkolenia mo&#380;e zosta&#263; dostosowany
+                        do poziomu uczestnika lub potrzeb zamkni&#281;tej
+                        grupy pracownik&oacute;w.
+                    </p>
+
+                    <div class="bottom-buttons">
+
+                        <a
+                            class="button"
+                            href="zapis-na-szkolenie.html"
+                        >
+                            Zapisz si&#281; na szkolenie
+                        </a>
+
+                        <a
+                            class="button back-button"
+                            href="../index.html"
+                        >
+                            Powr&oacute;t do strony g&#322;&oacute;wnej
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="year"></span>
+            Zachodniopomorskie Centrum Informatyki
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
 
 </body>
 </html>

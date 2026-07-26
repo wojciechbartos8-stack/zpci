@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+ZPCI - Szkolenia dla osób z niepełnosprawnościami
+</title>
+
+
+<meta name="description" content="Zachodniopomorskie Centrum Informatyki - szkolenia komputerowe dla osób z niepełnosprawnościami. Kursy IT, obsługa komputera, grafika i tworzenie stron WWW.">
+
+
+<style>
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#f4f6f8;
+
+    color:#333;
+
+    line-height:1.7;
+
+}
+
+
+
+/* ===========================
+HEADER
+=========================== */
+
+
+header{
+
+    background:linear-gradient(135deg,#003366,#0b2148);
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px 15px;
+
+}
+
+
+header h1{
+
+    font-size:34px;
+
+}
+
+
+header p{
+
+    font-size:18px;
+
+    margin-top:10px;
+
+}
+
+
+
+/* ===========================
+MENU
+=========================== */
+
+
+nav{
+
+    background:#00509e;
+
+    padding:15px;
+
+    text-align:center;
+
+}
+
+
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    margin:0 15px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+}
+
+
+
+nav a:hover{
+
+    color:#ffd447;
+
+}
+
+
+
+/* ===========================
+HERO - GRAFIKA
+=========================== */
+
+
+.niepelnosprawni{
+
+    position:relative;
+
+    min-height:760px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:#0b2148;
+
+}
+
+
+
+.hero-image{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    z-index:0;
+
+}
+
+
+
+/* przyciemnienie obrazu */
+
+
+.niepelnosprawni::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,30,70,0.50);
+
+    z-index:1;
+
+}
+
+
+
+
+
+.container{
+
+    position:relative;
+
+    z-index:2;
+
+    width:90%;
+
+    max-width:1200px;
+
+}
+
+
+
+
+
+.section-title{
+
+    text-align:center;
+
+    color:white;
+
+    font-size:52px;
+
+    margin-bottom:35px;
+
+    text-shadow:0 5px 15px black;
+
+}
+
+
+
+
+
+.card{
+
+    max-width:850px;
+
+    margin:auto;
+
+    background:rgba(255,255,255,0.96);
+
+    padding:45px;
+
+    border-radius:22px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+}
+
+
+
+.card p{
+
+    font-size:21px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* ===========================
+PRZYCISKI
+=========================== */
+
+
+.btn-row{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:25px;
+
+}
+
+
+
+.btn{
+
+    display:inline-block;
+
+    background:#00509e;
+
+    color:white;
+
+    padding:16px 34px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+
+
+
+.btn:hover{
+
+    background:#003366;
+
+}
+
+
+
+/* ===========================
+STOPKA
+=========================== */
+
+
+footer{
+
+    background:#003366;
+
+    color:white;
+
+    text-align:center;
+
+    padding:22px;
+
+}
+
+
+
+/* ===========================
+TABLETY
+=========================== */
+
+
+@media(max-width:900px){
+
+
+header h1{
+
+    font-size:28px;
+
+}
+
+
+.niepelnosprawni{
+
+    min-height:650px;
+
+}
+
+
+.section-title{
+
+    font-size:38px;
+
+}
+
+
+.card{
+
+    width:95%;
+
+    padding:30px;
+
+}
+
+
+.card p{
+
+    font-size:18px;
+
+}
+
+
+.hero-image{
+
+    object-position:center;
+
+}
+
+
+}
+
+
+
+/* ===========================
+TELEFONY
+=========================== */
+
+
+@media(max-width:600px){
+
+
+body{
+
+    font-size:15px;
+
+}
+
+
+
+header{
+
+    padding:18px 10px;
+
+}
+
+
+header h1{
+
+    font-size:23px;
+
+}
+
+
+
+nav a{
+
+    display:block;
+
+    margin:10px;
+
+}
+
+
+
+.niepelnosprawni{
+
+    min-height:auto;
+
+    padding:50px 0;
+
+}
+
+
+
+.section-title{
+
+    font-size:30px;
+
+    padding:0 10px;
+
+}
+
+
+
+.card{
+
+    width:92%;
+
+    padding:22px;
+
+}
+
+
+
+.card p{
+
+    font-size:16px;
+
+}
+
+
+
+.btn-row{
+
+    flex-direction:column;
+
+}
+
+
+
+.btn{
+
+    width:100%;
+
+    text-align:center;
+
+    font-size:17px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+<header>
+
+<h1>
+Zachodniopomorskie Centrum Informatyki
+</h1>
+
+
+<p>
+Szkolenia informatyczne • Kursy IT • Usługi informatyczne
+</p>
+
+
+</header>
+
+
+
+
+
+<nav>
+
+
+<a href="/zpci/index.html">
+
+&#8962; Strona główna
+
+</a>
+
+
+
+<a href="/zpci/szkoleniakursy.html">
+
+Szkolenia
+
+</a>
+
+
+
+<a href="/zpci/uslugit.html">
+
+Usługi IT
+
+</a>
+
+
+
+<a href="/zpci/kontakt.html">
+
+Kontakt
+
+</a>
+
+
+</nav>
+
+
+
+
+
+
+<section class="niepelnosprawni">
+
+
+
+<img 
+
+src="../images/szkolenia-niepelnosprawni.png"
+
+alt="Szkolenia dla osób z niepełnosprawnościami"
+
+class="hero-image">
+
+
+
+
+
+<div class="container">
+
+
+
+<h2 class="section-title">
+
+Szkolenia dla osób z niepełnosprawnościami
+
+</h2>
+
+
+
+
+
+<div class="card">
+
+
+
+
+
+<p>
+
+Zachodniopomorskie Centrum Informatyki realizuje szkolenia
+informatyczne dla osób z niepełnosprawnościami.
+
+</p>
+
+
+
+
+
+<p>
+
+Oferujemy kursy komputerowe dostosowane do indywidualnych
+potrzeb uczestników oraz pomagamy zdobywać nowe
+kompetencje cyfrowe.
+
+</p>
+
+
+
+
+
+<p>
+
+Szkolenia obejmują między innymi:
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Obsługa komputera i Internetu
+</li>
+
+
+<li>
+Pakiety biurowe MS Office oraz LibreOffice
+</li>
+
+
+<li>
+Grafika komputerowa
+</li>
+
+
+<li>
+Tworzenie stron internetowych HTML i CSS
+</li>
+
+
+<li>
+Podstawy programowania
+</li>
+
+
+</ul>
+
+
+
+
+
+<p>
+
+Zapewniamy przyjazne warunki nauki, indywidualne podejście
+oraz wsparcie podczas całego procesu szkoleniowego.
+
+</p>
+
+
+
+
+
+
+
+<div class="btn-row">
+
+
+
+<a href="/zpci/zapis-na-szkolenie.html" class="btn">
+
+&#9993; Zapisz się na szkolenie
+
+</a>
+
+
+
+
+
+<a href="/zpci/kontakt.html" class="btn">
+
+&#9742; Kontakt
+
+</a>
+
+
+
+
+
+<a href="/zpci/index.html" class="btn">
+
+&#8962; Strona główna
+
+</a>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+<footer>
+
+<p>
+&copy; <span id="year"></span>
+Zachodniopomorskie Centrum Informatyki
+</p>
+
+
+<p>
+Szkolenia komputerowe • Kursy IT • Usługi informatyczne
+</p>
+
+
+</footer>
+
+
+
+
+
+<script>
+
+
+// automatyczny aktualny rok
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Doradztwo informatyczne i projektowanie rozwi&#261;za&#324; | ZPCI
+    </title>
+
+    <meta
+        name="description"
+        content="Doradztwo informatyczne, analiza potrzeb, dob&oacute;r sprz&#281;tu i oprogramowania, projektowanie infrastruktury IT oraz wsparcie podczas wdra&#380;ania rozwi&#261;za&#324;."
+    >
+
+    <style>
+        :root {
+            --primary: #1f3b73;
+            --primary-dark: #0b2148;
+            --primary-light: #eef5ff;
+            --accent: #f2b705;
+            --accent-hover: #ffd447;
+            --background: #f4f7fb;
+            --white: #ffffff;
+            --text: #29333d;
+            --muted: #5d6976;
+            --border: #dce5ef;
+            --radius: 18px;
+            --shadow: 0 14px 38px rgba(11, 33, 72, 0.12);
+            --shadow-hover: 0 20px 44px rgba(11, 33, 72, 0.18);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf4ff 0%,
+                    #f7faff 50%,
+                    #ffffff 100%
+                );
+            color: var(--text);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page-container {
+            width: calc(100% - 40px);
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        /* =========================
+           NAG&#321;&Oacute;WEK
+        ========================= */
+
+        .site-header {
+            position: relative;
+            overflow: hidden;
+            padding: 44px 20px;
+            background:
+                radial-gradient(
+                    circle at 86% 18%,
+                    rgba(255, 255, 255, 0.12),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--primary)
+                );
+            color: var(--white);
+            text-align: center;
+        }
+
+        .site-header::before {
+            content: "";
+            position: absolute;
+            top: -150px;
+            right: -90px;
+            width: 370px;
+            height: 370px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .site-header h1 {
+            max-width: 960px;
+            margin: 0 auto 12px;
+            color: var(--white);
+            font-size: clamp(30px, 5vw, 49px);
+            line-height: 1.15;
+        }
+
+        .site-header p {
+            max-width: 780px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(17px, 2.3vw, 21px);
+        }
+
+        /* =========================
+           NAWIGACJA
+        ========================= */
+
+        .main-nav {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: #071b37;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .nav-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .main-nav a {
+            display: flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 21px;
+            color: var(--white);
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .main-nav a:hover,
+        .main-nav a:focus-visible {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        .main-nav a:focus-visible,
+        .btn:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        /* =========================
+           BANER
+        ========================= */
+
+        .banner-section {
+            padding: 32px 0 0;
+        }
+
+        .banner-box {
+            overflow: hidden;
+            border: 5px solid var(--white);
+            border-radius: 22px;
+            background: var(--white);
+            box-shadow: 0 20px 50px rgba(11, 33, 72, 0.2);
+        }
+
+        .banner-box img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* =========================
+           G&#321;&Oacute;WNA TRE&#346;&#262;
+        ========================= */
+
+        main {
+            padding: 32px 0 55px;
+        }
+
+        .content-box {
+            padding: 42px;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .intro {
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .intro h2 {
+            margin-bottom: 18px;
+            color: var(--primary-dark);
+            font-size: clamp(29px, 4.5vw, 43px);
+            line-height: 1.2;
+        }
+
+        .intro p {
+            max-width: 940px;
+            margin: 0 auto 15px;
+            color: var(--muted);
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           SEKCJE
+        ========================= */
+
+        .content-section {
+            margin-top: 42px;
+        }
+
+        .content-section > h2 {
+            margin-bottom: 19px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            color: var(--primary-dark);
+            font-size: clamp(24px, 3.2vw, 32px);
+            line-height: 1.3;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            color: var(--muted);
+            text-align: left;
+        }
+
+        .content-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           KAFELKI US&#321;UG
+        ========================= */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .service-card {
+            position: relative;
+            min-height: 135px;
+            padding: 24px 22px 22px 65px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #f3f7ff
+                );
+            box-shadow: 0 9px 24px rgba(11, 33, 72, 0.08);
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .service-card:hover {
+            border-color: #b8cbe2;
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        .service-card::before {
+            content: "\2713";
+            position: absolute;
+            top: 24px;
+            left: 22px;
+            display: flex;
+            width: 29px;
+            height: 29px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .service-card h3 {
+            margin-bottom: 6px;
+            color: var(--primary-dark);
+            font-size: 20px;
+            line-height: 1.3;
+        }
+
+        .service-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        /* =========================
+           BLOKI INFORMACYJNE
+        ========================= */
+
+        .info-box {
+            margin-top: 35px;
+            padding: 28px;
+            border-left: 6px solid var(--accent);
+            border-radius: 15px;
+            background: var(--primary-light);
+        }
+
+        .info-box h2 {
+            margin-bottom: 14px;
+            color: var(--primary-dark);
+            font-size: clamp(24px, 3vw, 30px);
+            line-height: 1.3;
+        }
+
+        .info-box p {
+            margin-bottom: 13px;
+            color: #4d5d6c;
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .question-box {
+            position: relative;
+            overflow: hidden;
+            margin-top: 35px;
+            padding: 30px;
+            border-radius: 17px;
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+                );
+            color: var(--white);
+            box-shadow: 0 18px 40px rgba(11, 33, 72, 0.2);
+        }
+
+        .question-box::after {
+            content: "?";
+            position: absolute;
+            top: 50%;
+            right: 25px;
+            color: rgba(255, 255, 255, 0.08);
+            font-size: 150px;
+            font-weight: 800;
+            line-height: 1;
+            transform: translateY(-50%);
+        }
+
+        .question-box h2,
+        .question-box p {
+            position: relative;
+            z-index: 1;
+        }
+
+        .question-box h2 {
+            margin-bottom: 13px;
+            color: var(--white);
+            font-size: clamp(24px, 3vw, 31px);
+        }
+
+        .question-box p {
+            max-width: 820px;
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .question-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           ETAPY WSP&#211;&#321;PRACY
+        ========================= */
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .step-card {
+            padding: 23px 19px;
+            border: 1px solid var(--border);
+            border-top: 5px solid var(--primary);
+            border-radius: 15px;
+            background: #f9fbfe;
+            text-align: center;
+        }
+
+        .step-number {
+            display: flex;
+            width: 45px;
+            height: 45px;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 800;
+        }
+
+        .step-card h3 {
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+            font-size: 19px;
+            line-height: 1.3;
+        }
+
+        .step-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+            text-align: center;
+        }
+
+        /* =========================
+           PRZYCISKI
+        ========================= */
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 38px;
+        }
+
+        .btn {
+            display: inline-flex;
+            min-height: 52px;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 27px;
+            border: 2px solid transparent;
+            border-radius: 999px;
+            background: var(--accent);
+            color: var(--primary-dark);
+            font-weight: 800;
+            line-height: 1.2;
+            text-align: center;
+            box-shadow: 0 9px 22px rgba(242, 183, 5, 0.25);
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+            box-shadow: 0 13px 28px rgba(242, 183, 5, 0.32);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 9px 22px rgba(31, 59, 115, 0.22);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-dark);
+        }
+
+        /* =========================
+           STOPKA
+        ========================= */
+
+        footer {
+            padding: 27px 20px;
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.86);
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer p + p {
+            margin-top: 5px;
+        }
+
+        /* =========================
+           RESPONSYWNO&#346;&#262;
+        ========================= */
+
+        @media (max-width: 960px) {
+            .steps-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 820px) {
+            body {
+                font-size: 17px;
+            }
+
+            .page-container {
+                width: calc(100% - 28px);
+            }
+
+            .content-box {
+                padding: 32px 24px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .page-container {
+                width: calc(100% - 20px);
+            }
+
+            .site-header {
+                padding: 35px 14px;
+            }
+
+            .nav-inner {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .main-nav a {
+                min-height: 49px;
+                padding: 10px 8px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                font-size: 14px;
+            }
+
+            .banner-section {
+                padding-top: 20px;
+            }
+
+            .banner-box {
+                border-width: 3px;
+                border-radius: 14px;
+            }
+
+            main {
+                padding: 20px 0 36px;
+            }
+
+            .content-box {
+                padding: 24px 17px;
+                border-radius: 14px;
+            }
+
+            .intro {
+                padding-bottom: 25px;
+            }
+
+            .service-card {
+                min-height: auto;
+                padding: 22px 18px 20px 58px;
+            }
+
+            .service-card::before {
+                top: 22px;
+                left: 18px;
+            }
+
+            .info-box,
+            .question-box {
+                padding: 23px 18px;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .buttons .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .nav-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .main-nav a {
+                min-height: 45px;
+            }
+
+            .site-header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAG&#321;&Oacute;WEK -->
+
+    <header class="site-header">
+        <div class="header-content">
+
+            <h1>
+                Doradztwo informatyczne i projektowanie rozwi&#261;za&#324;
+            </h1>
+
+            <p>
+                Profesjonalna analiza potrzeb, dob&oacute;r technologii
+                oraz projektowanie bezpiecznych rozwi&#261;za&#324; IT
+            </p>
+
+        </div>
+    </header>
+
+    <!-- NAWIGACJA -->
+
+    <nav
+        class="main-nav"
+        aria-label="G&#322;&oacute;wna nawigacja"
+    >
+        <div class="page-container nav-inner">
+
+            <a href="../index.html">
+                Strona g&#322;&oacute;wna
+            </a>
+
+            <a href="../szkoleniakursy.html">
+                Szkolenia / Kursy
+            </a>
+
+            <a href="../uslugit.html">
+                Us&#322;ugi IT
+            </a>
+
+            <a href="../kontakt.html">
+                Kontakt
+            </a>
+
+        </div>
+    </nav>
+
+    <!-- BANER -->
+
+    <section
+        class="banner-section"
+        aria-label="Baner us&#322;ugi doradztwa informatycznego"
+    >
+        <div class="page-container">
+
+            <div class="banner-box">
+                <img
+                    src="../images/uslugidoradztwwoinformatyczne.png"
+                    alt="Doradztwo informatyczne i projektowanie rozwi&#261;za&#324; IT"
+                    loading="eager"
+                    fetchpriority="high"
+                >
+            </div>
+
+        </div>
+    </section>
+
+    <main>
+        <div class="page-container">
+
+            <article class="content-box">
+
+                <section class="intro">
+
+                    <h2>
+                        Doradztwo informatyczne
+                    </h2>
+
+                    <p>
+                        Zachodniopomorskie Centrum Informatyki
+                        &#347;wiadczy us&#322;ugi doradztwa informatycznego,
+                        pomagaj&#261;c dobra&#263; optymalne
+                        rozwi&#261;zania technologiczne dla firm,
+                        instytucji oraz klient&oacute;w indywidualnych.
+                    </p>
+
+                    <p>
+                        Oferujemy profesjonalne wsparcie na ka&#380;dym
+                        etapie planowania, wyboru oraz wdra&#380;ania
+                        nowoczesnych system&oacute;w informatycznych.
+                    </p>
+
+                </section>
+
+                <section class="content-section">
+
+                    <h2>
+                        W czym mo&#380;emy pom&oacute;c?
+                    </h2>
+
+                    <p>
+                        Pomagamy odnale&#378;&#263; si&#281; w du&#380;ej
+                        liczbie dost&#281;pnych technologii,
+                        producent&oacute;w oraz ofert. Doradzamy w wyborze
+                        odpowiedniego sprz&#281;tu komputerowego,
+                        oprogramowania, urz&#261;dze&#324; sieciowych
+                        oraz us&#322;ug informatycznych.
+                    </p>
+
+                    <p>
+                        Proponowane rozwi&#261;zania dopasowujemy
+                        do rzeczywistych potrzeb, mo&#380;liwo&#347;ci
+                        finansowych oraz plan&oacute;w rozwoju klienta.
+                    </p>
+
+                </section>
+
+                <section class="content-section">
+
+                    <h2>
+                        Zakres doradztwa
+                    </h2>
+
+                    <div class="services-grid">
+
+                        <article class="service-card">
+
+                            <h3>
+                                Analiza potrzeb informatycznych
+                            </h3>
+
+                            <p>
+                                Ocena obecnego &#347;rodowiska IT,
+                                stanowisk pracy i potrzeb u&#380;ytkownik&oacute;w.
+                            </p>
+
+                        </article>
+
+                        <article class="service-card">
+
+                            <h3>
+                                Dob&oacute;r sprz&#281;tu komputerowego
+                            </h3>
+
+                            <p>
+                                Pomoc w wyborze komputer&oacute;w,
+                                podzespo&#322;&oacute;w, drukarek
+                                i urz&#261;dze&#324; dodatkowych.
+                            </p>
+
+                        </article>
+
+                        <article class="service-card">
+
+                            <h3>
+                                Dob&oacute;r oprogramowania
+                            </h3>
+
+                            <p>
+                                Wyb&oacute;r system&oacute;w operacyjnych,
+                                program&oacute;w biurowych i aplikacji
+                                specjalistycznych.
+                            </p>
+
+                        </article>
+
+                        <article class="service-card">
+
+                            <h3>
+                                Projektowanie infrastruktury IT
+                            </h3>
+
+                            <p>
+                                Planowanie stanowisk komputerowych,
+                                sieci lokalnych i sposob&oacute;w
+                                przechowywania danych.
+                            </p>
+
+                        </article>
+
+                        <article class="service-card">
+
+                            <h3>
+                                Modernizacja stanowisk pracy
+                            </h3>
+
+                            <p>
+                                Opracowanie planu wymiany lub rozbudowy
+                                sprz&#281;tu i oprogramowania.
+                            </p>
+
+                        </article>
+
+                        <article class="service-card">
+
+                            <h3>
+                                Koordynacja wdro&#380;e&#324;
+                            </h3>
+
+                            <p>
+                                Pomoc podczas instalowania,
+                                konfigurowania i uruchamiania nowych
+                                rozwi&#261;za&#324;.
+                            </p>
+
+                        </article>
+
+                        <article class="service-card">
+
+                            <h3>
+                                Bezpiecze&#324;stwo danych
+                            </h3>
+
+                            <p>
+                                Dob&oacute;r metod wykonywania kopii
+                                zapasowych i ochrony danych firmowych.
+                            </p>
+
+                        </article>
+
+                        <article class="service-card">
+
+                            <h3>
+                                Szkolenia dla u&#380;ytkownik&oacute;w
+                            </h3>
+
+                            <p>
+                                Przygotowanie pracownik&oacute;w
+                                do obs&#322;ugi wdro&#380;onych system&oacute;w
+                                i program&oacute;w.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <section class="content-section">
+
+                    <h2>
+                        Projektowanie rozwi&#261;za&#324;
+                    </h2>
+
+                    <p>
+                        Ka&#380;dy projekt traktujemy indywidualnie.
+                        Przed rozpocz&#281;ciem wsp&oacute;&#322;pracy
+                        przeprowadzamy analiz&#281; potrzeb oraz
+                        oczekiwa&#324; klienta.
+                    </p>
+
+                    <p>
+                        Nast&#281;pnie opracowujemy rozwi&#261;zanie,
+                        kt&oacute;re umo&#380;liwia sprawne, wydajne
+                        i bezpieczne funkcjonowanie &#347;rodowiska
+                        informatycznego.
+                    </p>
+
+                </section>
+
+                <section class="content-section">
+
+                    <h2>
+                        Etapy wsp&oacute;&#322;pracy
+                    </h2>
+
+                    <div class="steps-grid">
+
+                        <article class="step-card">
+
+                            <span class="step-number">
+                                1
+                            </span>
+
+                            <h3>
+                                Rozmowa
+                            </h3>
+
+                            <p>
+                                Poznajemy potrzeby, problemy
+                                i oczekiwania klienta.
+                            </p>
+
+                        </article>
+
+                        <article class="step-card">
+
+                            <span class="step-number">
+                                2
+                            </span>
+
+                            <h3>
+                                Analiza
+                            </h3>
+
+                            <p>
+                                Sprawdzamy obecne rozwi&#261;zania
+                                oraz mo&#380;liwo&#347;ci modernizacji.
+                            </p>
+
+                        </article>
+
+                        <article class="step-card">
+
+                            <span class="step-number">
+                                3
+                            </span>
+
+                            <h3>
+                                Projekt
+                            </h3>
+
+                            <p>
+                                Przygotowujemy propozycj&#281;
+                                dopasowan&#261; do potrzeb klienta.
+                            </p>
+
+                        </article>
+
+                        <article class="step-card">
+
+                            <span class="step-number">
+                                4
+                            </span>
+
+                            <h3>
+                                Wdro&#380;enie
+                            </h3>
+
+                            <p>
+                                Pomagamy uruchomi&#263;, skonfigurowa&#263;
+                                i obs&#322;ugiwa&#263; nowe rozwi&#261;zanie.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <section class="info-box">
+
+                    <h2>
+                        Szkolenia typu custom training
+                    </h2>
+
+                    <p>
+                        Organizujemy szkolenia typu
+                        <strong>
+                            &bdquo;custom training&rdquo;
+                        </strong>,
+                        kt&oacute;rych program przygotowywany jest
+                        specjalnie pod wdra&#380;ane rozwi&#261;zanie.
+                    </p>
+
+                    <p>
+                        Pozwala to u&#380;ytkownikom efektywnie
+                        wykorzystywa&#263; nowe technologie ju&#380;
+                        od pierwszego dnia pracy.
+                    </p>
+
+                </section>
+
+                <section class="content-section">
+
+                    <h2>
+                        Sta&#322;a wsp&oacute;&#322;praca
+                    </h2>
+
+                    <p>
+                        Sta&#322;ym klientom zapewniamy bie&#380;&#261;ce
+                        doradztwo informatyczne oraz wsparcie
+                        w realizowanych projektach.
+                    </p>
+
+                    <p>
+                        Ch&#281;tnie odpowiadamy na pytania i pomagamy
+                        rozwi&#261;zywa&#263; codzienne problemy
+                        zwi&#261;zane z wykorzystaniem technologii
+                        informatycznych.
+                    </p>
+
+                </section>
+
+                <section class="question-box">
+
+                    <h2>
+                        Nie obawiaj si&#281; zadawania pyta&#324;
+                    </h2>
+
+                    <p>
+                        Nie ka&#380;dy musi by&#263; specjalist&#261;
+                        z zakresu informatyki.
+                    </p>
+
+                    <p>
+                        Doradzimy, wyja&#347;nimy i pomo&#380;emy
+                        wybra&#263; najlepsze rozwi&#261;zanie
+                        dopasowane do Twoich potrzeb.
+                    </p>
+
+                </section>
+
+                <div class="buttons">
+
+                    <a
+                        href="../kontakt.html"
+                        class="btn"
+                    >
+                        Skontaktuj si&#281; z nami
+                    </a>
+
+                    <a
+                        href="../uslugit.html"
+                        class="btn btn-secondary"
+                    >
+                        Powr&oacute;t do us&#322;ug IT
+                    </a>
+
+                    <a
+                        href="../index.html"
+                        class="btn btn-secondary"
+                    >
+                        Powr&oacute;t do strony g&#322;&oacute;wnej
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+
+        <p>
+            &copy;
+            <span id="year">2026</span>
+            Zachodniopomorskie Centrum Informatyki
+        </p>
+
+        <p>
+            Doradztwo informatyczne &bull;
+            Projektowanie rozwi&#261;za&#324; &bull;
+            Us&#322;ugi IT
+        </p>
+
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
