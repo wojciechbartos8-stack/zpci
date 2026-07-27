@@ -1,173 +1,1904 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<title>MS Excel - Szkolenie</title>
 
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: linear-gradient(135deg, #eef5ff, #ffffff);
-    color: #222;
-}
+    <meta charset="UTF-8">
 
-header {
-    background: #1f3b73;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-nav {
-    background: #333;
-    display: flex;
-}
+    <title>Szkolenie MS Excel | ZPCI Szczecin</title>
 
-nav a {
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
-}
+    <meta
+        name="description"
+        content="Szkolenie Microsoft Excel w ZPCI Szczecin. Poziom podstawowy, &#347;redni i zaawansowany. Formu&#322;y, funkcje, wykresy, filtry i analiza danych."
+    >
 
-nav a:hover {
-    background: #444;
-}
+    <style>
 
-main {
-    padding: 20px;
-}
+        :root {
+            --primary: #1f3b73;
+            --primary-dark: #0b2148;
+            --primary-medium: #2f67ad;
+            --primary-light: #eef5ff;
 
-.box {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 1000px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+            --excel: #217346;
+            --excel-dark: #155c37;
+            --excel-light: #edf8f2;
 
-/* Grafika szkolenia */
-.training-image {
-    display: block;
-    width: 100%;
-    max-width: 900px;
-    height: auto;
-    margin: 20px auto;
-    border-radius: 10px;
-}
+            --accent: #f2b705;
+            --accent-hover: #ffd447;
 
-h2 {
-    color: #1f3b73;
-}
+            --white: #ffffff;
+            --background: #f4f7fb;
+            --text: #29333d;
+            --muted: #5d6976;
+            --border: #dce5ef;
 
-.print {
-    display: inline-block;
-    margin-top: 10px;
-    margin-right: 10px;
-    padding: 8px 12px;
-    background: #1f3b73;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
+            --radius: 18px;
 
-.print:hover {
-    background: #16305d;
-}
+            --shadow:
+                0 15px 38px rgba(11, 33, 72, 0.12);
 
-footer {
-    background: #1f3b73;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
-}
-</style>
+            --shadow-hover:
+                0 22px 46px rgba(11, 33, 72, 0.20);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf4ff 0%,
+                    #f8fbff 50%,
+                    #ffffff 100%
+                );
+
+            color: var(--text);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .page-container {
+            width: calc(100% - 40px);
+            max-width: 1160px;
+            margin: 0 auto;
+        }
+
+        /* =========================
+           NAG&#321;&Oacute;WEK
+        ========================= */
+
+        .site-header {
+            position: relative;
+            overflow: hidden;
+
+            padding: 45px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 88% 18%,
+                    rgba(255, 255, 255, 0.14),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--primary-medium)
+                );
+
+            color: var(--white);
+            text-align: center;
+        }
+
+        .site-header::before {
+            content: "X";
+
+            position: absolute;
+            top: 50%;
+            right: 8%;
+
+            color: rgba(255, 255, 255, 0.06);
+
+            font-size: clamp(130px, 20vw, 250px);
+            font-weight: 900;
+            line-height: 1;
+
+            transform: translateY(-50%);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .site-header h1 {
+            max-width: 900px;
+            margin: 0 auto 12px;
+
+            color: var(--white);
+
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.15;
+        }
+
+        .site-header p {
+            max-width: 820px;
+            margin: 0 auto;
+
+            color: rgba(255, 255, 255, 0.9);
+
+            font-size: clamp(17px, 2.3vw, 21px);
+        }
+
+        /* =========================
+           NAWIGACJA
+        ========================= */
+
+        .main-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+
+            background: #071b37;
+
+            box-shadow:
+                0 5px 18px rgba(0, 0, 0, 0.18);
+        }
+
+        .nav-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .main-nav a {
+            display: flex;
+            min-height: 54px;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 13px 22px;
+
+            color: var(--white);
+
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .main-nav a:hover,
+        .main-nav a:focus-visible {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        .main-nav a:focus-visible,
+        .button:focus-visible,
+        .email-link:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        /* =========================
+           BANER
+        ========================= */
+
+        .banner-section {
+            padding: 32px 0 0;
+        }
+
+        .banner-box {
+            overflow: hidden;
+
+            border: 5px solid var(--white);
+            border-radius: 23px;
+
+            background: var(--white);
+
+            box-shadow:
+                0 21px 50px rgba(11, 33, 72, 0.2);
+        }
+
+        .banner-box img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* =========================
+           G&#321;&Oacute;WNA TRE&#346;&#262;
+        ========================= */
+
+        main {
+            padding: 32px 0 58px;
+        }
+
+        .content-box {
+            padding: 42px;
+
+            border: 1px solid var(--border);
+            border-radius: 23px;
+
+            background: var(--white);
+
+            box-shadow: var(--shadow);
+        }
+
+        .intro {
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .intro h2 {
+            margin-bottom: 17px;
+
+            color: var(--primary-dark);
+
+            font-size: clamp(30px, 4.5vw, 44px);
+            line-height: 1.2;
+        }
+
+        .intro p {
+            max-width: 920px;
+            margin: 0 auto 14px;
+
+            color: var(--muted);
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           PRZYCISKI
+        ========================= */
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+
+            margin-top: 32px;
+        }
+
+        .button {
+            display: inline-flex;
+            min-height: 52px;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 27px;
+
+            border: 2px solid transparent;
+            border-radius: 999px;
+
+            background: var(--accent);
+            color: var(--primary-dark);
+
+            font-weight: 800;
+            line-height: 1.2;
+            text-align: center;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 9px 22px rgba(242, 183, 5, 0.25);
+
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .button:hover {
+            background: var(--accent-hover);
+
+            box-shadow:
+                0 13px 28px rgba(242, 183, 5, 0.32);
+
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            background: var(--primary);
+            color: var(--white);
+
+            box-shadow:
+                0 9px 22px rgba(31, 59, 115, 0.22);
+        }
+
+        .button-secondary:hover {
+            background: var(--primary-dark);
+        }
+
+        .button-outline {
+            border-color: var(--primary);
+
+            background: var(--white);
+            color: var(--primary);
+
+            box-shadow: none;
+        }
+
+        .button-outline:hover {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        /* =========================
+           SEKCJE
+        ========================= */
+
+        .content-section {
+            margin-top: 44px;
+        }
+
+        .content-section > h2 {
+            margin-bottom: 21px;
+            padding-bottom: 10px;
+
+            border-bottom: 2px solid var(--excel);
+
+            color: var(--primary-dark);
+
+            font-size: clamp(25px, 3.2vw, 34px);
+            line-height: 1.3;
+        }
+
+        .content-section > p {
+            margin-bottom: 15px;
+            color: var(--muted);
+        }
+
+        .content-section > p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           INFORMACJE O SZKOLENIU
+        ========================= */
+
+        .information-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 20px;
+        }
+
+        .information-card {
+            padding: 27px 23px;
+
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #f3f7ff
+                );
+
+            box-shadow:
+                0 9px 25px rgba(11, 33, 72, 0.07);
+
+            transition:
+                transform 0.22s ease,
+                box-shadow 0.22s ease;
+        }
+
+        .information-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        .information-icon {
+            display: flex;
+            width: 56px;
+            height: 56px;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 16px;
+
+            border-radius: 15px;
+
+            background: var(--excel);
+            color: var(--white);
+
+            font-size: 27px;
+        }
+
+        .information-card h3 {
+            margin-bottom: 11px;
+
+            color: var(--primary-dark);
+
+            font-size: 22px;
+            line-height: 1.3;
+        }
+
+        .information-card p {
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        /* =========================
+           POZIOMY SZKOLENIA
+        ========================= */
+
+        .levels-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 20px;
+        }
+
+        .level-card {
+            padding: 26px 22px;
+
+            border: 1px solid var(--border);
+            border-top: 6px solid var(--excel);
+            border-radius: 16px;
+
+            background: var(--white);
+
+            box-shadow:
+                0 10px 26px rgba(11, 33, 72, 0.08);
+
+            transition:
+                transform 0.22s ease,
+                box-shadow 0.22s ease;
+        }
+
+        .level-card:nth-child(2) {
+            border-top-color: var(--accent);
+        }
+
+        .level-card:nth-child(3) {
+            border-top-color: var(--primary);
+        }
+
+        .level-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        .level-number {
+            display: flex;
+            width: 54px;
+            height: 54px;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 16px;
+
+            border-radius: 50%;
+
+            background: var(--excel);
+            color: var(--white);
+
+            font-size: 22px;
+            font-weight: 900;
+        }
+
+        .level-card:nth-child(2) .level-number {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
+
+        .level-card:nth-child(3) .level-number {
+            background: var(--primary);
+        }
+
+        .level-card h3 {
+            margin-bottom: 12px;
+
+            color: var(--primary-dark);
+
+            font-size: 23px;
+            line-height: 1.3;
+        }
+
+        .level-card p {
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        /* =========================
+           PROGRAM SZKOLENIA
+        ========================= */
+
+        .program-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 15px 18px;
+        }
+
+        .program-card {
+            position: relative;
+
+            min-height: 82px;
+
+            padding:
+                17px 17px 17px 58px;
+
+            border: 1px solid var(--border);
+            border-radius: 13px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #f4fbf7
+                );
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .program-card:hover {
+            border-color: #b5d5c5;
+
+            box-shadow:
+                0 10px 24px rgba(33, 115, 70, 0.12);
+
+            transform: translateY(-3px);
+        }
+
+        .program-card::before {
+            content: "\2713";
+
+            position: absolute;
+            top: 18px;
+            left: 17px;
+
+            display: flex;
+            width: 28px;
+            height: 28px;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--excel);
+            color: var(--white);
+
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        .program-card h3 {
+            margin-bottom: 4px;
+
+            color: var(--primary-dark);
+
+            font-size: 19px;
+            line-height: 1.3;
+        }
+
+        .program-card p {
+            color: var(--muted);
+
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        /* =========================
+           TAKSONOMIA
+        ========================= */
+
+        .taxonomy-intro {
+            margin-bottom: 25px;
+            color: var(--muted);
+        }
+
+        .taxonomy-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 19px;
+        }
+
+        .taxonomy-card {
+            padding: 25px 21px;
+
+            border: 1px solid var(--border);
+            border-top: 5px solid var(--primary);
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff,
+                    #f8fbff
+                );
+
+            box-shadow:
+                0 9px 24px rgba(11, 33, 72, 0.08);
+
+            transition:
+                transform 0.22s ease,
+                box-shadow 0.22s ease;
+        }
+
+        .taxonomy-card:nth-child(2) {
+            border-top-color: #2878b5;
+        }
+
+        .taxonomy-card:nth-child(3) {
+            border-top-color: var(--accent);
+        }
+
+        .taxonomy-card:nth-child(4) {
+            border-top-color: var(--excel);
+        }
+
+        .taxonomy-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        .taxonomy-card h3 {
+            margin-bottom: 15px;
+
+            color: var(--primary-dark);
+
+            font-size: 24px;
+            line-height: 1.25;
+        }
+
+        .taxonomy-card ul {
+            padding-left: 21px;
+        }
+
+        .taxonomy-card li {
+            margin-bottom: 10px;
+            color: var(--muted);
+        }
+
+        .taxonomy-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           EFEKTY PRAKTYCZNE
+        ========================= */
+
+        .outcomes-box {
+            margin-top: 44px;
+            padding: 30px;
+
+            border-left: 6px solid var(--excel);
+            border-radius: 16px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--excel-light),
+                    #ffffff
+                );
+        }
+
+        .outcomes-box h2 {
+            margin-bottom: 17px;
+
+            color: var(--primary-dark);
+
+            font-size: clamp(25px, 3vw, 32px);
+            line-height: 1.3;
+        }
+
+        .outcomes-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 13px 26px;
+        }
+
+        .outcome-item {
+            position: relative;
+
+            min-height: 55px;
+
+            padding:
+                13px 15px 13px 48px;
+
+            border: 1px solid #d4e8dd;
+            border-radius: 12px;
+
+            background:
+                rgba(255, 255, 255, 0.85);
+
+            color: var(--muted);
+        }
+
+        .outcome-item::before {
+            content: "\2713";
+
+            position: absolute;
+            top: 13px;
+            left: 14px;
+
+            display: flex;
+            width: 24px;
+            height: 24px;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--excel);
+            color: var(--white);
+
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        /* =========================
+           KONTAKT
+        ========================= */
+
+        .contact-box {
+            margin-top: 44px;
+            padding: 32px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+                );
+
+            color: var(--white);
+            text-align: center;
+
+            box-shadow:
+                0 18px 42px rgba(11, 33, 72, 0.22);
+        }
+
+        .contact-box h2 {
+            margin-bottom: 13px;
+
+            color: var(--white);
+
+            font-size: clamp(26px, 3vw, 34px);
+            line-height: 1.3;
+        }
+
+        .contact-box p {
+            max-width: 800px;
+            margin: 0 auto 9px;
+
+            color:
+                rgba(255, 255, 255, 0.9);
+        }
+
+        .email-link {
+            color: var(--accent);
+
+            font-size: 20px;
+            font-weight: 800;
+
+            overflow-wrap: anywhere;
+
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+
+        /* =========================
+           STOPKA
+        ========================= */
+
+        footer {
+            padding: 28px 20px;
+
+            background: var(--primary-dark);
+            color:
+                rgba(255, 255, 255, 0.88);
+
+            text-align: center;
+        }
+
+        footer p + p {
+            margin-top: 5px;
+        }
+
+        /* =========================
+           RESPONSYWNO&#346;&#262;
+        ========================= */
+
+        @media (max-width: 1050px) {
+
+            .taxonomy-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+            .information-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+            .information-card:last-child {
+                grid-column: 1 / -1;
+            }
+
+            .levels-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+            .level-card:last-child {
+                grid-column: 1 / -1;
+            }
+
+        }
+
+        @media (max-width: 850px) {
+
+            body {
+                font-size: 17px;
+            }
+
+            .page-container {
+                width: calc(100% - 28px);
+            }
+
+            .content-box {
+                padding: 32px 24px;
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .program-grid,
+            .outcomes-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .page-container {
+                width: calc(100% - 20px);
+            }
+
+            .site-header {
+                padding: 34px 14px;
+            }
+
+            .site-header::before {
+                right: 50%;
+
+                transform:
+                    translate(50%, -50%);
+            }
+
+            .nav-inner {
+                display: grid;
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+            .main-nav a {
+                min-height: 49px;
+
+                padding: 10px 8px;
+
+                border-bottom:
+                    1px solid
+                    rgba(255, 255, 255, 0.08);
+
+                font-size: 14px;
+            }
+
+            .banner-section {
+                padding-top: 20px;
+            }
+
+            .banner-box {
+                border-width: 3px;
+                border-radius: 14px;
+            }
+
+            main {
+                padding: 20px 0 38px;
+            }
+
+            .content-box {
+                padding: 24px 17px;
+                border-radius: 15px;
+            }
+
+            .intro {
+                padding-bottom: 25px;
+            }
+
+            .information-grid,
+            .levels-grid,
+            .taxonomy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .information-card:last-child,
+            .level-card:last-child {
+                grid-column: auto;
+            }
+
+            .information-card,
+            .level-card,
+            .taxonomy-card,
+            .outcomes-box,
+            .contact-box {
+                padding: 22px 18px;
+            }
+
+            .program-card {
+                min-height: auto;
+                padding-right: 14px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .buttons .button {
+                width: 100%;
+            }
+
+        }
+
+        @media (max-width: 390px) {
+
+            .nav-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .main-nav a {
+                min-height: 45px;
+            }
+
+            .site-header h1 {
+                font-size: 28px;
+            }
+
+        }
+
+        /* =========================
+           DRUKOWANIE
+        ========================= */
+
+        @media print {
+
+            body {
+                background: #ffffff;
+                color: #000000;
+                font-size: 12pt;
+            }
+
+            .site-header {
+                padding: 20px;
+                background: #ffffff;
+                color: #000000;
+            }
+
+            .site-header h1,
+            .site-header p {
+                color: #000000;
+            }
+
+            .site-header::before,
+            .main-nav,
+            .buttons,
+            footer {
+                display: none;
+            }
+
+            .page-container {
+                width: 100%;
+                max-width: none;
+            }
+
+            .banner-section {
+                padding-top: 10px;
+            }
+
+            .banner-box,
+            .content-box,
+            .information-card,
+            .level-card,
+            .program-card,
+            .taxonomy-card,
+            .outcomes-box,
+            .contact-box {
+                border: 1px solid #cccccc;
+                box-shadow: none;
+            }
+
+            .content-box {
+                padding: 20px;
+            }
+
+            .information-grid,
+            .levels-grid,
+            .program-grid,
+            .taxonomy-grid,
+            .outcomes-grid {
+                display: block;
+            }
+
+            .information-card,
+            .level-card,
+            .program-card,
+            .taxonomy-card,
+            .outcome-item {
+                margin-bottom: 14px;
+                page-break-inside: avoid;
+            }
+
+            .contact-box {
+                background: #ffffff;
+                color: #000000;
+            }
+
+            .contact-box h2,
+            .contact-box p,
+            .email-link {
+                color: #000000;
+            }
+
+        }
+
+    </style>
 
 </head>
 
 <body>
 
-<header>
-<h1>MS Excel - Szkolenia</h1>
-</header>
+    <!-- NAG&#321;&Oacute;WEK -->
 
-<nav>
-<a href="../index.html">Strona główna</a>
-<a href="../szkoleniakursy.html">Szkolenia / Kursy</a>
-<a href="../uslugit.html">Usługi IT</a>
-<a href="../kontakt.html">Kontakt</a>
-</nav>
+    <header class="site-header">
 
+        <div class="header-content">
 
-<main>
+            <h1>
+                Szkolenie Microsoft Excel
+            </h1>
 
-<div class="box">
+            <p>
+                Poziom podstawowy, &#347;redni i zaawansowany
+            </p>
 
-<a class="print" href="javascript:window.print()">Drukuj</a>
-<a class="print" href="zapis-na-szkolenie.html">
-    Zapisz się na szkolenie
-</a>
+        </div>
 
-<img src="../images/szkolenieExcel.png"
-     alt="Szkolenie MS Excel"
-     class="training-image">
+    </header>
 
+    <!-- NAWIGACJA -->
 
-<h2>Kogo zapraszamy:</h2>
-<p>
-Szkolenie przeznaczone dla osób, które chcą rozpocząć lub przyspieszyć pracę w MS Excel.
-Dostępne poziomy: podstawowy, średni i zaawansowany.
-</p>
+    <nav
+        class="main-nav"
+        aria-label="G&#322;&oacute;wna nawigacja"
+    >
 
+        <div class="page-container nav-inner">
 
-<h2>Organizacja:</h2>
-<p>
-Zajęcia prowadzone są indywidualnie lub grupowo, w formie praktycznych ćwiczeń komputerowych.
-Terminy dopasowywane są do uczestników.
-</p>
+            <a href="../index.html">
+                Strona g&#322;&oacute;wna
+            </a>
 
+            <a href="../szkoleniakursy.html">
+                Szkolenia / Kursy
+            </a>
 
-<h2>Certyfikaty:</h2>
-<p>
-Certyfikat w języku polskim i angielskim. Możliwość dodatkowych wersji językowych.
-</p>
+            <a href="../uslugiit.html">
+                Us&#322;ugi IT
+            </a>
 
+            <a href="../kontakt.html">
+                Kontakt
+            </a>
 
-<h2>Zakres szkolenia:</h2>
+        </div>
 
-<ul>
-<li>Ustawienia arkusza: kolumny, wiersze, komórki</li>
-<li>Formatowanie standardowe i niestandardowe</li>
-<li>Funkcje podstawowe i zaawansowane</li>
-<li>Wykresy i analiza danych</li>
-<li>Funkcje tekstowe, logiczne i finansowe</li>
-<li>Filtry proste i zaawansowane</li>
-<li>Import i eksport danych</li>
-<li>Praca zespołowa w arkuszach</li>
-<li>Zabezpieczenia arkuszy</li>
-<li>Łączenie z bazami danych</li>
-</ul>
+    </nav>
 
+    <!-- BANER -->
 
-<p>
-Kontakt: <strong>biuro@zpci.pl</strong>
-</p>
+    <section
+        class="banner-section"
+        aria-label="Baner szkolenia Microsoft Excel"
+    >
 
-</div>
+        <div class="page-container">
 
-</main>
+            <div class="banner-box">
 
+                <img
+                    src="../images/szkolenieExcel.png"
+                    alt="Szkolenie Microsoft Excel w Zachodniopomorskim Centrum Informatyki"
+                    loading="eager"
+                    fetchpriority="high"
+                >
 
-<footer>
-© <span id="year"></span> Zachodniopomorskie Centrum Informatyki
-</footer>
+            </div>
 
+        </div>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    </section>
 
+    <!-- G&#321;&Oacute;WNA TRE&#346;&#262; -->
+
+    <main>
+
+        <div class="page-container">
+
+            <article class="content-box">
+
+                <!-- WPROWADZENIE -->
+
+                <section class="intro">
+
+                    <h2>
+                        Praktyczne szkolenie MS Excel
+                    </h2>
+
+                    <p>
+                        Szkolenie przeznaczone jest dla os&oacute;b,
+                        kt&oacute;re chc&#261; rozpocz&#261;&#263;
+                        prac&#281; z programem Microsoft Excel
+                        lub rozwin&#261;&#263; posiadane
+                        umiej&#281;tno&#347;ci.
+                    </p>
+
+                    <p>
+                        Program obejmuje prac&#281; z arkuszami,
+                        formu&#322;ami, funkcjami, wykresami,
+                        filtrami oraz narz&#281;dziami
+                        do analizy i prezentowania danych.
+                    </p>
+
+                </section>
+
+                <!-- PRZYCISKI -->
+
+                <div class="buttons">
+
+                    <button
+                        type="button"
+                        class="button button-outline"
+                        onclick="window.print()"
+                    >
+                        Drukuj program szkolenia
+                    </button>
+
+                    <a
+                        class="button"
+                        href="zapis-na-szkolenie.html"
+                    >
+                        Zapisz si&#281; na szkolenie
+                    </a>
+
+                </div>
+
+                <!-- INFORMACJE -->
+
+                <section class="content-section">
+
+                    <h2>
+                        Informacje o szkoleniu
+                    </h2>
+
+                    <div class="information-grid">
+
+                        <article class="information-card">
+
+                            <span
+                                class="information-icon"
+                                aria-hidden="true"
+                            >
+                                &#128100;
+                            </span>
+
+                            <h3>Kogo zapraszamy?</h3>
+
+                            <p>
+                                Osoby pocz&#261;tkuj&#261;ce,
+                                pracownik&oacute;w biurowych,
+                                analityk&oacute;w, ksi&#281;gowych
+                                oraz osoby pracuj&#261;ce
+                                z zestawieniami i danymi.
+                            </p>
+
+                        </article>
+
+                        <article class="information-card">
+
+                            <span
+                                class="information-icon"
+                                aria-hidden="true"
+                            >
+                                &#128187;
+                            </span>
+
+                            <h3>Organizacja zaj&#281;&#263;</h3>
+
+                            <p>
+                                Zaj&#281;cia prowadzone s&#261;
+                                indywidualnie lub grupowo,
+                                w formie praktycznych &#263;wicze&#324;
+                                komputerowych.
+                            </p>
+
+                        </article>
+
+                        <article class="information-card">
+
+                            <span
+                                class="information-icon"
+                                aria-hidden="true"
+                            >
+                                &#127891;
+                            </span>
+
+                            <h3>Certyfikat</h3>
+
+                            <p>
+                                Po uko&#324;czeniu szkolenia
+                                uczestnik otrzymuje certyfikat
+                                w j&#281;zyku polskim i angielskim.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- POZIOMY -->
+
+                <section class="content-section">
+
+                    <h2>
+                        Dost&#281;pne poziomy szkolenia
+                    </h2>
+
+                    <div class="levels-grid">
+
+                        <article class="level-card">
+
+                            <span class="level-number">
+                                1
+                            </span>
+
+                            <h3>Poziom podstawowy</h3>
+
+                            <p>
+                                Dla os&oacute;b rozpoczynaj&#261;cych
+                                prac&#281; z programem Excel.
+                                Obejmuje obs&#322;ug&#281; arkusza,
+                                formatowanie danych i podstawowe
+                                formu&#322;y.
+                            </p>
+
+                        </article>
+
+                        <article class="level-card">
+
+                            <span class="level-number">
+                                2
+                            </span>
+
+                            <h3>Poziom &#347;redni</h3>
+
+                            <p>
+                                Dla os&oacute;b znaj&#261;cych
+                                podstawy programu. Obejmuje funkcje,
+                                wykresy, filtrowanie, walidacj&#281;
+                                oraz analizowanie danych.
+                            </p>
+
+                        </article>
+
+                        <article class="level-card">
+
+                            <span class="level-number">
+                                3
+                            </span>
+
+                            <h3>Poziom zaawansowany</h3>
+
+                            <p>
+                                Dla os&oacute;b pracuj&#261;cych
+                                z rozbudowanymi zestawieniami.
+                                Obejmuje zaawansowane funkcje,
+                                tabele przestawne i automatyzacj&#281;.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- PROGRAM -->
+
+                <section class="content-section">
+
+                    <h2>
+                        Zakres szkolenia
+                    </h2>
+
+                    <div class="program-grid">
+
+                        <article class="program-card">
+
+                            <h3>Budowa arkusza</h3>
+
+                            <p>
+                                Wiersze, kolumny, kom&oacute;rki,
+                                zakresy i skoroszyty.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Wprowadzanie danych</h3>
+
+                            <p>
+                                Liczby, teksty, daty, serie danych
+                                i automatyczne wype&#322;nianie.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Formatowanie</h3>
+
+                            <p>
+                                Formatowanie standardowe,
+                                warunkowe i niestandardowe.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Formu&#322;y</h3>
+
+                            <p>
+                                Operatory matematyczne,
+                                odwo&#322;ania wzgl&#281;dne
+                                i bezwzgl&#281;dne.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Funkcje podstawowe</h3>
+
+                            <p>
+                                SUMA, &#346;REDNIA, MIN, MAX,
+                                ILE.LICZB i LICZ.JE&#379;ELI.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Funkcje logiczne</h3>
+
+                            <p>
+                                JE&#379;ELI, ORAZ, LUB
+                                oraz zagnie&#380;d&#380;one warunki.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Funkcje tekstowe</h3>
+
+                            <p>
+                                &#321;&#261;czenie, dzielenie
+                                i modyfikowanie tekst&oacute;w.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Funkcje finansowe</h3>
+
+                            <p>
+                                Podstawowe obliczenia rat,
+                                odsetek i warto&#347;ci inwestycji.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Sortowanie i filtrowanie</h3>
+
+                            <p>
+                                Filtry proste, wielopoziomowe
+                                oraz filtry zaawansowane.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Wykresy</h3>
+
+                            <p>
+                                Tworzenie, formatowanie
+                                i dob&oacute;r odpowiedniego wykresu.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Analiza danych</h3>
+
+                            <p>
+                                Podsumowania, zestawienia
+                                oraz tabele przestawne.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Import i eksport</h3>
+
+                            <p>
+                                Wymiana danych z plikami CSV,
+                                tekstowymi i innymi programami.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Praca zespo&#322;owa</h3>
+
+                            <p>
+                                Udost&#281;pnianie, komentarze,
+                                wsp&oacute;&#322;praca i kontrola zmian.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Zabezpieczenia</h3>
+
+                            <p>
+                                Ochrona kom&oacute;rek, arkuszy,
+                                skoroszyt&oacute;w i formu&#322;.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Bazy danych</h3>
+
+                            <p>
+                                Pobieranie i &#322;&#261;czenie danych
+                                z zewn&#281;trznymi &#378;r&oacute;d&#322;ami.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Automatyzacja pracy</h3>
+
+                            <p>
+                                Wprowadzenie do makr
+                                i podstaw automatyzowania czynno&#347;ci.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- TAKSONOMIA -->
+
+                <section class="content-section">
+
+                    <h2>
+                        Po uko&#324;czeniu szkolenia uczestnik
+                    </h2>
+
+                    <p class="taxonomy-intro">
+                        Uczestnik zdobywa wiedz&#281;
+                        i praktyczne umiej&#281;tno&#347;ci
+                        pozwalaj&#261;ce sprawnie tworzy&#263;,
+                        przetwarza&#263; oraz analizowa&#263;
+                        dane w programie Microsoft Excel.
+                    </p>
+
+                    <div class="taxonomy-grid">
+
+                        <!-- WIE -->
+
+                        <article class="taxonomy-card">
+
+                            <h3>Wie</h3>
+
+                            <ul>
+
+                                <li>
+                                    Jak zbudowany jest skoroszyt
+                                    i arkusz programu Excel.
+                                </li>
+
+                                <li>
+                                    Do czego s&#322;u&#380;&#261;
+                                    formu&#322;y, funkcje i wykresy.
+                                </li>
+
+                                <li>
+                                    Jakie typy danych mo&#380;na
+                                    wprowadza&#263; do kom&oacute;rek.
+                                </li>
+
+                                <li>
+                                    Do czego s&#322;u&#380;&#261;
+                                    sortowanie i filtrowanie.
+                                </li>
+
+                                <li>
+                                    Jak zabezpiecza&#263;
+                                    arkusze i skoroszyty.
+                                </li>
+
+                            </ul>
+
+                        </article>
+
+                        <!-- ROZUMIE -->
+
+                        <article class="taxonomy-card">
+
+                            <h3>Rozumie</h3>
+
+                            <ul>
+
+                                <li>
+                                    Zasady tworzenia poprawnych
+                                    formu&#322; i funkcji.
+                                </li>
+
+                                <li>
+                                    R&oacute;&#380;nic&#281; pomi&#281;dzy
+                                    odwo&#322;aniami wzgl&#281;dnymi
+                                    i bezwzgl&#281;dnymi.
+                                </li>
+
+                                <li>
+                                    Znaczenie poprawnej organizacji
+                                    danych w arkuszu.
+                                </li>
+
+                                <li>
+                                    Zasady doboru wykresu
+                                    do rodzaju danych.
+                                </li>
+
+                                <li>
+                                    Spos&oacute;b dzia&#322;ania
+                                    filtr&oacute;w i tabel przestawnych.
+                                </li>
+
+                            </ul>
+
+                        </article>
+
+                        <!-- UMIE -->
+
+                        <article class="taxonomy-card">
+
+                            <h3>Umie</h3>
+
+                            <ul>
+
+                                <li>
+                                    Tworzy&#263; i formatowa&#263;
+                                    tabele w arkuszu.
+                                </li>
+
+                                <li>
+                                    Stosowa&#263; podstawowe
+                                    i zaawansowane funkcje.
+                                </li>
+
+                                <li>
+                                    Sortowa&#263; i filtrowa&#263;
+                                    dane wed&#322;ug wielu kryteri&oacute;w.
+                                </li>
+
+                                <li>
+                                    Tworzy&#263; czytelne wykresy
+                                    i zestawienia.
+                                </li>
+
+                                <li>
+                                    Importowa&#263; i eksportowa&#263;
+                                    dane.
+                                </li>
+
+                            </ul>
+
+                        </article>
+
+                        <!-- POTRAFI -->
+
+                        <article class="taxonomy-card">
+
+                            <h3>Potrafi</h3>
+
+                            <ul>
+
+                                <li>
+                                    Samodzielnie przygotowa&#263;
+                                    arkusz kalkulacyjny.
+                                </li>
+
+                                <li>
+                                    Wykona&#263; obliczenia
+                                    i analiz&#281; danych.
+                                </li>
+
+                                <li>
+                                    Utworzy&#263; zestawienie
+                                    oraz tabel&#281; przestawn&#261;.
+                                </li>
+
+                                <li>
+                                    Przygotowa&#263; raport
+                                    i prezentacj&#281; danych.
+                                </li>
+
+                                <li>
+                                    Zabezpieczy&#263; arkusz
+                                    przed niepo&#380;&#261;danymi zmianami.
+                                </li>
+
+                            </ul>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- EFEKTY PRAKTYCZNE -->
+
+                <section class="outcomes-box">
+
+                    <h2>
+                        Praktyczne efekty szkolenia
+                    </h2>
+
+                    <div class="outcomes-grid">
+
+                        <div class="outcome-item">
+                            Przygotowanie czytelnej tabeli
+                            z danymi.
+                        </div>
+
+                        <div class="outcome-item">
+                            Wykonanie automatycznych oblicze&#324;
+                            za pomoc&#261; formu&#322;.
+                        </div>
+
+                        <div class="outcome-item">
+                            Zastosowanie funkcji logicznych
+                            i tekstowych.
+                        </div>
+
+                        <div class="outcome-item">
+                            Filtrowanie i sortowanie
+                            du&#380;ych zestaw&oacute;w danych.
+                        </div>
+
+                        <div class="outcome-item">
+                            Przygotowanie wykresu
+                            na podstawie danych.
+                        </div>
+
+                        <div class="outcome-item">
+                            Utworzenie raportu
+                            w tabeli przestawnej.
+                        </div>
+
+                        <div class="outcome-item">
+                            Importowanie danych
+                            z plik&oacute;w zewn&#281;trznych.
+                        </div>
+
+                        <div class="outcome-item">
+                            Zabezpieczenie formu&#322;
+                            i wybranych kom&oacute;rek.
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- KONTAKT -->
+
+                <section class="contact-box">
+
+                    <h2>
+                        Kontakt w sprawie szkolenia
+                    </h2>
+
+                    <p>
+                        Program i poziom szkolenia mog&#261;
+                        zosta&#263; dostosowane do potrzeb
+                        uczestnika, firmy lub grupy zorganizowanej.
+                    </p>
+
+                    <p>
+                        Napisz do nas:
+                    </p>
+
+                    <p>
+
+                        <a
+                            class="email-link"
+                            href="mailto:biuro@zpci.pl"
+                        >
+                            biuro@zpci.pl
+                        </a>
+
+                    </p>
+
+                    <div class="buttons">
+
+                        <a
+                            class="button"
+                            href="zapis-na-szkolenie.html"
+                        >
+                            Zapisz si&#281; na szkolenie
+                        </a>
+
+                        <a
+                            class="button button-secondary"
+                            href="../kontakt.html"
+                        >
+                            Przejd&#378; do kontaktu
+                        </a>
+
+                    </div>
+
+                </section>
+
+                <!-- POWROTY -->
+
+                <div class="buttons">
+
+                    <a
+                        class="button button-secondary"
+                        href="../szkoleniakursy.html"
+                    >
+                        Powr&oacute;t do listy szkole&#324;
+                    </a>
+
+                    <a
+                        class="button button-secondary"
+                        href="../index.html"
+                    >
+                        Powr&oacute;t do strony g&#322;&oacute;wnej
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </main>
+
+    <!-- STOPKA -->
+
+    <footer>
+
+        <p>
+            &copy;
+            <span id="year">2026</span>
+            Zachodniopomorskie Centrum Informatyki
+        </p>
+
+        <p>
+            Microsoft Excel &bull;
+            Arkusze kalkulacyjne &bull;
+            Analiza danych
+        </p>
+
+    </footer>
+
+    <script>
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
 
 </body>
 </html>
