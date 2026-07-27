@@ -1,413 +1,2130 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        GIMP &ndash; cyfrowa obr&oacute;bka zdj&#281;&#263; | ZPCI Szczecin
+    </title>
+
+    <meta
+        name="description"
+        content="Szkolenie GIMP w ZPCI Szczecin. Cyfrowa obr&oacute;bka zdj&#281;&#263;, retusz, korekcja kolor&oacute;w, fotomonta&#380;, warstwy, filtry i przygotowanie fotografii do publikacji."
+    >
+
+    <style>
+
+        :root {
+            --primary: #1f3b73;
+            --primary-dark: #0b2148;
+            --primary-medium: #2f67ad;
+            --primary-light: #eef5ff;
+
+            --gimp: #665f50;
+            --gimp-dark: #403b32;
+            --gimp-light: #f3f1ed;
+
+            --accent: #f2b705;
+            --accent-hover: #ffd447;
+
+            --white: #ffffff;
+            --background: #f4f7fb;
+            --text: #29333d;
+            --muted: #5d6976;
+            --border: #dce5ef;
+
+            --green: #24845c;
+            --blue: #2878b5;
+
+            --radius: 18px;
+
+            --shadow:
+                0 15px 38px rgba(11, 33, 72, 0.12);
+
+            --shadow-hover:
+                0 22px 46px rgba(11, 33, 72, 0.20);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #edf4ff 0%,
+                    #f8fbff 50%,
+                    #ffffff 100%
+                );
+
+            color: var(--text);
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .page-container {
+            width: calc(100% - 40px);
+            max-width: 1160px;
+            margin: 0 auto;
+        }
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        /* =========================
+           NAG&#321;&Oacute;WEK
+        ========================= */
 
+        .site-header {
+            position: relative;
+            overflow: hidden;
 
-<title>
-GIMP - Cyfrowa Obr&oacute;bka Zdj&#281;&#263; | Zachodniopomorskie Centrum Informatyki
-</title>
+            padding: 45px 20px;
 
+            background:
+                radial-gradient(
+                    circle at 88% 18%,
+                    rgba(255, 255, 255, 0.14),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    var(--primary-dark),
+                    var(--primary-medium)
+                );
 
-<style>
+            color: var(--white);
+            text-align: center;
+        }
 
-body {
+        .site-header::before {
+            content: "GIMP";
+
+            position: absolute;
+            top: 50%;
+            right: 7%;
+
+            color:
+                rgba(255, 255, 255, 0.055);
+
+            font-size:
+                clamp(100px, 18vw, 220px);
 
-    font-family: Arial, sans-serif;
+            font-weight: 900;
+            line-height: 1;
 
-    margin:0;
+            transform:
+                translateY(-50%);
+        }
 
-    background:#f4f4f4;
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
 
-    color:#333;
+        .site-header h1 {
+            max-width: 950px;
+            margin: 0 auto 12px;
 
-}
+            color: var(--white);
 
+            font-size:
+                clamp(31px, 5vw, 51px);
 
+            line-height: 1.15;
+        }
 
-header {
+        .site-header p {
+            max-width: 820px;
+            margin: 0 auto;
 
-    background:#003366;
+            color:
+                rgba(255, 255, 255, 0.9);
 
-    color:white;
+            font-size:
+                clamp(17px, 2.3vw, 21px);
+        }
 
-    padding:20px;
+        /* =========================
+           NAWIGACJA
+        ========================= */
 
-    text-align:center;
+        .main-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
 
-}
+            background: #071b37;
 
+            box-shadow:
+                0 5px 18px rgba(0, 0, 0, 0.18);
+        }
 
+        .nav-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-.container {
+        .main-nav a {
+            display: flex;
+            min-height: 54px;
 
-    width:85%;
+            align-items: center;
+            justify-content: center;
 
-    margin:30px auto;
+            padding: 13px 22px;
 
-    background:white;
+            color: var(--white);
 
-    padding:30px;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
 
-    border-radius:10px;
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease;
+        }
 
-}
+        .main-nav a:hover,
+        .main-nav a:focus-visible {
+            background: var(--accent);
+            color: var(--primary-dark);
+        }
 
+        .main-nav a:focus-visible,
+        .button:focus-visible,
+        .email-link:focus-visible,
+        .text-link:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
 
+        /* =========================
+           BANER
+        ========================= */
 
-h1, h2 {
+        .banner-section {
+            padding: 32px 0 0;
+        }
 
-    color:#003366;
+        .banner-box {
+            overflow: hidden;
 
-}
+            border: 5px solid var(--white);
+            border-radius: 23px;
 
+            background: var(--white);
 
+            box-shadow:
+                0 21px 50px rgba(11, 33, 72, 0.20);
+        }
 
-ul {
+        .banner-box img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
 
-    line-height:1.8;
+        /* =========================
+           G&#321;&Oacute;WNA TRE&#346;&#262;
+        ========================= */
 
-}
+        main {
+            padding: 32px 0 58px;
+        }
 
+        .content-box {
+            padding: 42px;
 
+            border: 1px solid var(--border);
+            border-radius: 23px;
 
-.button {
+            background: var(--white);
 
-    display:inline-block;
+            box-shadow: var(--shadow);
+        }
 
-    background:#0066cc;
+        .intro {
+            padding-bottom: 32px;
 
-    color:white;
+            border-bottom:
+                1px solid var(--border);
 
-    padding:12px 25px;
+            text-align: center;
+        }
 
-    text-decoration:none;
+        .intro-logo {
+            display: flex;
 
-    border-radius:5px;
+            width: 78px;
+            height: 78px;
 
-    margin-top:20px;
+            align-items: center;
+            justify-content: center;
 
-}
+            margin: 0 auto 20px;
 
+            border:
+                4px solid #918775;
 
+            border-radius: 21px;
 
-.button:hover {
+            background:
+                linear-gradient(
+                    145deg,
+                    #766e5d,
+                    var(--gimp-dark)
+                );
 
-    background:#004c99;
+            color: var(--white);
 
-}
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: 1px;
 
+            box-shadow:
+                0 11px 25px
+                rgba(64, 59, 50, 0.25);
+        }
 
+        .intro h2 {
+            margin-bottom: 17px;
 
-footer {
+            color: var(--primary-dark);
 
-    background:#003366;
+            font-size:
+                clamp(30px, 4.5vw, 44px);
 
-    color:white;
+            line-height: 1.2;
+        }
 
-    text-align:center;
+        .intro p {
+            max-width: 920px;
+            margin: 0 auto 14px;
 
-    padding:15px;
+            color: var(--muted);
+        }
 
-    margin-top:30px;
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
 
-}
+        /* =========================
+           PRZYCISKI
+        ========================= */
 
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
 
-</style>
+            margin-top: 32px;
+        }
 
+        .button {
+            display: inline-flex;
+            min-height: 52px;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 14px 27px;
+
+            border:
+                2px solid transparent;
+
+            border-radius: 999px;
+
+            background: var(--accent);
+            color: var(--primary-dark);
+
+            font-weight: 800;
+            line-height: 1.2;
+            text-align: center;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 9px 22px
+                rgba(242, 183, 5, 0.25);
+
+            transition:
+                background-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .button:hover {
+            background: var(--accent-hover);
+
+            box-shadow:
+                0 13px 28px
+                rgba(242, 183, 5, 0.32);
+
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            background: var(--primary);
+            color: var(--white);
+
+            box-shadow:
+                0 9px 22px
+                rgba(31, 59, 115, 0.22);
+        }
+
+        .button-secondary:hover {
+            background: var(--primary-dark);
+        }
+
+        .button-outline {
+            border-color: var(--primary);
+
+            background: var(--white);
+            color: var(--primary);
+
+            box-shadow: none;
+        }
+
+        .button-outline:hover {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        /* =========================
+           SEKCJE
+        ========================= */
+
+        .content-section {
+            margin-top: 44px;
+        }
+
+        .content-section > h2 {
+            margin-bottom: 21px;
+            padding-bottom: 10px;
+
+            border-bottom:
+                2px solid var(--gimp);
+
+            color: var(--primary-dark);
+
+            font-size:
+                clamp(25px, 3.2vw, 34px);
+
+            line-height: 1.3;
+        }
+
+        .content-section > p {
+            margin-bottom: 15px;
+            color: var(--muted);
+        }
+
+        .content-section > p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           INFORMACJE
+        ========================= */
+
+        .information-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 20px;
+        }
+
+        .information-card {
+            padding: 27px 23px;
+
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    #f5f7fa
+                );
+
+            box-shadow:
+                0 9px 25px
+                rgba(11, 33, 72, 0.07);
+
+            transition:
+                transform 0.22s ease,
+                box-shadow 0.22s ease;
+        }
+
+        .information-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        .information-icon {
+            display: flex;
+
+            width: 56px;
+            height: 56px;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 16px;
+
+            border-radius: 15px;
+
+            background: var(--gimp);
+            color: var(--white);
+
+            font-size: 27px;
+        }
+
+        .information-card h3 {
+            margin-bottom: 11px;
+
+            color: var(--primary-dark);
+
+            font-size: 22px;
+            line-height: 1.3;
+        }
+
+        .information-card p {
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        /* =========================
+           PROGRAM SZKOLENIA
+        ========================= */
+
+        .program-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 15px 18px;
+        }
+
+        .program-card {
+            position: relative;
+
+            min-height: 85px;
+
+            padding:
+                17px 17px 17px 58px;
+
+            border: 1px solid var(--border);
+            border-radius: 13px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #ffffff,
+                    var(--gimp-light)
+                );
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .program-card:hover {
+            border-color: #c8c1b5;
+
+            box-shadow:
+                0 10px 24px
+                rgba(102, 95, 80, 0.13);
+
+            transform: translateY(-3px);
+        }
+
+        .program-card::before {
+            content: "\2713";
+
+            position: absolute;
+            top: 18px;
+            left: 17px;
+
+            display: flex;
+
+            width: 28px;
+            height: 28px;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--gimp);
+            color: var(--white);
+
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        .program-card h3 {
+            margin-bottom: 4px;
+
+            color: var(--primary-dark);
+
+            font-size: 19px;
+            line-height: 1.3;
+        }
+
+        .program-card p {
+            color: var(--muted);
+
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        /* =========================
+           TAKSONOMIA
+        ========================= */
+
+        .taxonomy-intro {
+            margin-bottom: 25px;
+            color: var(--muted);
+        }
+
+        .taxonomy-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, minmax(0, 1fr));
+
+            gap: 19px;
+        }
+
+        .taxonomy-card {
+            padding: 25px 21px;
+
+            border: 1px solid var(--border);
+            border-top:
+                5px solid var(--primary);
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #ffffff,
+                    #f8fbff
+                );
+
+            box-shadow:
+                0 9px 24px
+                rgba(11, 33, 72, 0.08);
+
+            transition:
+                transform 0.22s ease,
+                box-shadow 0.22s ease;
+        }
+
+        .taxonomy-card:nth-child(2) {
+            border-top-color: var(--blue);
+        }
+
+        .taxonomy-card:nth-child(3) {
+            border-top-color: var(--accent);
+        }
+
+        .taxonomy-card:nth-child(4) {
+            border-top-color: var(--green);
+        }
+
+        .taxonomy-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        .taxonomy-card h3 {
+            margin-bottom: 15px;
+
+            color: var(--primary-dark);
+
+            font-size: 24px;
+            line-height: 1.25;
+        }
+
+        .taxonomy-card ul {
+            padding-left: 21px;
+        }
+
+        .taxonomy-card li {
+            margin-bottom: 10px;
+            color: var(--muted);
+        }
+
+        .taxonomy-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           EFEKTY PRAKTYCZNE
+        ========================= */
+
+        .outcomes-box {
+            margin-top: 44px;
+            padding: 30px;
+
+            border-left:
+                6px solid var(--gimp);
+
+            border-radius: 16px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--gimp-light),
+                    #ffffff
+                );
+        }
+
+        .outcomes-box h2 {
+            margin-bottom: 17px;
+
+            color: var(--primary-dark);
+
+            font-size:
+                clamp(25px, 3vw, 32px);
+
+            line-height: 1.3;
+        }
+
+        .outcomes-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 13px 26px;
+        }
+
+        .outcome-item {
+            position: relative;
+
+            min-height: 55px;
+
+            padding:
+                13px 15px 13px 48px;
+
+            border:
+                1px solid #d9d4ca;
+
+            border-radius: 12px;
+
+            background:
+                rgba(255, 255, 255, 0.88);
+
+            color: var(--muted);
+        }
+
+        .outcome-item::before {
+            content: "\2713";
+
+            position: absolute;
+            top: 13px;
+            left: 14px;
+
+            display: flex;
+
+            width: 24px;
+            height: 24px;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: var(--gimp);
+            color: var(--white);
+
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        /* =========================
+           INFORMACJE DODATKOWE
+        ========================= */
+
+        .details-box {
+            margin-top: 44px;
+            padding: 30px;
+
+            border-left:
+                6px solid var(--primary);
+
+            border-radius: 16px;
+
+            background: var(--primary-light);
+        }
+
+        .details-box > h2 {
+            margin-bottom: 20px;
+
+            color: var(--primary-dark);
+
+            font-size:
+                clamp(25px, 3vw, 32px);
+
+            line-height: 1.3;
+        }
+
+        .details-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 21px;
+        }
+
+        .detail-card {
+            padding: 24px;
+
+            border:
+                1px solid #d4e0ed;
+
+            border-radius: 14px;
+
+            background: var(--white);
+        }
+
+        .detail-card h3 {
+            margin-bottom: 13px;
+
+            color: var(--primary-dark);
+
+            font-size: 22px;
+            line-height: 1.3;
+        }
+
+        .detail-card ul {
+            padding-left: 22px;
+        }
+
+        .detail-card li {
+            margin-bottom: 8px;
+        }
+
+        .detail-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .price-label {
+            margin-bottom: 4px;
+
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .price {
+            display: block;
+            margin-bottom: 10px;
+
+            color: var(--gimp-dark);
+
+            font-size:
+                clamp(35px, 5vw, 47px);
+
+            font-weight: 900;
+            line-height: 1.1;
+        }
+
+        .details-text {
+            margin-top: 23px;
+        }
+
+        .details-text p {
+            margin-bottom: 12px;
+            color: #4d5d6c;
+        }
+
+        .details-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .email-link,
+        .text-link {
+            color: var(--primary);
+
+            font-weight: 800;
+
+            overflow-wrap: anywhere;
+
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+
+        /* =========================
+           KONTAKT
+        ========================= */
+
+        .contact-box {
+            margin-top: 44px;
+            padding: 32px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+                );
+
+            color: var(--white);
+            text-align: center;
+
+            box-shadow:
+                0 18px 42px
+                rgba(11, 33, 72, 0.22);
+        }
+
+        .contact-box h2 {
+            margin-bottom: 13px;
+
+            color: var(--white);
+
+            font-size:
+                clamp(26px, 3vw, 34px);
+
+            line-height: 1.3;
+        }
+
+        .contact-box p {
+            max-width: 800px;
+            margin: 0 auto 9px;
+
+            color:
+                rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-box .email-link {
+            color: var(--accent);
+            font-size: 20px;
+        }
+
+        /* =========================
+           STOPKA
+        ========================= */
+
+        footer {
+            padding: 28px 20px;
+
+            background: var(--primary-dark);
+
+            color:
+                rgba(255, 255, 255, 0.88);
+
+            text-align: center;
+        }
+
+        footer p + p {
+            margin-top: 5px;
+        }
+
+        /* =========================
+           RESPONSYWNO&#346;&#262;
+        ========================= */
+
+        @media (max-width: 1050px) {
+
+            .taxonomy-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+            .information-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+            .information-card:last-child {
+                grid-column: 1 / -1;
+            }
+
+        }
+
+        @media (max-width: 850px) {
+
+            body {
+                font-size: 17px;
+            }
+
+            .page-container {
+                width:
+                    calc(100% - 28px);
+            }
+
+            .content-box {
+                padding: 32px 24px;
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .program-grid,
+            .outcomes-grid,
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .page-container {
+                width:
+                    calc(100% - 20px);
+            }
+
+            .site-header {
+                padding: 34px 14px;
+            }
+
+            .site-header::before {
+                right: 50%;
+
+                transform:
+                    translate(50%, -50%);
+            }
+
+            .nav-inner {
+                display: grid;
+
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+            .main-nav a {
+                min-height: 49px;
+
+                padding: 10px 8px;
+
+                border-bottom:
+                    1px solid
+                    rgba(255, 255, 255, 0.08);
+
+                font-size: 14px;
+            }
+
+            .banner-section {
+                padding-top: 20px;
+            }
+
+            .banner-box {
+                border-width: 3px;
+                border-radius: 14px;
+            }
+
+            main {
+                padding: 20px 0 38px;
+            }
+
+            .content-box {
+                padding: 24px 17px;
+                border-radius: 15px;
+            }
+
+            .intro {
+                padding-bottom: 25px;
+            }
+
+            .intro-logo {
+                width: 66px;
+                height: 66px;
+                font-size: 17px;
+            }
+
+            .information-grid,
+            .taxonomy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .information-card:last-child {
+                grid-column: auto;
+            }
+
+            .information-card,
+            .taxonomy-card,
+            .outcomes-box,
+            .details-box,
+            .detail-card,
+            .contact-box {
+                padding: 22px 18px;
+            }
+
+            .program-card {
+                min-height: auto;
+                padding-right: 14px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .buttons .button {
+                width: 100%;
+            }
+
+        }
+
+        @media (max-width: 390px) {
+
+            .nav-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .main-nav a {
+                min-height: 45px;
+            }
+
+            .site-header h1 {
+                font-size: 27px;
+            }
+
+        }
+
+        /* =========================
+           DRUKOWANIE
+        ========================= */
+
+        @media print {
+
+            body {
+                background: #ffffff;
+                color: #000000;
+                font-size: 12pt;
+            }
+
+            .site-header {
+                padding: 20px;
+                background: #ffffff;
+                color: #000000;
+            }
+
+            .site-header h1,
+            .site-header p {
+                color: #000000;
+            }
+
+            .site-header::before,
+            .main-nav,
+            .buttons,
+            footer {
+                display: none;
+            }
+
+            .page-container {
+                width: 100%;
+                max-width: none;
+            }
+
+            .banner-section {
+                padding-top: 10px;
+            }
+
+            .banner-box,
+            .content-box,
+            .information-card,
+            .program-card,
+            .taxonomy-card,
+            .outcomes-box,
+            .details-box,
+            .detail-card,
+            .contact-box {
+                border: 1px solid #cccccc;
+                box-shadow: none;
+            }
+
+            .content-box {
+                padding: 20px;
+            }
+
+            .information-grid,
+            .program-grid,
+            .taxonomy-grid,
+            .outcomes-grid,
+            .details-grid {
+                display: block;
+            }
+
+            .information-card,
+            .program-card,
+            .taxonomy-card,
+            .outcome-item,
+            .detail-card {
+                margin-bottom: 14px;
+                page-break-inside: avoid;
+            }
+
+            .contact-box {
+                background: #ffffff;
+                color: #000000;
+            }
+
+            .contact-box h2,
+            .contact-box p,
+            .contact-box .email-link {
+                color: #000000;
+            }
+
+        }
+
+    </style>
 
 </head>
 
-
-
 <body>
 
+    <!-- NAG&#321;&Oacute;WEK -->
 
+    <header class="site-header">
 
-<header>
+        <div class="header-content">
 
-<h1>
-Zachodniopomorskie Centrum Informatyki
-</h1>
+            <h1>
+                GIMP &ndash; cyfrowa obr&oacute;bka zdj&#281;&#263;
+            </h1>
 
-<p>
-Szkolenia informatyczne
-</p>
+            <p>
+                Retusz fotografii, korekcja kolor&oacute;w,
+                fotomonta&#380; i przygotowanie zdj&#281;&#263;
+                do publikacji
+            </p>
 
-</header>
+        </div>
 
+    </header>
 
+    <!-- NAWIGACJA -->
 
+    <nav
+        class="main-nav"
+        aria-label="G&#322;&oacute;wna nawigacja"
+    >
 
-<div class="container">
+        <div class="page-container nav-inner">
 
+            <a href="../index.html">
+                Strona g&#322;&oacute;wna
+            </a>
 
+            <a href="../szkoleniakursy.html">
+                Szkolenia / Kursy
+            </a>
 
-<h1>
-GIMP - Cyfrowa Obr&oacute;bka Zdj&#281;&#263;
-</h1>
+            <a href="../uslugiit.html">
+                Us&#322;ugi IT
+            </a>
 
+            <a href="../kontakt.html">
+                Kontakt
+            </a>
 
+        </div>
 
-<p>
-Szkolenie przeznaczone dla os&oacute;b planuj&#261;cych rozpocz&#261;&#263;
-prac&#281; w programie GIMP, kt&oacute;ry jest jedn&#261; z najlepszych
-darmowych alternatyw dla p&#322;atnych aplikacji takich jak Photoshop.
-</p>
+    </nav>
 
+    <!-- BANER -->
 
+    <section
+        class="banner-section"
+        aria-label="Baner szkolenia GIMP"
+    >
 
+        <div class="page-container">
 
-<h2>
-Kogo zapraszamy:
-</h2>
+            <div class="banner-box">
 
+                <img
+                    src="../images/szkolenieGIMP.png"
+                    alt="Szkolenie GIMP z cyfrowej obr&oacute;bki zdj&#281;&#263;"
+                    loading="eager"
+                    fetchpriority="high"
+                >
 
+            </div>
 
-<p>
-Szkolenie skierowane jest zar&oacute;wno do os&oacute;b pocz&#261;tkuj&#261;cych,
-fotograf&oacute;w amator&oacute;w, jak i wszystkich os&oacute;b chc&#261;cych poprawi&#263;
-jako&#347;&#263; swoich zdj&#281;&#263; poprzez cyfrow&#261; obr&oacute;bk&#281;.
-</p>
+        </div>
 
+    </section>
 
+    <!-- G&#321;&Oacute;WNA TRE&#346;&#262; -->
 
+    <main>
 
-<h2>
-Termin, organizacja i metodyka szkolenia:
-</h2>
+        <div class="page-container">
 
+            <article class="content-box">
 
+                <!-- WPROWADZENIE -->
 
-<p>
-Zaj&#281;cia realizowane s&#261; indywidualnie lub dla grup zorganizowanych.
-Terminy ustalane s&#261; zgodnie z potrzebami uczestnik&oacute;w.
-Szkolenie prowadzone jest g&#322;&oacute;wnie w formie praktycznych
-&#263;wicze&#324; przy komputerze.
-</p>
+                <section class="intro">
 
+                    <span
+                        class="intro-logo"
+                        aria-hidden="true"
+                    >
+                        GIMP
+                    </span>
 
+                    <h2>
+                        Praktyczne szkolenie z programu GIMP
+                    </h2>
 
+                    <p>
+                        Szkolenie przeznaczone jest dla os&oacute;b
+                        planuj&#261;cych rozpocz&#261;&#263; prac&#281;
+                        z programem GIMP, kt&oacute;ry jest
+                        bezp&#322;atnym narz&#281;dziem do edycji
+                        grafiki rastrowej i cyfrowej obr&oacute;bki
+                        fotografii.
+                    </p>
+
+                    <p>
+                        Uczestnik poznaje narz&#281;dzia umo&#380;liwiaj&#261;ce
+                        poprawianie jako&#347;ci zdj&#281;&#263;,
+                        retuszowanie fotografii, usuwanie
+                        niedoskona&#322;o&#347;ci, prac&#281; z warstwami
+                        oraz tworzenie fotomonta&#380;y.
+                    </p>
 
-<h2>
-Kwalifikacje po uko&#324;czeniu szkolenia:
-</h2>
+                </section>
 
+                <!-- PRZYCISKI -->
 
+                <div class="buttons">
 
-<p>
-Uczestnik otrzymuje certyfikat wydany w j&#281;zyku polskim i angielskim.
-Istnieje mo&#380;liwo&#347;&#263; przygotowania dokumentu w dodatkowych j&#281;zykach.
-</p>
+                    <button
+                        type="button"
+                        class="button button-outline"
+                        onclick="window.print()"
+                    >
+                        Drukuj program szkolenia
+                    </button>
 
+                    <a
+                        class="button"
+                        href="zapis-na-szkolenie.html"
+                    >
+                        Zapisz si&#281; na szkolenie
+                    </a>
 
+                </div>
 
+                <!-- INFORMACJE -->
 
-<h2>
-Ramowy program szkolenia:
-</h2>
+                <section class="content-section">
 
+                    <h2>
+                        Informacje o szkoleniu
+                    </h2>
 
+                    <div class="information-grid">
 
-<ul>
+                        <article class="information-card">
 
-<li>
-Funkcje aparatu cyfrowego i podstawy fotografii
-</li>
+                            <span
+                                class="information-icon"
+                                aria-hidden="true"
+                            >
+                                &#128247;
+                            </span>
 
-<li>
-Zmiana rozdzielczo&#347;ci zdj&#281;cia
-</li>
+                            <h3>Kogo zapraszamy?</h3>
 
-<li>
-Kadrowanie
-</li>
+                            <p>
+                                Osoby pocz&#261;tkuj&#261;ce,
+                                fotograf&oacute;w amator&oacute;w,
+                                pracownik&oacute;w firm oraz osoby
+                                przygotowuj&#261;ce zdj&#281;cia
+                                do stron internetowych i medi&oacute;w
+                                spo&#322;eczno&#347;ciowych.
+                            </p>
 
-<li>
-Ekspozycja i balans bieli
-</li>
+                        </article>
 
-<li>
-Przyciemnianie i rozja&#347;nianie zdj&#281;&#263;
-</li>
+                        <article class="information-card">
 
-<li>
-Retusz zdj&#281;&#263;
-</li>
+                            <span
+                                class="information-icon"
+                                aria-hidden="true"
+                            >
+                                &#128187;
+                            </span>
 
-<li>
-Filtry
-</li>
+                            <h3>Organizacja zaj&#281;&#263;</h3>
 
-<li>
-Korekcja barw
-</li>
+                            <p>
+                                Zaj&#281;cia prowadzone s&#261;
+                                indywidualnie lub grupowo,
+                                w formie praktycznych &#263;wicze&#324;
+                                wykonywanych przy komputerze.
+                            </p>
 
-<li>
-Prostowanie kadru
-</li>
+                        </article>
 
-<li>
-G&#322;&#281;bia ostro&#347;ci
-</li>
+                        <article class="information-card">
 
-<li>
-Wyostrzanie zdj&#281;&#263;
-</li>
+                            <span
+                                class="information-icon"
+                                aria-hidden="true"
+                            >
+                                &#127891;
+                            </span>
 
-<li>
-Efekt ruchu
-</li>
+                            <h3>Certyfikat</h3>
 
-<li>
-Wstawianie tekstu
-</li>
+                            <p>
+                                Po uko&#324;czeniu szkolenia
+                                uczestnik otrzymuje certyfikat
+                                w j&#281;zyku polskim i angielskim.
+                            </p>
 
-<li>
-Usuwanie niedoskona&#322;o&#347;ci
-</li>
+                        </article>
 
-<li>
-Zmiana koloru oczu
-</li>
+                    </div>
 
-<li>
-Usuwanie obiekt&oacute;w ze zdj&#281;&#263;
-</li>
+                </section>
 
-<li>
-Kolorowanie zdj&#281;&#263; czarno-bia&#322;ych
-</li>
+                <!-- PROGRAM -->
 
-<li>
-Fotomonta&#380;
-</li>
+                <section class="content-section">
 
-<li>
-Tworzenie prezentacji ze zdj&#281;&#263;
-</li>
+                    <h2>
+                        Ramowy program szkolenia
+                    </h2>
 
-</ul>
+                    <div class="program-grid">
 
+                        <article class="program-card">
 
+                            <h3>Podstawy fotografii</h3>
 
+                            <p>
+                                Funkcje aparatu cyfrowego,
+                                ekspozycja, ostro&#347;&#263;
+                                i kompozycja kadru.
+                            </p>
 
+                        </article>
 
-<h2>
-Dodatkowe informacje:
-</h2>
+                        <article class="program-card">
 
+                            <h3>Interfejs programu GIMP</h3>
 
+                            <p>
+                                Obszar roboczy, przybornik,
+                                doki, menu i ustawienia programu.
+                            </p>
 
-<p>
-Program szkolenia mo&#380;e zosta&#263; dostosowany do indywidualnych
-potrzeb uczestnik&oacute;w.
-</p>
+                        </article>
 
+                        <article class="program-card">
 
+                            <h3>Otwieranie i zapisywanie</h3>
 
+                            <p>
+                                Format XCF, JPG, PNG,
+                                eksportowanie i zapisywanie projektu.
+                            </p>
 
-<h2>
-Szczeg&oacute;&#322;y szkolenia:
-</h2>
+                        </article>
 
+                        <article class="program-card">
 
+                            <h3>Zmiana rozdzielczo&#347;ci</h3>
 
-<p>
+                            <p>
+                                Skalowanie obrazu i przygotowanie
+                                zdj&#281;cia do Internetu lub druku.
+                            </p>
 
-<b>
-Liczba godzin dydaktycznych:
-</b>
+                        </article>
 
-<br>
+                        <article class="program-card">
 
-- grupy zorganizowane: 20 godzin
+                            <h3>Kadrowanie</h3>
 
-<br>
+                            <p>
+                                Zmiana kompozycji i proporcji
+                                fotografii.
+                            </p>
 
-- szkolenia indywidualne: 14 godzin
+                        </article>
 
-</p>
+                        <article class="program-card">
 
+                            <h3>Prostowanie kadru</h3>
 
+                            <p>
+                                Obracanie obrazu i poprawianie
+                                linii horyzontu.
+                            </p>
 
+                        </article>
 
-<h2>
-Cena szkolenia:
-</h2>
+                        <article class="program-card">
 
+                            <h3>Ekspozycja</h3>
 
+                            <p>
+                                Korekcja jasno&#347;ci,
+                                kontrastu i poziom&oacute;w obrazu.
+                            </p>
 
-<p>
+                        </article>
 
-<b>
-249 z&#322;
-</b>
+                        <article class="program-card">
 
-</p>
+                            <h3>Balans bieli</h3>
 
+                            <p>
+                                Poprawianie temperatury barwowej
+                                fotografii.
+                            </p>
 
+                        </article>
 
+                        <article class="program-card">
 
-<p>
-Na &#380;yczenie klienta wystawiamy faktury VAT.
-</p>
+                            <h3>Korekcja kolor&oacute;w</h3>
 
+                            <p>
+                                Nasycenie, odcie&#324;, krzywe,
+                                balans kolor&oacute;w i selektywna korekta.
+                            </p>
 
+                        </article>
 
+                        <article class="program-card">
 
-<a class="button" href="zapisnaszkolenie.html">
+                            <h3>Warstwy</h3>
 
-Zapisz si&#281; na szkolenie
+                            <p>
+                                Tworzenie, kopiowanie, &#322;&#261;czenie
+                                i porz&#261;dkowanie warstw.
+                            </p>
 
-</a>
+                        </article>
 
+                        <article class="program-card">
 
+                            <h3>Zaznaczenia</h3>
 
+                            <p>
+                                Zaznaczenia prostok&#261;tne,
+                                eliptyczne, odr&#281;czne i wed&#322;ug koloru.
+                            </p>
 
-<br><br>
+                        </article>
 
+                        <article class="program-card">
 
+                            <h3>Maski warstw</h3>
 
+                            <p>
+                                Ukrywanie fragment&oacute;w obrazu
+                                bez trwa&#322;ego usuwania danych.
+                            </p>
 
-<a href="cennik-szkolen.html">
+                        </article>
 
-Zobacz pe&#322;ny cennik szkole&#324;
+                        <article class="program-card">
 
-</a>
+                            <h3>Retusz fotografii</h3>
 
+                            <p>
+                                Narz&#281;dzia klonowania,
+                                leczenia i usuwania niedoskona&#322;o&#347;ci.
+                            </p>
 
+                        </article>
 
-</div>
+                        <article class="program-card">
 
+                            <h3>Rozja&#347;nianie i przyciemnianie</h3>
 
+                            <p>
+                                Lokalna korekcja jasnych
+                                i ciemnych obszar&oacute;w zdj&#281;cia.
+                            </p>
 
+                        </article>
 
+                        <article class="program-card">
 
-<footer>
+                            <h3>Wyostrzanie zdj&#281;&#263;</h3>
 
-&copy; <span id="year"></span>
-Zachodniopomorskie Centrum Informatyki
+                            <p>
+                                Poprawa szczeg&oacute;&#322;owo&#347;ci
+                                i ostro&#347;ci fotografii.
+                            </p>
 
-</footer>
+                        </article>
 
+                        <article class="program-card">
 
+                            <h3>G&#322;&#281;bia ostro&#347;ci</h3>
 
+                            <p>
+                                Rozmywanie t&#322;a i wyr&oacute;&#380;nianie
+                                g&#322;&oacute;wnego obiektu.
+                            </p>
 
-<script>
+                        </article>
 
-document.getElementById("year").textContent =
-new Date().getFullYear();
+                        <article class="program-card">
 
-</script>
+                            <h3>Filtry i efekty</h3>
 
+                            <p>
+                                Rozmycia, zniekszta&#322;cenia,
+                                efekty artystyczne i korekcyjne.
+                            </p>
 
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Efekt ruchu</h3>
+
+                            <p>
+                                Tworzenie kierunkowego rozmycia
+                                i wra&#380;enia dynamiki.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Zmiana koloru oczu</h3>
+
+                            <p>
+                                Selektywna zmiana koloru
+                                wybranego fragmentu fotografii.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Usuwanie obiekt&oacute;w</h3>
+
+                            <p>
+                                Usuwanie niepo&#380;&#261;danych
+                                element&oacute;w i odtwarzanie t&#322;a.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Kolorowanie fotografii</h3>
+
+                            <p>
+                                Kolorowanie zdj&#281;&#263;
+                                czarno-bia&#322;ych przy u&#380;yciu warstw.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Wstawianie tekstu</h3>
+
+                            <p>
+                                Dodawanie napis&oacute;w,
+                                formatowanie i stosowanie efekt&oacute;w.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Fotomonta&#380;</h3>
+
+                            <p>
+                                &#321;&#261;czenie kilku fotografii
+                                w jeden sp&oacute;jny projekt.
+                            </p>
+
+                        </article>
+
+                        <article class="program-card">
+
+                            <h3>Prezentacja ze zdj&#281;&#263;</h3>
+
+                            <p>
+                                Przygotowanie fotografii
+                                do pokazu, publikacji i udost&#281;pnienia.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- TAKSONOMIA -->
+
+                <section class="content-section">
+
+                    <h2>
+                        Po uko&#324;czeniu szkolenia uczestnik
+                    </h2>
+
+                    <p class="taxonomy-intro">
+                        Uczestnik zdobywa wiedz&#281; i praktyczne
+                        umiej&#281;tno&#347;ci umo&#380;liwiaj&#261;ce
+                        samodzieln&#261; obr&oacute;bk&#281; fotografii
+                        oraz tworzenie prostych projekt&oacute;w
+                        graficznych.
+                    </p>
+
+                    <div class="taxonomy-grid">
+
+                        <!-- WIE -->
+
+                        <article class="taxonomy-card">
+
+                            <h3>Wie</h3>
+
+                            <ul>
+
+                                <li>
+                                    Czym jest grafika rastrowa.
+                                </li>
+
+                                <li>
+                                    Do czego s&#322;u&#380;y
+                                    program GIMP.
+                                </li>
+
+                                <li>
+                                    Jakie formaty plik&oacute;w
+                                    wykorzystuje si&#281;
+                                    podczas obr&oacute;bki zdj&#281;&#263;.
+                                </li>
+
+                                <li>
+                                    Do czego s&#322;u&#380;&#261;
+                                    warstwy, maski i zaznaczenia.
+                                </li>
+
+                                <li>
+                                    Jak przygotowa&#263; zdj&#281;cie
+                                    do Internetu lub druku.
+                                </li>
+
+                            </ul>
+
+                        </article>
+
+                        <!-- ROZUMIE -->
+
+                        <article class="taxonomy-card">
+
+                            <h3>Rozumie</h3>
+
+                            <ul>
+
+                                <li>
+                                    Zasady pracy z warstwami.
+                                </li>
+
+                                <li>
+                                    Znaczenie rozdzielczo&#347;ci
+                                    i wymiar&oacute;w obrazu.
+                                </li>
+
+                                <li>
+                                    R&oacute;&#380;nic&#281; pomi&#281;dzy
+                                    formatami JPG, PNG i XCF.
+                                </li>
+
+                                <li>
+                                    Znaczenie poprawnej ekspozycji,
+                                    kontrastu i balansu bieli.
+                                </li>
+
+                                <li>
+                                    Zasady niedestrukcyjnej
+                                    obr&oacute;bki fotografii.
+                                </li>
+
+                            </ul>
+
+                        </article>
+
+                        <!-- UMIE -->
+
+                        <article class="taxonomy-card">
+
+                            <h3>Umie</h3>
+
+                            <ul>
+
+                                <li>
+                                    Kadrowa&#263; i skalowa&#263;
+                                    fotografie.
+                                </li>
+
+                                <li>
+                                    Korygowa&#263; jasno&#347;&#263;,
+                                    kontrast i kolory.
+                                </li>
+
+                                <li>
+                                    Pos&#322;ugiwa&#263; si&#281;
+                                    warstwami i maskami.
+                                </li>
+
+                                <li>
+                                    Retuszowa&#263; niedoskona&#322;o&#347;ci.
+                                </li>
+
+                                <li>
+                                    Dodawa&#263; tekst i proste
+                                    elementy graficzne.
+                                </li>
+
+                            </ul>
+
+                        </article>
+
+                        <!-- POTRAFI -->
+
+                        <article class="taxonomy-card">
+
+                            <h3>Potrafi</h3>
+
+                            <ul>
+
+                                <li>
+                                    Samodzielnie poprawi&#263;
+                                    jako&#347;&#263; fotografii.
+                                </li>
+
+                                <li>
+                                    Usun&#261;&#263; niepo&#380;&#261;dany
+                                    obiekt ze zdj&#281;cia.
+                                </li>
+
+                                <li>
+                                    Wykona&#263; prosty fotomonta&#380;.
+                                </li>
+
+                                <li>
+                                    Przygotowa&#263; zdj&#281;cie
+                                    do strony internetowej.
+                                </li>
+
+                                <li>
+                                    Wyeksportowa&#263; gotowy projekt
+                                    do odpowiedniego formatu.
+                                </li>
+
+                            </ul>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- EFEKTY -->
+
+                <section class="outcomes-box">
+
+                    <h2>
+                        Praktyczne efekty szkolenia
+                    </h2>
+
+                    <div class="outcomes-grid">
+
+                        <div class="outcome-item">
+                            Poprawienie jasno&#347;ci i kolorystyki
+                            fotografii.
+                        </div>
+
+                        <div class="outcome-item">
+                            Wykadrowanie i wyprostowanie zdj&#281;cia.
+                        </div>
+
+                        <div class="outcome-item">
+                            Usuni&#281;cie drobnych niedoskona&#322;o&#347;ci.
+                        </div>
+
+                        <div class="outcome-item">
+                            Usuni&#281;cie niepotrzebnego obiektu
+                            z fotografii.
+                        </div>
+
+                        <div class="outcome-item">
+                            Rozmycie t&#322;a i wyr&oacute;&#380;nienie
+                            fotografowanego obiektu.
+                        </div>
+
+                        <div class="outcome-item">
+                            Dodanie tekstu i element&oacute;w
+                            graficznych.
+                        </div>
+
+                        <div class="outcome-item">
+                            Przygotowanie prostego fotomonta&#380;u.
+                        </div>
+
+                        <div class="outcome-item">
+                            Eksport zdj&#281;cia do Internetu
+                            lub druku.
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- INFORMACJE DODATKOWE -->
+
+                <section class="details-box">
+
+                    <h2>
+                        Informacje dodatkowe
+                    </h2>
+
+                    <div class="details-grid">
+
+                        <article class="detail-card">
+
+                            <h3>Czas trwania</h3>
+
+                            <ul>
+
+                                <li>
+                                    <strong>
+                                        Grupy zorganizowane:
+                                    </strong>
+
+                                    20 godzin dydaktycznych
+                                </li>
+
+                                <li>
+                                    <strong>
+                                        Szkolenie indywidualne:
+                                    </strong>
+
+                                    14 godzin dydaktycznych
+                                </li>
+
+                            </ul>
+
+                        </article>
+
+                        <article class="detail-card">
+
+                            <h3>Cena szkolenia</h3>
+
+                            <p class="price-label">
+                                Cena szkolenia
+                            </p>
+
+                            <strong class="price">
+                                249&nbsp;z&#322;
+                            </strong>
+
+                            <p>
+                                Na &#380;yczenie klienta wystawiamy
+                                faktur&#281; VAT.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                    <div class="details-text">
+
+                        <p>
+                            Program szkolenia mo&#380;e zosta&#263;
+                            dostosowany do indywidualnych potrzeb
+                            uczestnika, firmy lub grupy zamkni&#281;tej.
+                        </p>
+
+                        <p>
+                            W celu uzyskania szczeg&oacute;&#322;owego
+                            programu prosimy o kontakt:
+                        </p>
+
+                        <p>
+
+                            <a
+                                class="email-link"
+                                href="mailto:biuro@zpci.pl"
+                            >
+                                biuro@zpci.pl
+                            </a>
+
+                        </p>
+
+                        <p>
+                            Zobacz r&oacute;wnie&#380;
+                            <a
+                                class="text-link"
+                                href="cennik-szkolen.html"
+                            >
+                                pe&#322;ny cennik szkole&#324;
+                            </a>
+                            oraz aktualne promocje.
+                        </p>
+
+                    </div>
+
+                </section>
+
+                <!-- KONTAKT -->
+
+                <section class="contact-box">
+
+                    <h2>
+                        Zapisz si&#281; na szkolenie GIMP
+                    </h2>
+
+                    <p>
+                        Terminy szkolenia ustalane s&#261;
+                        indywidualnie z uczestnikami.
+                    </p>
+
+                    <p>
+                        Kontakt:
+                    </p>
+
+                    <p>
+
+                        <a
+                            class="email-link"
+                            href="mailto:biuro@zpci.pl"
+                        >
+                            biuro@zpci.pl
+                        </a>
+
+                    </p>
+
+                    <div class="buttons">
+
+                        <a
+                            class="button"
+                            href="zapis-na-szkolenie.html"
+                        >
+                            Zapisz si&#281; na szkolenie
+                        </a>
+
+                        <a
+                            class="button button-secondary"
+                            href="../kontakt.html"
+                        >
+                            Przejd&#378; do kontaktu
+                        </a>
+
+                    </div>
+
+                </section>
+
+                <!-- POWROTY -->
+
+                <div class="buttons">
+
+                    <a
+                        class="button button-secondary"
+                        href="../szkoleniakursy.html"
+                    >
+                        Powr&oacute;t do listy szkole&#324;
+                    </a>
+
+                    <a
+                        class="button button-secondary"
+                        href="../index.html"
+                    >
+                        Powr&oacute;t do strony g&#322;&oacute;wnej
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </main>
+
+    <!-- STOPKA -->
+
+    <footer>
+
+        <p>
+            &copy;
+            <span id="year">2026</span>
+            Zachodniopomorskie Centrum Informatyki.
+            Wszelkie prawa zastrze&#380;one.
+        </p>
+
+        <p>
+            GIMP &bull;
+            Cyfrowa obr&oacute;bka zdj&#281;&#263; &bull;
+            Retusz fotografii
+        </p>
+
+    </footer>
+
+    <script>
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
 
 </body>
-
 </html>
