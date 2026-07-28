@@ -6,129 +6,479 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>
-Podstawy obs&#322;ugi komputera i Internetu | ZPCI
-</title>
+<title>Podstawy obsługi komputera i Internetu | ZPCI</title>
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:Arial,sans-serif;
-    background:#f4f6f9;
-    color:#333;
-    line-height:1.7;
+html {
+    scroll-behavior: smooth;
 }
 
-header{
-    background:#1f3b73;
-    color:#fff;
-    text-align:center;
-    padding:30px 20px;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    line-height: 1.7;
 }
 
-header h1{
-    margin-bottom:10px;
+/* NAGŁÓWEK */
+
+header {
+    background: linear-gradient(135deg, #0b2148, #1f3b73);
+    color: #fff;
+    text-align: center;
+    padding: 35px 20px;
 }
 
-nav{
-    background:#16315d;
-    text-align:center;
-    padding:12px;
+header h1 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
 }
 
-nav a{
-    color:#fff;
-    text-decoration:none;
-    margin:0 15px;
-    font-weight:bold;
+header p {
+    color: #e4ecfa;
+    font-size: 1.1rem;
 }
 
-nav a:hover{
-    text-decoration:underline;
+/* MENU */
+
+nav {
+    background: #16315d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 15px;
 }
 
-.container{
-    max-width:1100px;
-    margin:30px auto;
-    background:#fff;
-    padding:35px;
-    border-radius:10px;
-    box-shadow:0 0 15px rgba(0,0,0,.1);
+nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-h1{
-    color:#1f3b73;
-    margin-bottom:20px;
+nav a:hover,
+nav a:focus {
+    background: #244b87;
 }
 
-h2{
-    color:#1f3b73;
-    margin-top:30px;
-    margin-bottom:15px;
-    border-bottom:2px solid #1f3b73;
-    padding-bottom:8px;
+/* GŁÓWNA TREŚĆ */
+
+main {
+    padding: 30px 20px;
 }
 
-h3{
-    color:#1f3b73;
-    margin-top:20px;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-p{
-    margin-bottom:15px;
+/* BANER */
+
+.course-banner {
+    width: 100%;
+    max-height: 480px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
 }
 
-ul{
-    margin-left:25px;
-    margin-bottom:20px;
+/* NAGŁÓWKI */
+
+.container > h1 {
+    color: #1f3b73;
+    margin-bottom: 20px;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
 }
 
-li{
-    margin-bottom:8px;
+h2 {
+    color: #1f3b73;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #1f3b73;
+    padding-bottom: 8px;
 }
 
-.info-box{
-    background:#eef4ff;
-    border-left:5px solid #1f3b73;
-    padding:20px;
-    margin-top:30px;
-    border-radius:8px;
+h3 {
+    color: #1f3b73;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.button{
-
-    display:inline-block;
-    margin-top:20px;
-    padding:14px 28px;
-    background:#1f3b73;
-    color:#fff;
-    text-decoration:none;
-    border-radius:6px;
-    font-weight:bold;
-    transition:.3s;
-
+p {
+    margin-bottom: 15px;
 }
 
-.button:hover{
-
-    background:#16315d;
-
+ul {
+    margin-left: 25px;
+    margin-bottom: 20px;
 }
 
-footer{
+li {
+    margin-bottom: 8px;
+}
 
-    background:#003366;
-    color:#fff;
-    text-align:center;
-    padding:18px;
-    margin-top:30px;
+li::marker {
+    color: #1f3b73;
+}
 
+/* TAKSONOMIA EFEKTÓW KSZTAŁCENIA */
+
+.taxonomy-intro {
+    margin-bottom: 20px;
+}
+
+.taxonomy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.taxonomy-card {
+    background: #f4f7fc;
+    border-top: 5px solid #1f3b73;
+    padding: 22px;
+    border-radius: 10px;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.taxonomy-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(31, 59, 115, 0.16);
+}
+
+.taxonomy-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.taxonomy-card ul {
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+.taxonomy-card li {
+    margin-bottom: 8px;
+}
+
+.taxonomy-card li::marker {
+    color: #c57c00;
+}
+
+/* TABELA TAKSONOMII */
+
+.taxonomy-table-wrapper {
+    margin-top: 25px;
+    overflow-x: auto;
+}
+
+.taxonomy-table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+}
+
+.taxonomy-table th,
+.taxonomy-table td {
+    padding: 14px;
+    border: 1px solid #d8e1ef;
+    text-align: left;
+    vertical-align: top;
+}
+
+.taxonomy-table th {
+    background: #1f3b73;
+    color: #fff;
+}
+
+.taxonomy-table tbody tr:nth-child(even) {
+    background: #f4f7fc;
+}
+
+.taxonomy-table tbody tr:hover {
+    background: #eaf1fb;
+}
+
+/* ZASTOSOWANIE PRAKTYCZNE */
+
+.practical-box {
+    background: #fff8e8;
+    border-left: 5px solid #c57c00;
+    padding: 22px;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.practical-box h2 {
+    margin-top: 0;
+}
+
+/* INFORMACJE */
+
+.info-box {
+    background: #eef4ff;
+    border-left: 5px solid #1f3b73;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.info-box h2 {
+    margin-top: 0;
+}
+
+.info-box hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #b9c9df;
+}
+
+.info-box a:not(.button) {
+    color: #1f3b73;
+    font-weight: bold;
+}
+
+/* PRZYCISK */
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: #1f3b73;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+}
+
+.button:hover,
+.button:focus {
+    background: #16315d;
+    transform: translateY(-2px);
+}
+
+/* STOPKA */
+
+footer {
+    background: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 20px 15px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* TABLETY */
+
+@media (max-width: 900px) {
+
+    .taxonomy-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+
+    main {
+        padding: 25px 15px;
+    }
+
+    .container {
+        padding: 28px;
+    }
+
+    .course-banner {
+        max-height: 360px;
+    }
+}
+
+/* TELEFONY */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 28px 15px;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 13px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    main {
+        padding: 18px 10px;
+    }
+
+    .container {
+        padding: 20px 16px;
+        border-radius: 8px;
+    }
+
+    .course-banner {
+        max-height: 260px;
+        margin-bottom: 22px;
+        border-radius: 7px;
+    }
+
+    .container > h1 {
+        font-size: 1.65rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .taxonomy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .taxonomy-card {
+        padding: 20px 17px;
+    }
+
+    .info-box,
+    .practical-box {
+        padding: 20px 15px;
+    }
+
+    .button {
+        width: 100%;
+        padding: 14px 15px;
+    }
+}
+
+/* BARDZO MAŁE EKRANY */
+
+@media (max-width: 380px) {
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 18px 13px;
+    }
+
+    ul {
+        margin-left: 20px;
+    }
+}
+
+/* DRUKOWANIE */
+
+@media print {
+
+    body {
+        background: #fff;
+        color: #000;
+    }
+
+    nav,
+    .button,
+    footer {
+        display: none;
+    }
+
+    header {
+        background: #fff;
+        color: #000;
+        padding: 10px 0 20px;
+    }
+
+    header h1,
+    header p {
+        color: #000;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .course-banner {
+        max-height: 300px;
+        box-shadow: none;
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: #000;
+    }
+
+    .taxonomy-grid {
+        display: block;
+    }
+
+    .taxonomy-card {
+        background: #fff;
+        border: 1px solid #000;
+        margin-bottom: 15px;
+        break-inside: avoid;
+    }
+
+    .taxonomy-table {
+        min-width: 0;
+    }
+
+    .taxonomy-table th {
+        background: #fff;
+        color: #000;
+    }
+
+    .info-box,
+    .practical-box {
+        background: #fff;
+        border: 1px solid #000;
+    }
 }
 
 </style>
@@ -139,205 +489,398 @@ footer{
 
 <header>
 
-<h1>
-Zachodniopomorskie Centrum Informatyki
-</h1>
+    <h1>Zachodniopomorskie Centrum Informatyki</h1>
 
-<p>
-Szkolenia komputerowe i informatyczne
-</p>
+    <p>Szkolenia komputerowe i informatyczne</p>
 
 </header>
 
-<nav>
+<nav aria-label="Menu główne">
 
-<a href="index.html">
-Strona g&#322;&oacute;wna
-</a>
+    <a href="index.html">Strona główna</a>
 
-<a href="szkoleniakursy.html">
-Szkolenia
-</a>
+    <a href="szkoleniakursy.html">Szkolenia</a>
 
-<a href="kontakt.html">
-Kontakt
-</a>
+    <a href="kontakt.html">Kontakt</a>
 
 </nav>
 
-<div class="container">
+<main>
 
-<h1>
-Podstawy obs&#322;ugi komputera i Internetu
-</h1>
+    <article class="container">
 
-<h2>
-Kogo zapraszamy?
-</h2>
+        <img
+            class="course-banner"
+            src="../images/Podstawyobslugikomputeraiinternetu.png"
+            alt="Podstawy obsługi komputera i Internetu – szkolenie ZPCI"
+        >
 
-<p>
-Szkolenie przeznaczone jest dla os&oacute;b,
-kt&oacute;re dopiero zaczynaj&#261; prac&#281;
-z komputerem lub tabletem.
-</p>
+        <h1>Podstawy obsługi komputera i Internetu</h1>
 
-<p>
-Kurs pozwala zdoby&#263; podstawowe
-umiej&#281;tno&#347;ci obs&#322;ugi urz&#261;dze&#324;
-oraz Internetu.
-</p>
+        <section>
 
-<h2>
-Termin, organizacja i metodyka szkolenia
-</h2>
+            <h2>Kogo zapraszamy?</h2>
 
-<p>
-Zaj&#281;cia prowadzone s&#261;
-indywidualnie lub w grupach.
-Terminy s&#261; elastyczne
-i dopasowane do uczestnika.
-</p>
+            <p>
+                Szkolenie przeznaczone jest dla osób, które dopiero zaczynają
+                pracę z komputerem lub tabletem.
+            </p>
 
-<p>
-Szkolenie ma form&#281;
-warsztat&oacute;w praktycznych
-na komputerze lub tablecie.
-</p>
+            <p>
+                Kurs pozwala zdobyć podstawowe umiejętności obsługi urządzeń
+                oraz korzystania z Internetu.
+            </p>
 
-<h2>
-Kwalifikacje po uko&#324;czeniu szkolenia
-</h2>
+        </section>
 
-<p>
-Uczestnik otrzymuje
-za&#347;wiadczenie
-w j&#281;zyku polskim
-i angielskim.
-</p>
+        <section>
 
-<h2>
-Ramowy program szkolenia
-</h2>
+            <h2>Termin, organizacja i metodyka szkolenia</h2>
 
-<ul>
+            <p>
+                Zajęcia prowadzone są indywidualnie lub w grupach. Terminy są
+                elastyczne i dopasowane do potrzeb uczestników.
+            </p>
 
-<li>Wprowadzenie do Windows</li>
+            <p>
+                Szkolenie ma formę praktycznych warsztatów prowadzonych
+                na komputerze lub tablecie.
+            </p>
 
-<li>Pliki i foldery</li>
+        </section>
 
-<li>Obs&#322;uga klawiatury</li>
+        <section>
 
-<li>Internet i wyszukiwarki</li>
+            <h2>Kwalifikacje po ukończeniu szkolenia</h2>
 
-<li>Poczta e-mail</li>
+            <p>
+                Po zakończeniu szkolenia uczestnik otrzymuje zaświadczenie
+                w języku polskim i angielskim.
+            </p>
 
-<li>Za&#322;&#261;czniki i komunikacja online</li>
+        </section>
 
-<li>Instalacja program&oacute;w</li>
+        <section>
 
-<li>No&#347;niki danych (USB, CD/DVD)</li>
+            <h2>Ramowy program szkolenia</h2>
 
-<li>Zdj&#281;cia i multimedia</li>
+            <ul>
+                <li>Wprowadzenie do systemu Windows</li>
+                <li>Obsługa plików i folderów</li>
+                <li>Obsługa klawiatury i myszy</li>
+                <li>Internet i wyszukiwarki internetowe</li>
+                <li>Zakładanie i obsługa poczty e-mail</li>
+                <li>Wysyłanie załączników i komunikacja online</li>
+                <li>Instalowanie i usuwanie programów</li>
+                <li>Obsługa nośników danych: USB oraz CD/DVD</li>
+                <li>Zdjęcia, filmy i multimedia</li>
+                <li>Bezpieczeństwo w sieci</li>
+                <li>Podstawy bankowości internetowej</li>
+                <li>Podstawy obsługi programów Microsoft Office</li>
+                <li>Ustawienia systemu Windows</li>
+                <li>Ochrona komputera przed wirusami</li>
+                <li>Podstawowe narzędzia systemowe</li>
+                <li>Praktyczne zastosowanie komputera w życiu codziennym</li>
+            </ul>
 
-<li>Bezpiecze&#324;stwo w sieci</li>
+        </section>
 
-<li>Bankowo&#347;&#263; internetowa</li>
+        <!-- TAKSONOMIA EFEKTÓW KSZTAŁCENIA -->
 
-<li>Podstawy MS Office</li>
+        <section>
 
-<li>Ustawienia systemu Windows</li>
+            <h2>Taksonomia efektów kształcenia</h2>
 
-<li>Ochrona przed wirusami</li>
+            <p class="taxonomy-intro">
+                Po zakończeniu szkolenia uczestnik osiąga efekty kształcenia
+                w zakresie wiedzy, rozumienia, praktycznego zastosowania,
+                analizy, oceny oraz samodzielnego wykonywania podstawowych
+                czynności na komputerze i w Internecie.
+            </p>
 
-<li>Narz&#281;dzzia systemowe</li>
+            <div class="taxonomy-grid">
 
-<li>Praktyczne zastosowanie komputera
-w &#380;yciu codziennym</li>
+                <div class="taxonomy-card">
 
-</ul>
+                    <h3>Uczestnik wie</h3>
 
-<div class="info-box">
-<h2>
-Dodatkowe informacje
-</h2>
+                    <ul>
+                        <li>jakie są podstawowe elementy komputera,</li>
+                        <li>do czego służy system operacyjny Windows,</li>
+                        <li>czym są pliki, foldery i programy,</li>
+                        <li>do czego służą przeglądarki internetowe,</li>
+                        <li>czym jest poczta elektroniczna,</li>
+                        <li>jakie zagrożenia mogą występować w Internecie.</li>
+                    </ul>
 
-<p>
-W celu uzyskania szczeg&oacute;&#322;owego programu szkolenia
-prosimy o kontakt:
-</p>
+                </div>
 
-<p>
-<strong>
-biuro@zpci.pl
-</strong>
-</p>
+                <div class="taxonomy-card">
 
-<p>
-Dla szkole&#324; indywidualnych i grupowych
-mo&#380;liwe jest dostosowanie programu
-do potrzeb uczestnik&oacute;w.
-</p>
+                    <h3>Uczestnik rozumie</h3>
 
-<hr style="margin:20px 0;">
+                    <ul>
+                        <li>zasady bezpiecznego korzystania z komputera,</li>
+                        <li>różnicę między plikiem, folderem i programem,</li>
+                        <li>sposób działania wyszukiwarki internetowej,</li>
+                        <li>znaczenie silnego hasła,</li>
+                        <li>zasady ochrony danych osobowych,</li>
+                        <li>potrzebę wykonywania aktualizacji systemu.</li>
+                    </ul>
 
-<h3>
-Czas trwania
-</h3>
+                </div>
 
-<ul>
+                <div class="taxonomy-card">
 
-<li>
-Grupy zorganizowane: 20 h
-</li>
+                    <h3>Uczestnik umie</h3>
 
-<li>
-Indywidualnie: 14 h
-</li>
+                    <ul>
+                        <li>włączyć i prawidłowo wyłączyć komputer,</li>
+                        <li>posługiwać się myszą i klawiaturą,</li>
+                        <li>tworzyć, kopiować i usuwać foldery,</li>
+                        <li>zapisywać i odnajdywać pliki,</li>
+                        <li>korzystać z przeglądarki internetowej,</li>
+                        <li>wysyłać i odbierać wiadomości e-mail.</li>
+                    </ul>
 
-</ul>
+                </div>
 
-<h3>
-Cena szkolenia
-</h3>
+                <div class="taxonomy-card">
 
-<p>
-<strong>
-249 z&#322;
-</strong>
-</p>
+                    <h3>Uczestnik stosuje</h3>
 
-<p>
-Na &#380;yczenie wystawiamy faktury VAT.
-</p>
+                    <ul>
+                        <li>poznane funkcje systemu Windows,</li>
+                        <li>wyszukiwarki do znajdowania informacji,</li>
+                        <li>pocztę elektroniczną do komunikacji,</li>
+                        <li>podstawowe programy biurowe,</li>
+                        <li>nośniki USB do przenoszenia plików,</li>
+                        <li>zasady bezpieczeństwa podczas pracy online.</li>
+                    </ul>
 
-<p>
-Zobacz pe&#322;ny cennik szkole&#324;
-oraz aktualne promocje i rabaty.
-</p>
+                </div>
 
-<a class="button"
-href="zapisnaszkolenie.html">
+                <div class="taxonomy-card">
 
-Zapisz si&#281; na szkolenie
+                    <h3>Uczestnik analizuje i ocenia</h3>
 
-</a>
+                    <ul>
+                        <li>czy strona internetowa jest wiarygodna,</li>
+                        <li>czy wiadomość e-mail może być próbą oszustwa,</li>
+                        <li>czy pobierany plik jest bezpieczny,</li>
+                        <li>które informacje można udostępnić w sieci,</li>
+                        <li>czy hasło odpowiednio chroni konto,</li>
+                        <li>który program najlepiej wykona dane zadanie.</li>
+                    </ul>
 
-</div>
+                </div>
 
-</div>
+                <div class="taxonomy-card">
+
+                    <h3>Uczestnik wykonuje samodzielnie</h3>
+
+                    <ul>
+                        <li>porządkuje dokumenty w folderach,</li>
+                        <li>wyszukuje potrzebne informacje,</li>
+                        <li>tworzy i wysyła wiadomość z załącznikiem,</li>
+                        <li>instaluje podstawowe programy,</li>
+                        <li>przenosi zdjęcia i dokumenty na nośnik USB,</li>
+                        <li>wykonuje codzienne czynności na komputerze.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h2>Poziomy taksonomii szkolenia</h2>
+
+            <div class="taxonomy-table-wrapper">
+
+                <table class="taxonomy-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Poziom</th>
+                            <th>Efekt kształcenia</th>
+                            <th>Przykład praktyczny</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>1. Wiedza</td>
+                            <td>
+                                Uczestnik zna podstawowe pojęcia związane
+                                z komputerem i Internetem.
+                            </td>
+                            <td>
+                                Rozpoznaje pulpit, folder, plik, przeglądarkę
+                                i program komputerowy.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>2. Rozumienie</td>
+                            <td>
+                                Uczestnik rozumie sposób działania podstawowych
+                                funkcji komputera.
+                            </td>
+                            <td>
+                                Wyjaśnia, dlaczego należy chronić hasła
+                                i wykonywać aktualizacje.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>3. Zastosowanie</td>
+                            <td>
+                                Uczestnik wykorzystuje poznane funkcje
+                                w praktyce.
+                            </td>
+                            <td>
+                                Tworzy folder, zapisuje dokument i wysyła
+                                wiadomość e-mail.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>4. Analiza</td>
+                            <td>
+                                Uczestnik rozpoznaje problemy i zagrożenia.
+                            </td>
+                            <td>
+                                Rozpoznaje podejrzaną wiadomość lub
+                                niebezpieczną stronę internetową.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>5. Ocena</td>
+                            <td>
+                                Uczestnik ocenia poprawność i bezpieczeństwo
+                                wykonywanych czynności.
+                            </td>
+                            <td>
+                                Sprawdza adres strony przed podaniem danych
+                                lub wykonaniem płatności.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>6. Samodzielne działanie</td>
+                            <td>
+                                Uczestnik samodzielnie wykorzystuje komputer
+                                w codziennym życiu.
+                            </td>
+                            <td>
+                                Wyszukuje informacje, obsługuje pocztę,
+                                dokumenty, zdjęcia i podstawowe programy.
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <section class="practical-box">
+
+            <h2>Zastosowanie umiejętności w życiu codziennym</h2>
+
+            <p>
+                Uczestnik potrafi samodzielnie korzystać z komputera,
+                tabletu i Internetu podczas wykonywania podstawowych
+                czynności życia codziennego.
+            </p>
+
+            <p>
+                Potrafi między innymi wyszukiwać informacje, korzystać
+                z poczty elektronicznej, przygotowywać proste dokumenty,
+                przesyłać zdjęcia, uczestniczyć w komunikacji online
+                oraz bezpiecznie korzystać z usług internetowych.
+            </p>
+
+        </section>
+
+        <section class="info-box">
+
+            <h2>Dodatkowe informacje</h2>
+
+            <p>
+                W celu uzyskania szczegółowego programu szkolenia prosimy
+                o kontakt:
+            </p>
+
+            <p>
+                <strong>
+                    <a href="mailto:biuro@zpci.pl">biuro@zpci.pl</a>
+                </strong>
+            </p>
+
+            <p>
+                W przypadku szkoleń indywidualnych i grupowych istnieje
+                możliwość dostosowania programu do potrzeb uczestników.
+            </p>
+
+            <hr>
+
+            <h3>Czas trwania</h3>
+
+            <ul>
+                <li>Grupy zorganizowane: 20 godzin</li>
+                <li>Szkolenie indywidualne: 14 godzin</li>
+            </ul>
+
+            <h3>Cena szkolenia</h3>
+
+            <p>
+                <strong>249 zł</strong>
+            </p>
+
+            <p>
+                Na życzenie wystawiamy faktury VAT.
+            </p>
+
+            <p>
+                Zobacz pełny cennik szkoleń oraz aktualne promocje i rabaty.
+            </p>
+
+            <a
+                class="button"
+                href="zapisnaszkolenie.html"
+            >
+                Zapisz się na szkolenie
+            </a>
+
+        </section>
+
+    </article>
+
+</main>
 
 <footer>
 
-<p>
-
-&copy; 2026
-Zachodniopomorskie Centrum Informatyki.
-
-Wszelkie prawa zastrze&#380;one.
-
-</p>
+    <p>
+        &copy; <span id="year"></span>
+        Zachodniopomorskie Centrum Informatyki.
+        Wszelkie prawa zastrzeżone.
+    </p>
 
 </footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
