@@ -1,17 +1,122 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl-PL">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>
-        HTML + CSS - Projektowanie stron WWW | ZPCI
-    </title>
+    <title>Szkolenie HTML i CSS Szczecin – tworzenie stron WWW | ZPCI</title>
 
     <meta
         name="description"
-        content="Praktyczne szkolenie HTML i CSS z projektowania responsywnych stron internetowych. Tworzenie struktury strony, stylów CSS, formularzy, nawigacji i publikacja witryny."
+        content="Praktyczne szkolenie HTML i CSS w Szczecinie. Nauka tworzenia responsywnych stron WWW, formularzy, nawigacji, Flexbox, CSS Grid, podstaw SEO i publikacji witryny."
     >
+
+    <meta
+        name="keywords"
+        content="szkolenie HTML CSS Szczecin, kurs HTML i CSS, tworzenie stron WWW, projektowanie stron internetowych, responsywne strony, Flexbox, CSS Grid, ZPCI"
+    >
+
+    <meta name="author" content="Zachodniopomorskie Centrum Informatyki">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0b2148">
+
+    <link
+        rel="canonical"
+        href="https://www.zpci.pl/szkoleniakursy/html-css-projektowanie-stron-www.html"
+    >
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="ZPCI">
+    <meta
+        property="og:title"
+        content="Szkolenie HTML i CSS – projektowanie stron WWW | ZPCI"
+    >
+    <meta
+        property="og:description"
+        content="Praktyczna nauka HTML5 i CSS3: responsywne strony, formularze, Flexbox, CSS Grid, dostępność, podstawy SEO i publikacja witryny."
+    >
+    <meta
+        property="og:url"
+        content="https://www.zpci.pl/szkoleniakursy/html-css-projektowanie-stron-www.html"
+    >
+    <meta
+        property="og:image"
+        content="https://www.zpci.pl/images/SzkolenieHTMLICSS-TWORZENIESTRONWWW.png"
+    >
+    <meta
+        property="og:image:alt"
+        content="Szkolenie HTML i CSS z tworzenia responsywnych stron internetowych"
+    >
+
+    <!-- X / Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta
+        name="twitter:title"
+        content="Szkolenie HTML i CSS – tworzenie stron WWW | ZPCI"
+    >
+    <meta
+        name="twitter:description"
+        content="Praktyczne szkolenie HTML5 i CSS3 z projektowania responsywnych stron internetowych."
+    >
+    <meta
+        name="twitter:image"
+        content="https://www.zpci.pl/images/SzkolenieHTMLICSS-TWORZENIESTRONWWW.png"
+    >
+
+    <!-- Dane strukturalne SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "EducationalOrganization",
+                "@id": "https://www.zpci.pl/#organization",
+                "name": "Zachodniopomorskie Centrum Informatyki",
+                "alternateName": "ZPCI",
+                "url": "https://www.zpci.pl/",
+                "email": "biuro@zpci.pl"
+            },
+            {
+                "@type": "Course",
+                "@id": "https://www.zpci.pl/szkoleniakursy/html-css-projektowanie-stron-www.html#course",
+                "name": "HTML i CSS – projektowanie stron WWW",
+                "description": "Praktyczne szkolenie z tworzenia responsywnych stron internetowych w HTML5 i CSS3, obejmujące semantyczną strukturę dokumentu, formularze, Flexbox, CSS Grid, dostępność, podstawy SEO i publikację witryny.",
+                "url": "https://www.zpci.pl/szkoleniakursy/html-css-projektowanie-stron-www.html",
+                "image": "https://www.zpci.pl/images/SzkolenieHTMLICSS-TWORZENIESTRONWWW.png",
+                "inLanguage": "pl-PL",
+                "educationalLevel": "Poziom podstawowy",
+                "provider": {
+                    "@id": "https://www.zpci.pl/#organization"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Strona główna",
+                        "item": "https://www.zpci.pl/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Szkolenia i kursy",
+                        "item": "https://www.zpci.pl/szkoleniakursy.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "HTML i CSS – projektowanie stron WWW",
+                        "item": "https://www.zpci.pl/szkoleniakursy/html-css-projektowanie-stron-www.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 
     <style>
         * {
@@ -40,26 +145,106 @@
         }
 
         /* =========================
-           NAGŁÓWEK
+           NAGŁÓWEK Z LOGO
         ========================= */
 
-        header {
-            padding: 30px 20px;
-            background: #1f3b73;
+        .site-header {
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 88% 15%,
+                    rgba(255, 255, 255, 0.13),
+                    transparent 31%
+                ),
+                linear-gradient(135deg, #0b2148, #1f3b73);
             color: #fff;
-            text-align: center;
         }
 
-        header h1 {
-            margin-bottom: 10px;
+        .site-header::after {
+            content: "";
+            position: absolute;
+            top: -170px;
+            right: -120px;
+            width: 390px;
+            height: 390px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .header-inner {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            min-height: 145px;
+            margin: 0 auto;
+            padding: 24px 25px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            min-width: 0;
+            align-items: center;
+            gap: 16px;
             color: #fff;
-            font-size: clamp(29px, 5vw, 45px);
+            text-decoration: none;
+        }
+
+        .logo-image {
+            width: 88px;
+            height: 88px;
+            flex: 0 0 88px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 6px 19px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo-text {
+            min-width: 0;
+        }
+
+        .logo-text strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #fff;
+            font-size: clamp(22px, 3vw, 32px);
             line-height: 1.2;
         }
 
-        header p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 20px;
+        .logo-text span {
+            display: block;
+            color: #dce8fa;
+            font-size: 16px;
+        }
+
+        .header-course {
+            max-width: 420px;
+            padding-left: 24px;
+            border-left: 1px solid rgba(255, 255, 255, 0.25);
+            text-align: right;
+        }
+
+        .header-course span {
+            display: block;
+            margin-bottom: 5px;
+            color: #dce8fa;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .header-course strong {
+            display: block;
+            color: #fff;
+            font-size: clamp(24px, 3vw, 36px);
+            line-height: 1.2;
         }
 
         /* =========================
@@ -369,12 +554,25 @@
                 font-size: 17px;
             }
 
-            header {
-                padding: 35px 15px;
+            .header-inner {
+                flex-direction: column;
+                min-height: auto;
+                padding: 25px 15px;
+                justify-content: center;
+                text-align: center;
             }
 
-            header p {
-                font-size: 18px;
+            .logo {
+                justify-content: center;
+            }
+
+            .header-course {
+                max-width: 700px;
+                padding-top: 20px;
+                padding-left: 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.25);
+                border-left: 0;
+                text-align: center;
             }
 
             nav {
@@ -401,6 +599,30 @@
         }
 
         @media (max-width: 560px) {
+            .logo {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .logo-image {
+                width: 76px;
+                height: 76px;
+                flex-basis: 76px;
+            }
+
+            .logo-text strong {
+                font-size: 21px;
+            }
+
+            .logo-text span {
+                font-size: 15px;
+            }
+
+            .header-course strong {
+                font-size: 25px;
+            }
+
             nav {
                 grid-template-columns: 1fr;
             }
@@ -438,14 +660,48 @@
 
 <body>
 
-    <header>
-        <h1>
-            Zachodniopomorskie Centrum Informatyki
-        </h1>
+    <header class="site-header">
 
-        <p>
-            Szkolenia komputerowe i informatyczne
-        </p>
+        <div class="header-inner">
+
+            <a
+                class="logo"
+                href="../index.html"
+                aria-label="ZPCI – przejdź do strony głównej"
+            >
+
+                <img
+                    class="logo-image"
+                    src="../images/logo+zdjecia/logotypy/2_Logotypy_okrag.png"
+                    alt="Logo Zachodniopomorskiego Centrum Informatyki"
+                    width="200"
+                    height="200"
+                >
+
+                <div class="logo-text">
+
+                    <strong>
+                        Zachodniopomorskie Centrum Informatyki
+                    </strong>
+
+                    <span>
+                        Szkolenia komputerowe i usługi informatyczne
+                    </span>
+
+                </div>
+
+            </a>
+
+            <div class="header-course">
+
+                <span>Szkolenie z projektowania stron WWW</span>
+
+                <strong>HTML + CSS</strong>
+
+            </div>
+
+        </div>
+
     </header>
 
     <nav aria-label="Główna nawigacja">
@@ -471,9 +727,12 @@
         <div class="banner">
             <img
                 src="../images/SzkolenieHTMLICSS-TWORZENIESTRONWWW.png"
-                alt="Szkolenie HTML i CSS z tworzenia stron internetowych"
+                alt="Szkolenie HTML5 i CSS3 z tworzenia responsywnych stron internetowych w ZPCI"
+                width="1200"
+                height="750"
                 loading="eager"
                 fetchpriority="high"
+                decoding="async"
             >
         </div>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="pl-PL">
 <head>
     <meta charset="UTF-8">
 
@@ -8,14 +8,145 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        JavaScript &ndash; programowanie dynamicznych stron | ZPCI
-    </title>
+    <title>Szkolenie JavaScript Szczecin – dynamiczne strony WWW | ZPCI</title>
 
     <meta
         name="description"
-        content="Szkolenie JavaScript w ZPCI. Zmienne, funkcje, p&#281;tle, tablice, DOM, zdarzenia, walidacja formularzy i tworzenie interaktywnych stron internetowych."
+        content="Praktyczne szkolenie JavaScript w Szczecinie. Zmienne, funkcje, pętle, tablice, DOM, zdarzenia, formularze i tworzenie interaktywnych stron WWW."
     >
+
+    <meta name="author" content="Zachodniopomorskie Centrum Informatyki">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0b2148">
+
+    <link
+        rel="canonical"
+        href="https://www.zpci.pl/szkoleniakursy/javascript-programowanie-dynamiczne-strony.html"
+    >
+
+    <!-- OPEN GRAPH -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="ZPCI">
+
+    <meta
+        property="og:title"
+        content="Szkolenie JavaScript Szczecin – dynamiczne strony WWW | ZPCI"
+    >
+
+    <meta
+        property="og:description"
+        content="Praktyczna nauka JavaScript: DOM, zdarzenia, funkcje, tablice, walidacja formularzy i tworzenie interaktywnych stron internetowych."
+    >
+
+    <meta
+        property="og:url"
+        content="https://www.zpci.pl/szkoleniakursy/javascript-programowanie-dynamiczne-strony.html"
+    >
+
+    <meta
+        property="og:image"
+        content="https://www.zpci.pl/images/szkoleniejavascript-tworzeniestronwww.png"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="Szkolenie JavaScript z tworzenia dynamicznych stron internetowych"
+    >
+
+    <!-- X / TWITTER -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="Szkolenie JavaScript Szczecin | ZPCI"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Praktyczne szkolenie z JavaScript, DOM, zdarzeń, formularzy i tworzenia interaktywnych stron WWW."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://www.zpci.pl/images/szkoleniejavascript-tworzeniestronwww.png"
+    >
+
+    <!-- DANE STRUKTURALNE SEO -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "EducationalOrganization",
+                "@id": "https://www.zpci.pl/#organization",
+                "name": "Zachodniopomorskie Centrum Informatyki",
+                "alternateName": "ZPCI",
+                "url": "https://www.zpci.pl/",
+                "email": "biuro@zpci.pl"
+            },
+            {
+                "@type": "Course",
+                "@id": "https://www.zpci.pl/szkoleniakursy/javascript-programowanie-dynamiczne-strony.html#course",
+                "name": "JavaScript – programowanie dynamicznych stron internetowych",
+                "description": "Praktyczne szkolenie z języka JavaScript obejmujące zmienne, funkcje, pętle, tablice, obiekty, DOM, zdarzenia, formularze i tworzenie interaktywnych stron WWW.",
+                "url": "https://www.zpci.pl/szkoleniakursy/javascript-programowanie-dynamiczne-strony.html",
+                "image": "https://www.zpci.pl/images/szkoleniejavascript-tworzeniestronwww.png",
+                "inLanguage": "pl-PL",
+                "provider": {
+                    "@id": "https://www.zpci.pl/#organization"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "price": "499.00",
+                    "priceCurrency": "PLN",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://www.zpci.pl/szkoleniakursy/javascript-programowanie-dynamiczne-strony.html"
+                },
+                "hasCourseInstance": [
+                    {
+                        "@type": "CourseInstance",
+                        "name": "Szkolenie grupowe JavaScript",
+                        "courseMode": "onsite",
+                        "courseWorkload": "PT22H"
+                    },
+                    {
+                        "@type": "CourseInstance",
+                        "name": "Szkolenie indywidualne JavaScript",
+                        "courseMode": "onsite",
+                        "courseWorkload": "PT16H"
+                    }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Strona główna",
+                        "item": "https://www.zpci.pl/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Szkolenia i kursy",
+                        "item": "https://www.zpci.pl/szkoleniakursy.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "JavaScript",
+                        "item": "https://www.zpci.pl/szkoleniakursy/javascript-programowanie-dynamiczne-strony.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 
     <style>
         :root {
@@ -81,13 +212,12 @@
         }
 
         /* =========================
-           NAGLOWEK
+           NAGŁÓWEK Z LOGO
         ========================= */
 
         .site-header {
             position: relative;
             overflow: hidden;
-            padding: 42px 20px;
             background:
                 radial-gradient(
                     circle at 88% 18%,
@@ -100,7 +230,6 @@
                     var(--primary-medium)
                 );
             color: var(--white);
-            text-align: center;
         }
 
         .site-header::before {
@@ -108,7 +237,7 @@
             position: absolute;
             top: 50%;
             right: 7%;
-            color: rgba(255, 255, 255, 0.06);
+            color: rgba(255, 255, 255, 0.055);
             font-family: Arial, Helvetica, sans-serif;
             font-size: clamp(120px, 18vw, 230px);
             font-weight: 900;
@@ -116,23 +245,76 @@
             transform: translateY(-50%);
         }
 
-        .header-content {
+        .header-inner {
             position: relative;
             z-index: 1;
-        }
-
-        .site-header h1 {
-            margin-bottom: 10px;
-            color: var(--white);
-            font-size: clamp(29px, 5vw, 48px);
-            line-height: 1.15;
-        }
-
-        .site-header p {
-            max-width: 800px;
+            display: flex;
+            width: calc(100% - 40px);
+            max-width: 1160px;
+            min-height: 150px;
             margin: 0 auto;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: clamp(17px, 2.3vw, 21px);
+            padding: 25px 0;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .brand {
+            display: flex;
+            min-width: 0;
+            align-items: center;
+            gap: 16px;
+            color: var(--white);
+        }
+
+        .logo-image {
+            width: 88px;
+            height: 88px;
+            flex: 0 0 88px;
+            object-fit: contain;
+            border-radius: 50%;
+            background: var(--white);
+            box-shadow: 0 7px 21px rgba(0, 0, 0, 0.25);
+        }
+
+        .brand-text {
+            min-width: 0;
+        }
+
+        .brand-text strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--white);
+            font-size: clamp(21px, 3vw, 31px);
+            line-height: 1.2;
+        }
+
+        .brand-text span {
+            display: block;
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 16px;
+        }
+
+        .header-course {
+            max-width: 470px;
+            padding-left: 25px;
+            border-left: 1px solid rgba(255, 255, 255, 0.28);
+            text-align: right;
+        }
+
+        .header-course p {
+            margin-bottom: 5px;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+
+        .header-course h1 {
+            color: var(--white);
+            font-size: clamp(26px, 4vw, 42px);
+            line-height: 1.15;
         }
 
         /* =========================
@@ -640,6 +822,25 @@
                 font-size: 17px;
             }
 
+            .header-inner {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .brand {
+                justify-content: center;
+            }
+
+            .header-course {
+                max-width: 760px;
+                padding-top: 20px;
+                padding-left: 0;
+                border-top: 1px solid rgba(255, 255, 255, 0.25);
+                border-left: 0;
+                text-align: center;
+            }
+
             .page-container {
                 width: calc(100% - 28px);
             }
@@ -665,8 +866,34 @@
                 width: calc(100% - 20px);
             }
 
-            .site-header {
-                padding: 34px 14px;
+            .header-inner {
+                width: calc(100% - 28px);
+                min-height: auto;
+                padding: 25px 0;
+            }
+
+            .brand {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .logo-image {
+                width: 76px;
+                height: 76px;
+                flex-basis: 76px;
+            }
+
+            .brand-text strong {
+                font-size: 22px;
+            }
+
+            .brand-text span {
+                font-size: 14px;
+            }
+
+            .header-course h1 {
+                font-size: 28px;
             }
 
             .site-header::before {
@@ -746,8 +973,12 @@
                 min-height: 45px;
             }
 
-            .site-header h1 {
-                font-size: 27px;
+            .header-course h1 {
+                font-size: 25px;
+            }
+
+            .brand-text strong {
+                font-size: 20px;
             }
         }
     </style>
@@ -755,19 +986,42 @@
 
 <body>
 
-    <!-- NAGLOWEK -->
+    <!-- NAGŁÓWEK Z LOGO -->
 
     <header class="site-header">
-        <div class="header-content">
+        <div class="header-inner">
 
-            <h1>
-                Zachodniopomorskie Centrum Informatyki
-            </h1>
+            <a
+                class="brand"
+                href="../index.html"
+                aria-label="ZPCI – przejdź do strony głównej"
+            >
+                <img
+                    class="logo-image"
+                    src="../images/logo+zdjecia/logotypy/2_Logotypy_okrag.png"
+                    alt="Logo Zachodniopomorskiego Centrum Informatyki"
+                    width="200"
+                    height="200"
+                >
 
-            <p>
-                Praktyczne szkolenia z programowania
-                i tworzenia dynamicznych stron internetowych
-            </p>
+                <div class="brand-text">
+                    <strong>
+                        Zachodniopomorskie Centrum Informatyki
+                    </strong>
+
+                    <span>
+                        Szkolenia komputerowe i usługi informatyczne
+                    </span>
+                </div>
+            </a>
+
+            <div class="header-course">
+                <p>Szkolenie programistyczne</p>
+
+                <h1>
+                    JavaScript – dynamiczne strony WWW
+                </h1>
+            </div>
 
         </div>
     </header>
@@ -810,7 +1064,9 @@
             <div class="banner-box">
                 <img
                     src="../images/szkoleniejavascript-tworzeniestronwww.png"
-                    alt="Szkolenie JavaScript z tworzenia dynamicznych stron internetowych"
+                    alt="Szkolenie JavaScript z tworzenia dynamicznych i interaktywnych stron internetowych w ZPCI"
+                    width="1200"
+                    height="750"
                     loading="eager"
                     fetchpriority="high"
                 >
