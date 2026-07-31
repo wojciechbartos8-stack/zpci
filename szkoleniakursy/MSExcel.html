@@ -1,23 +1,151 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Szkolenie MS Excel | ZPCI Szczecin</title>
+    <title>Szkolenie Excel Szczecin – podstawowe i zaawansowane | ZPCI</title>
 
     <meta
         name="description"
-        content="Szkolenie Microsoft Excel w ZPCI Szczecin. Poziom podstawowy, &#347;redni i zaawansowany. Formu&#322;y, funkcje, wykresy, filtry i analiza danych."
+        content="Praktyczne szkolenie Microsoft Excel w Szczecinie: poziom podstawowy, średni i zaawansowany. Formuły, funkcje, wykresy, filtry, tabele przestawne i analiza danych."
     >
 
-    <style>
+    <meta
+        name="keywords"
+        content="szkolenie Excel Szczecin, kurs Excel Szczecin, Microsoft Excel, formuły Excel, funkcje Excel, tabele przestawne, analiza danych, ZPCI"
+    >
 
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Zachodniopomorskie Centrum Informatyki">
+    <meta name="theme-color" content="#0b2148">
+
+    <link
+        rel="canonical"
+        href="https://zpci.pl/szkolenia/msexcel.html"
+    >
+
+    <!-- FAVICON -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
+    >
+
+    <link
+        rel="apple-touch-icon"
+        href="../images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
+    >
+
+    <!-- OPEN GRAPH -->
+
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ZPCI">
+
+    <meta
+        property="og:title"
+        content="Szkolenie Excel Szczecin – poziom podstawowy, średni i zaawansowany"
+    >
+
+    <meta
+        property="og:description"
+        content="Praktyczne szkolenie Microsoft Excel: formuły, funkcje, wykresy, filtry, tabele przestawne i analiza danych."
+    >
+
+    <meta
+        property="og:url"
+        content="https://zpci.pl/szkolenia/msexcel.html"
+    >
+
+    <meta
+        property="og:image"
+        content="https://zpci.pl/images/szkolenieExcel.png"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="Szkolenie Microsoft Excel w Zachodniopomorskim Centrum Informatyki"
+    >
+
+    <!-- TWITTER / X -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="Szkolenie Excel Szczecin | ZPCI"
+    >
+
+    <meta
+        name="twitter:description"
+        content="Kurs Microsoft Excel od poziomu podstawowego do zaawansowanego."
+    >
+
+    <meta
+        name="twitter:image"
+        content="https://zpci.pl/images/szkolenieExcel.png"
+    >
+
+    <!-- DANE STRUKTURALNE SEO -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://zpci.pl/#organization",
+                "name": "Zachodniopomorskie Centrum Informatyki",
+                "alternateName": "ZPCI",
+                "url": "https://zpci.pl/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://zpci.pl/images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
+                },
+                "email": "biuro@zpci.pl"
+            },
+            {
+                "@type": "Course",
+                "@id": "https://zpci.pl/szkolenia/msexcel.html#course",
+                "name": "Szkolenie Microsoft Excel",
+                "description": "Praktyczne szkolenie Microsoft Excel na poziomie podstawowym, średnim i zaawansowanym, obejmujące formuły, funkcje, wykresy, filtrowanie, tabele przestawne i analizę danych.",
+                "url": "https://zpci.pl/szkolenia/msexcel.html",
+                "image": "https://zpci.pl/images/szkolenieExcel.png",
+                "inLanguage": "pl-PL",
+                "provider": {
+                    "@id": "https://zpci.pl/#organization"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Strona główna",
+                        "item": "https://zpci.pl/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Szkolenia i kursy",
+                        "item": "https://zpci.pl/szkoleniakursy.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Microsoft Excel",
+                        "item": "https://zpci.pl/szkolenia/msexcel.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <style>
         :root {
             --primary: #1f3b73;
             --primary-dark: #0b2148;
@@ -37,13 +165,8 @@
             --muted: #5d6976;
             --border: #dce5ef;
 
-            --radius: 18px;
-
-            --shadow:
-                0 15px 38px rgba(11, 33, 72, 0.12);
-
-            --shadow-hover:
-                0 22px 46px rgba(11, 33, 72, 0.20);
+            --shadow: 0 15px 38px rgba(11, 33, 72, 0.12);
+            --shadow-hover: 0 22px 46px rgba(11, 33, 72, 0.20);
         }
 
         * {
@@ -61,6 +184,8 @@
             overflow-x: hidden;
 
             font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            line-height: 1.7;
 
             background:
                 linear-gradient(
@@ -71,8 +196,6 @@
                 );
 
             color: var(--text);
-            font-size: 18px;
-            line-height: 1.7;
         }
 
         img {
@@ -96,15 +219,15 @@
             margin: 0 auto;
         }
 
-        /* =========================
-           NAG&#321;&Oacute;WEK
-        ========================= */
+        /* ==================================
+           NAGŁÓWEK ORAZ LOGO
+        ================================== */
 
         .site-header {
             position: relative;
             overflow: hidden;
 
-            padding: 45px 20px;
+            padding: 38px 20px 45px;
 
             background:
                 radial-gradient(
@@ -143,6 +266,74 @@
             z-index: 1;
         }
 
+        .header-brand {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+
+            margin-bottom: 25px;
+
+            color: var(--white);
+        }
+
+        .brand-mark {
+            width: 96px;
+            height: 96px;
+            flex: 0 0 96px;
+
+            border: 4px solid rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+
+            background: var(--white);
+            object-fit: contain;
+
+            box-shadow:
+                0 14px 30px rgba(0, 0, 0, 0.22);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+        .header-brand:hover .brand-mark {
+            transform: translateY(-3px) scale(1.03);
+
+            box-shadow:
+                0 18px 35px rgba(0, 0, 0, 0.28);
+        }
+
+        .brand-copy {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            text-align: left;
+        }
+
+        .brand-name {
+            font-size: clamp(20px, 2.6vw, 29px);
+            font-weight: 900;
+            line-height: 1.15;
+        }
+
+        .brand-subtitle {
+            margin-top: 6px;
+
+            color: rgba(255, 255, 255, 0.82);
+
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .header-brand:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 7px;
+            border-radius: 20px;
+        }
+
         .site-header h1 {
             max-width: 900px;
             margin: 0 auto 12px;
@@ -153,7 +344,7 @@
             line-height: 1.15;
         }
 
-        .site-header p {
+        .site-header > .header-content > p {
             max-width: 820px;
             margin: 0 auto;
 
@@ -162,9 +353,9 @@
             font-size: clamp(17px, 2.3vw, 21px);
         }
 
-        /* =========================
+        /* ==================================
            NAWIGACJA
-        ========================= */
+        ================================== */
 
         .main-nav {
             position: sticky;
@@ -216,9 +407,9 @@
             outline-offset: 3px;
         }
 
-        /* =========================
+        /* ==================================
            BANER
-        ========================= */
+        ================================== */
 
         .banner-section {
             padding: 32px 0 0;
@@ -242,9 +433,9 @@
             object-fit: contain;
         }
 
-        /* =========================
-           G&#321;&Oacute;WNA TRE&#346;&#262;
-        ========================= */
+        /* ==================================
+           GŁÓWNA TREŚĆ
+        ================================== */
 
         main {
             padding: 32px 0 58px;
@@ -263,7 +454,9 @@
 
         .intro {
             padding-bottom: 32px;
+
             border-bottom: 1px solid var(--border);
+
             text-align: center;
         }
 
@@ -287,9 +480,9 @@
             margin-bottom: 0;
         }
 
-        /* =========================
+        /* ==================================
            PRZYCISKI
-        ========================= */
+        ================================== */
 
         .buttons {
             display: flex;
@@ -366,9 +559,9 @@
             color: var(--primary-dark);
         }
 
-        /* =========================
+        /* ==================================
            SEKCJE
-        ========================= */
+        ================================== */
 
         .content-section {
             margin-top: 44px;
@@ -391,13 +584,9 @@
             color: var(--muted);
         }
 
-        .content-section > p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* =========================
+        /* ==================================
            INFORMACJE O SZKOLENIU
-        ========================= */
+        ================================== */
 
         .information-grid {
             display: grid;
@@ -466,9 +655,9 @@
             font-size: 16px;
         }
 
-        /* =========================
+        /* ==================================
            POZIOMY SZKOLENIA
-        ========================= */
+        ================================== */
 
         .levels-grid {
             display: grid;
@@ -551,9 +740,9 @@
             font-size: 16px;
         }
 
-        /* =========================
+        /* ==================================
            PROGRAM SZKOLENIA
-        ========================= */
+        ================================== */
 
         .program-grid {
             display: grid;
@@ -569,8 +758,7 @@
 
             min-height: 82px;
 
-            padding:
-                17px 17px 17px 58px;
+            padding: 17px 17px 17px 58px;
 
             border: 1px solid var(--border);
             border-radius: 13px;
@@ -598,7 +786,7 @@
         }
 
         .program-card::before {
-            content: "\2713";
+            content: "?";
 
             position: absolute;
             top: 18px;
@@ -636,9 +824,9 @@
             line-height: 1.55;
         }
 
-        /* =========================
+        /* ==================================
            TAKSONOMIA
-        ========================= */
+        ================================== */
 
         .taxonomy-intro {
             margin-bottom: 25px;
@@ -711,13 +899,9 @@
             color: var(--muted);
         }
 
-        .taxonomy-card li:last-child {
-            margin-bottom: 0;
-        }
-
-        /* =========================
-           EFEKTY PRAKTYCZNE
-        ========================= */
+        /* ==================================
+           PRAKTYCZNE EFEKTY
+        ================================== */
 
         .outcomes-box {
             margin-top: 44px;
@@ -756,21 +940,17 @@
             position: relative;
 
             min-height: 55px;
-
-            padding:
-                13px 15px 13px 48px;
+            padding: 13px 15px 13px 48px;
 
             border: 1px solid #d4e8dd;
             border-radius: 12px;
 
-            background:
-                rgba(255, 255, 255, 0.85);
-
+            background: rgba(255, 255, 255, 0.85);
             color: var(--muted);
         }
 
         .outcome-item::before {
-            content: "\2713";
+            content: "?";
 
             position: absolute;
             top: 13px;
@@ -792,9 +972,9 @@
             font-weight: 900;
         }
 
-        /* =========================
+        /* ==================================
            KONTAKT
-        ========================= */
+        ================================== */
 
         .contact-box {
             margin-top: 44px;
@@ -829,8 +1009,7 @@
             max-width: 800px;
             margin: 0 auto 9px;
 
-            color:
-                rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .email-link {
@@ -846,16 +1025,15 @@
             text-underline-offset: 4px;
         }
 
-        /* =========================
+        /* ==================================
            STOPKA
-        ========================= */
+        ================================== */
 
         footer {
             padding: 28px 20px;
 
             background: var(--primary-dark);
-            color:
-                rgba(255, 255, 255, 0.88);
+            color: rgba(255, 255, 255, 0.88);
 
             text-align: center;
         }
@@ -864,12 +1042,11 @@
             margin-top: 5px;
         }
 
-        /* =========================
-           RESPONSYWNO&#346;&#262;
-        ========================= */
+        /* ==================================
+           RESPONSYWNOŚĆ
+        ================================== */
 
         @media (max-width: 1050px) {
-
             .taxonomy-grid {
                 grid-template-columns:
                     repeat(2, minmax(0, 1fr));
@@ -892,11 +1069,9 @@
             .level-card:last-child {
                 grid-column: 1 / -1;
             }
-
         }
 
         @media (max-width: 850px) {
-
             body {
                 font-size: 17px;
             }
@@ -908,33 +1083,43 @@
             .content-box {
                 padding: 32px 24px;
             }
-
         }
 
         @media (max-width: 700px) {
-
             .program-grid,
             .outcomes-grid {
                 grid-template-columns: 1fr;
             }
-
         }
 
         @media (max-width: 600px) {
-
             .page-container {
                 width: calc(100% - 20px);
             }
 
             .site-header {
-                padding: 34px 14px;
+                padding: 30px 14px 35px;
+            }
+
+            .header-brand {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .brand-copy {
+                align-items: center;
+                text-align: center;
+            }
+
+            .brand-mark {
+                width: 84px;
+                height: 84px;
+                flex-basis: 84px;
             }
 
             .site-header::before {
                 right: 50%;
-
-                transform:
-                    translate(50%, -50%);
+                transform: translate(50%, -50%);
             }
 
             .nav-inner {
@@ -946,12 +1131,10 @@
 
             .main-nav a {
                 min-height: 49px;
-
                 padding: 10px 8px;
 
                 border-bottom:
-                    1px solid
-                    rgba(255, 255, 255, 0.08);
+                    1px solid rgba(255, 255, 255, 0.08);
 
                 font-size: 14px;
             }
@@ -1009,11 +1192,9 @@
             .buttons .button {
                 width: 100%;
             }
-
         }
 
         @media (max-width: 390px) {
-
             .nav-inner {
                 grid-template-columns: 1fr;
             }
@@ -1025,15 +1206,13 @@
             .site-header h1 {
                 font-size: 28px;
             }
-
         }
 
-        /* =========================
+        /* ==================================
            DRUKOWANIE
-        ========================= */
+        ================================== */
 
         @media print {
-
             body {
                 background: #ffffff;
                 color: #000000;
@@ -1047,8 +1226,23 @@
             }
 
             .site-header h1,
-            .site-header p {
+            .site-header p,
+            .brand-name,
+            .brand-subtitle {
                 color: #000000;
+            }
+
+            .header-brand {
+                margin-bottom: 15px;
+            }
+
+            .brand-mark {
+                width: 70px;
+                height: 70px;
+
+                border: 1px solid #cccccc;
+
+                box-shadow: none;
             }
 
             .site-header::before,
@@ -1110,27 +1304,54 @@
             .email-link {
                 color: #000000;
             }
-
         }
-
     </style>
-
 </head>
 
 <body>
 
-    <!-- NAG&#321;&Oacute;WEK -->
+    <!-- NAGŁÓWEK -->
 
     <header class="site-header">
 
         <div class="header-content">
+
+            <a
+                class="header-brand"
+                href="../index.html"
+                aria-label="ZPCI – przejdź do strony głównej"
+            >
+
+                <img
+                    class="brand-mark"
+                    src="../images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
+                    alt="Logo Zachodniopomorskiego Centrum Informatyki"
+                    width="96"
+                    height="96"
+                    loading="eager"
+                    decoding="async"
+                >
+
+                <span class="brand-copy">
+
+                    <span class="brand-name">
+                        Zachodniopomorskie Centrum Informatyki
+                    </span>
+
+                    <span class="brand-subtitle">
+                        Szkolenia i usługi IT
+                    </span>
+
+                </span>
+
+            </a>
 
             <h1>
                 Szkolenie Microsoft Excel
             </h1>
 
             <p>
-                Poziom podstawowy, &#347;redni i zaawansowany
+                Poziom podstawowy, średni i zaawansowany
             </p>
 
         </div>
@@ -1141,13 +1362,13 @@
 
     <nav
         class="main-nav"
-        aria-label="G&#322;&oacute;wna nawigacja"
+        aria-label="Główna nawigacja"
     >
 
         <div class="page-container nav-inner">
 
             <a href="../index.html">
-                Strona g&#322;&oacute;wna
+                Strona główna
             </a>
 
             <a href="../szkoleniakursy.html">
@@ -1155,7 +1376,7 @@
             </a>
 
             <a href="../uslugiit.html">
-                Us&#322;ugi IT
+                Usługi IT
             </a>
 
             <a href="../kontakt.html">
@@ -1180,8 +1401,11 @@
                 <img
                     src="../images/szkolenieExcel.png"
                     alt="Szkolenie Microsoft Excel w Zachodniopomorskim Centrum Informatyki"
+                    width="1160"
+                    height="500"
                     loading="eager"
                     fetchpriority="high"
+                    decoding="async"
                 >
 
             </div>
@@ -1190,7 +1414,7 @@
 
     </section>
 
-    <!-- G&#321;&Oacute;WNA TRE&#346;&#262; -->
+    <!-- GŁÓWNA TREŚĆ -->
 
     <main>
 
@@ -1207,17 +1431,14 @@
                     </h2>
 
                     <p>
-                        Szkolenie przeznaczone jest dla os&oacute;b,
-                        kt&oacute;re chc&#261; rozpocz&#261;&#263;
-                        prac&#281; z programem Microsoft Excel
-                        lub rozwin&#261;&#263; posiadane
-                        umiej&#281;tno&#347;ci.
+                        Szkolenie przeznaczone jest dla osób, które chcą
+                        rozpocząć pracę z programem Microsoft Excel lub
+                        rozwinąć posiadane umiejętności.
                     </p>
 
                     <p>
-                        Program obejmuje prac&#281; z arkuszami,
-                        formu&#322;ami, funkcjami, wykresami,
-                        filtrami oraz narz&#281;dziami
+                        Program obejmuje pracę z arkuszami, formułami,
+                        funkcjami, wykresami, filtrami oraz narzędziami
                         do analizy i prezentowania danych.
                     </p>
 
@@ -1239,7 +1460,7 @@
                         class="button"
                         href="zapis-na-szkolenie.html"
                     >
-                        Zapisz si&#281; na szkolenie
+                        Zapisz się na szkolenie
                     </a>
 
                 </div>
@@ -1260,16 +1481,16 @@
                                 class="information-icon"
                                 aria-hidden="true"
                             >
-                                &#128100;
+                                ??
                             </span>
 
-                            <h3>Kogo zapraszamy?</h3>
+                            <h3>
+                                Kogo zapraszamy?
+                            </h3>
 
                             <p>
-                                Osoby pocz&#261;tkuj&#261;ce,
-                                pracownik&oacute;w biurowych,
-                                analityk&oacute;w, ksi&#281;gowych
-                                oraz osoby pracuj&#261;ce
+                                Osoby początkujące, pracowników biurowych,
+                                analityków, księgowych oraz osoby pracujące
                                 z zestawieniami i danymi.
                             </p>
 
@@ -1281,15 +1502,16 @@
                                 class="information-icon"
                                 aria-hidden="true"
                             >
-                                &#128187;
+                                ??
                             </span>
 
-                            <h3>Organizacja zaj&#281;&#263;</h3>
+                            <h3>
+                                Organizacja zajęć
+                            </h3>
 
                             <p>
-                                Zaj&#281;cia prowadzone s&#261;
-                                indywidualnie lub grupowo,
-                                w formie praktycznych &#263;wicze&#324;
+                                Zajęcia prowadzone są indywidualnie lub
+                                grupowo, w formie praktycznych ćwiczeń
                                 komputerowych.
                             </p>
 
@@ -1301,15 +1523,16 @@
                                 class="information-icon"
                                 aria-hidden="true"
                             >
-                                &#127891;
+                                ??
                             </span>
 
-                            <h3>Certyfikat</h3>
+                            <h3>
+                                Certyfikat
+                            </h3>
 
                             <p>
-                                Po uko&#324;czeniu szkolenia
-                                uczestnik otrzymuje certyfikat
-                                w j&#281;zyku polskim i angielskim.
+                                Po ukończeniu szkolenia uczestnik otrzymuje
+                                certyfikat w języku polskim i angielskim.
                             </p>
 
                         </article>
@@ -1323,7 +1546,7 @@
                 <section class="content-section">
 
                     <h2>
-                        Dost&#281;pne poziomy szkolenia
+                        Dostępne poziomy szkolenia
                     </h2>
 
                     <div class="levels-grid">
@@ -1334,14 +1557,14 @@
                                 1
                             </span>
 
-                            <h3>Poziom podstawowy</h3>
+                            <h3>
+                                Poziom podstawowy
+                            </h3>
 
                             <p>
-                                Dla os&oacute;b rozpoczynaj&#261;cych
-                                prac&#281; z programem Excel.
-                                Obejmuje obs&#322;ug&#281; arkusza,
-                                formatowanie danych i podstawowe
-                                formu&#322;y.
+                                Dla osób rozpoczynających pracę z programem
+                                Excel. Obejmuje obsługę arkusza, formatowanie
+                                danych i podstawowe formuły.
                             </p>
 
                         </article>
@@ -1352,13 +1575,14 @@
                                 2
                             </span>
 
-                            <h3>Poziom &#347;redni</h3>
+                            <h3>
+                                Poziom średni
+                            </h3>
 
                             <p>
-                                Dla os&oacute;b znaj&#261;cych
-                                podstawy programu. Obejmuje funkcje,
-                                wykresy, filtrowanie, walidacj&#281;
-                                oraz analizowanie danych.
+                                Dla osób znających podstawy programu.
+                                Obejmuje funkcje, wykresy, filtrowanie,
+                                walidację oraz analizowanie danych.
                             </p>
 
                         </article>
@@ -1369,13 +1593,14 @@
                                 3
                             </span>
 
-                            <h3>Poziom zaawansowany</h3>
+                            <h3>
+                                Poziom zaawansowany
+                            </h3>
 
                             <p>
-                                Dla os&oacute;b pracuj&#261;cych
-                                z rozbudowanymi zestawieniami.
-                                Obejmuje zaawansowane funkcje,
-                                tabele przestawne i automatyzacj&#281;.
+                                Dla osób pracujących z rozbudowanymi
+                                zestawieniami. Obejmuje zaawansowane funkcje,
+                                tabele przestawne i automatyzację.
                             </p>
 
                         </article>
@@ -1395,180 +1620,129 @@
                     <div class="program-grid">
 
                         <article class="program-card">
-
                             <h3>Budowa arkusza</h3>
-
                             <p>
-                                Wiersze, kolumny, kom&oacute;rki,
-                                zakresy i skoroszyty.
+                                Wiersze, kolumny, komórki, zakresy
+                                i skoroszyty.
                             </p>
-
                         </article>
 
                         <article class="program-card">
-
                             <h3>Wprowadzanie danych</h3>
-
                             <p>
                                 Liczby, teksty, daty, serie danych
-                                i automatyczne wype&#322;nianie.
+                                i automatyczne wypełnianie.
                             </p>
-
                         </article>
 
                         <article class="program-card">
-
                             <h3>Formatowanie</h3>
-
                             <p>
-                                Formatowanie standardowe,
-                                warunkowe i niestandardowe.
+                                Formatowanie standardowe, warunkowe
+                                i niestandardowe.
                             </p>
-
                         </article>
 
                         <article class="program-card">
-
-                            <h3>Formu&#322;y</h3>
-
+                            <h3>Formuły</h3>
                             <p>
-                                Operatory matematyczne,
-                                odwo&#322;ania wzgl&#281;dne
-                                i bezwzgl&#281;dne.
+                                Operatory matematyczne, odwołania względne
+                                i bezwzględne.
                             </p>
-
                         </article>
 
                         <article class="program-card">
-
                             <h3>Funkcje podstawowe</h3>
-
                             <p>
-                                SUMA, &#346;REDNIA, MIN, MAX,
-                                ILE.LICZB i LICZ.JE&#379;ELI.
+                                SUMA, ŚREDNIA, MIN, MAX, ILE.LICZB
+                                i LICZ.JEŻELI.
                             </p>
-
                         </article>
 
                         <article class="program-card">
-
                             <h3>Funkcje logiczne</h3>
-
                             <p>
-                                JE&#379;ELI, ORAZ, LUB
-                                oraz zagnie&#380;d&#380;one warunki.
+                                JEŻELI, ORAZ, LUB oraz zagnieżdżone warunki.
                             </p>
-
                         </article>
 
                         <article class="program-card">
-
                             <h3>Funkcje tekstowe</h3>
-
                             <p>
-                                &#321;&#261;czenie, dzielenie
-                                i modyfikowanie tekst&oacute;w.
+                                Łączenie, dzielenie i modyfikowanie tekstów.
                             </p>
-
                         </article>
 
                         <article class="program-card">
-
                             <h3>Funkcje finansowe</h3>
-
                             <p>
-                                Podstawowe obliczenia rat,
-                                odsetek i warto&#347;ci inwestycji.
+                                Podstawowe obliczenia rat, odsetek
+                                i wartości inwestycji.
                             </p>
-
                         </article>
 
                         <article class="program-card">
-
                             <h3>Sortowanie i filtrowanie</h3>
-
                             <p>
-                                Filtry proste, wielopoziomowe
-                                oraz filtry zaawansowane.
+                                Filtry proste, wielopoziomowe oraz
+                                filtry zaawansowane.
                             </p>
-
                         </article>
 
                         <article class="program-card">
-
                             <h3>Wykresy</h3>
-
                             <p>
-                                Tworzenie, formatowanie
-                                i dob&oacute;r odpowiedniego wykresu.
+                                Tworzenie, formatowanie i dobór
+                                odpowiedniego wykresu.
                             </p>
-
                         </article>
 
                         <article class="program-card">
-
                             <h3>Analiza danych</h3>
-
                             <p>
-                                Podsumowania, zestawienia
-                                oraz tabele przestawne.
+                                Podsumowania, zestawienia oraz
+                                tabele przestawne.
                             </p>
-
                         </article>
 
                         <article class="program-card">
-
                             <h3>Import i eksport</h3>
-
                             <p>
-                                Wymiana danych z plikami CSV,
-                                tekstowymi i innymi programami.
+                                Wymiana danych z plikami CSV, tekstowymi
+                                i innymi programami.
                             </p>
-
                         </article>
 
                         <article class="program-card">
-
-                            <h3>Praca zespo&#322;owa</h3>
-
+                            <h3>Praca zespołowa</h3>
                             <p>
-                                Udost&#281;pnianie, komentarze,
-                                wsp&oacute;&#322;praca i kontrola zmian.
+                                Udostępnianie, komentarze, współpraca
+                                i kontrola zmian.
                             </p>
-
                         </article>
 
                         <article class="program-card">
-
                             <h3>Zabezpieczenia</h3>
-
                             <p>
-                                Ochrona kom&oacute;rek, arkuszy,
-                                skoroszyt&oacute;w i formu&#322;.
+                                Ochrona komórek, arkuszy, skoroszytów
+                                i formuł.
                             </p>
-
                         </article>
 
                         <article class="program-card">
-
                             <h3>Bazy danych</h3>
-
                             <p>
-                                Pobieranie i &#322;&#261;czenie danych
-                                z zewn&#281;trznymi &#378;r&oacute;d&#322;ami.
+                                Pobieranie i łączenie danych
+                                z zewnętrznymi źródłami.
                             </p>
-
                         </article>
 
                         <article class="program-card">
-
                             <h3>Automatyzacja pracy</h3>
-
                             <p>
-                                Wprowadzenie do makr
-                                i podstaw automatyzowania czynno&#347;ci.
+                                Wprowadzenie do makr i podstaw
+                                automatyzowania czynności.
                             </p>
-
                         </article>
 
                     </div>
@@ -1580,164 +1754,144 @@
                 <section class="content-section">
 
                     <h2>
-                        Po uko&#324;czeniu szkolenia uczestnik
+                        Po ukończeniu szkolenia uczestnik
                     </h2>
 
                     <p class="taxonomy-intro">
-                        Uczestnik zdobywa wiedz&#281;
-                        i praktyczne umiej&#281;tno&#347;ci
-                        pozwalaj&#261;ce sprawnie tworzy&#263;,
-                        przetwarza&#263; oraz analizowa&#263;
-                        dane w programie Microsoft Excel.
+                        Uczestnik zdobywa wiedzę i praktyczne umiejętności
+                        pozwalające sprawnie tworzyć, przetwarzać oraz
+                        analizować dane w programie Microsoft Excel.
                     </p>
 
                     <div class="taxonomy-grid">
 
-                        <!-- WIE -->
-
                         <article class="taxonomy-card">
 
-                            <h3>Wie</h3>
+                            <h3>
+                                Wie
+                            </h3>
 
                             <ul>
-
                                 <li>
                                     Jak zbudowany jest skoroszyt
                                     i arkusz programu Excel.
                                 </li>
 
                                 <li>
-                                    Do czego s&#322;u&#380;&#261;
-                                    formu&#322;y, funkcje i wykresy.
+                                    Do czego służą formuły, funkcje i wykresy.
                                 </li>
 
                                 <li>
-                                    Jakie typy danych mo&#380;na
-                                    wprowadza&#263; do kom&oacute;rek.
+                                    Jakie typy danych można wprowadzać
+                                    do komórek.
                                 </li>
 
                                 <li>
-                                    Do czego s&#322;u&#380;&#261;
-                                    sortowanie i filtrowanie.
+                                    Do czego służą sortowanie i filtrowanie.
                                 </li>
 
                                 <li>
-                                    Jak zabezpiecza&#263;
-                                    arkusze i skoroszyty.
+                                    Jak zabezpieczać arkusze i skoroszyty.
                                 </li>
-
                             </ul>
 
                         </article>
 
-                        <!-- ROZUMIE -->
-
                         <article class="taxonomy-card">
 
-                            <h3>Rozumie</h3>
+                            <h3>
+                                Rozumie
+                            </h3>
 
                             <ul>
-
                                 <li>
-                                    Zasady tworzenia poprawnych
-                                    formu&#322; i funkcji.
+                                    Zasady tworzenia poprawnych formuł
+                                    i funkcji.
                                 </li>
 
                                 <li>
-                                    R&oacute;&#380;nic&#281; pomi&#281;dzy
-                                    odwo&#322;aniami wzgl&#281;dnymi
-                                    i bezwzgl&#281;dnymi.
+                                    Różnicę pomiędzy odwołaniami względnymi
+                                    i bezwzględnymi.
                                 </li>
 
                                 <li>
-                                    Znaczenie poprawnej organizacji
-                                    danych w arkuszu.
+                                    Znaczenie poprawnej organizacji danych
+                                    w arkuszu.
                                 </li>
 
                                 <li>
-                                    Zasady doboru wykresu
-                                    do rodzaju danych.
+                                    Zasady doboru wykresu do rodzaju danych.
                                 </li>
 
                                 <li>
-                                    Spos&oacute;b dzia&#322;ania
-                                    filtr&oacute;w i tabel przestawnych.
+                                    Sposób działania filtrów
+                                    i tabel przestawnych.
                                 </li>
-
                             </ul>
 
                         </article>
 
-                        <!-- UMIE -->
-
                         <article class="taxonomy-card">
 
-                            <h3>Umie</h3>
+                            <h3>
+                                Umie
+                            </h3>
 
                             <ul>
-
                                 <li>
-                                    Tworzy&#263; i formatowa&#263;
-                                    tabele w arkuszu.
+                                    Tworzyć i formatować tabele w arkuszu.
                                 </li>
 
                                 <li>
-                                    Stosowa&#263; podstawowe
-                                    i zaawansowane funkcje.
+                                    Stosować podstawowe i zaawansowane
+                                    funkcje.
                                 </li>
 
                                 <li>
-                                    Sortowa&#263; i filtrowa&#263;
-                                    dane wed&#322;ug wielu kryteri&oacute;w.
+                                    Sortować i filtrować dane według
+                                    wielu kryteriów.
                                 </li>
 
                                 <li>
-                                    Tworzy&#263; czytelne wykresy
-                                    i zestawienia.
+                                    Tworzyć czytelne wykresy i zestawienia.
                                 </li>
 
                                 <li>
-                                    Importowa&#263; i eksportowa&#263;
-                                    dane.
+                                    Importować i eksportować dane.
                                 </li>
-
                             </ul>
 
                         </article>
 
-                        <!-- POTRAFI -->
-
                         <article class="taxonomy-card">
 
-                            <h3>Potrafi</h3>
+                            <h3>
+                                Potrafi
+                            </h3>
 
                             <ul>
-
                                 <li>
-                                    Samodzielnie przygotowa&#263;
-                                    arkusz kalkulacyjny.
+                                    Samodzielnie przygotować arkusz
+                                    kalkulacyjny.
                                 </li>
 
                                 <li>
-                                    Wykona&#263; obliczenia
-                                    i analiz&#281; danych.
+                                    Wykonać obliczenia i analizę danych.
                                 </li>
 
                                 <li>
-                                    Utworzy&#263; zestawienie
-                                    oraz tabel&#281; przestawn&#261;.
+                                    Utworzyć zestawienie oraz tabelę
+                                    przestawną.
                                 </li>
 
                                 <li>
-                                    Przygotowa&#263; raport
-                                    i prezentacj&#281; danych.
+                                    Przygotować raport i prezentację danych.
                                 </li>
 
                                 <li>
-                                    Zabezpieczy&#263; arkusz
-                                    przed niepo&#380;&#261;danymi zmianami.
+                                    Zabezpieczyć arkusz przed
+                                    niepożądanymi zmianami.
                                 </li>
-
                             </ul>
 
                         </article>
@@ -1746,7 +1900,7 @@
 
                 </section>
 
-                <!-- EFEKTY PRAKTYCZNE -->
+                <!-- PRAKTYCZNE EFEKTY -->
 
                 <section class="outcomes-box">
 
@@ -1757,43 +1911,36 @@
                     <div class="outcomes-grid">
 
                         <div class="outcome-item">
-                            Przygotowanie czytelnej tabeli
-                            z danymi.
+                            Przygotowanie czytelnej tabeli z danymi.
                         </div>
 
                         <div class="outcome-item">
-                            Wykonanie automatycznych oblicze&#324;
-                            za pomoc&#261; formu&#322;.
+                            Wykonanie automatycznych obliczeń
+                            za pomocą formuł.
                         </div>
 
                         <div class="outcome-item">
-                            Zastosowanie funkcji logicznych
-                            i tekstowych.
+                            Zastosowanie funkcji logicznych i tekstowych.
                         </div>
 
                         <div class="outcome-item">
-                            Filtrowanie i sortowanie
-                            du&#380;ych zestaw&oacute;w danych.
+                            Filtrowanie i sortowanie dużych zestawów danych.
                         </div>
 
                         <div class="outcome-item">
-                            Przygotowanie wykresu
-                            na podstawie danych.
+                            Przygotowanie wykresu na podstawie danych.
                         </div>
 
                         <div class="outcome-item">
-                            Utworzenie raportu
-                            w tabeli przestawnej.
+                            Utworzenie raportu w tabeli przestawnej.
                         </div>
 
                         <div class="outcome-item">
-                            Importowanie danych
-                            z plik&oacute;w zewn&#281;trznych.
+                            Importowanie danych z plików zewnętrznych.
                         </div>
 
                         <div class="outcome-item">
-                            Zabezpieczenie formu&#322;
-                            i wybranych kom&oacute;rek.
+                            Zabezpieczenie formuł i wybranych komórek.
                         </div>
 
                     </div>
@@ -1809,9 +1956,9 @@
                     </h2>
 
                     <p>
-                        Program i poziom szkolenia mog&#261;
-                        zosta&#263; dostosowane do potrzeb
-                        uczestnika, firmy lub grupy zorganizowanej.
+                        Program i poziom szkolenia mogą zostać dostosowane
+                        do potrzeb uczestnika, firmy lub grupy
+                        zorganizowanej.
                     </p>
 
                     <p>
@@ -1819,14 +1966,12 @@
                     </p>
 
                     <p>
-
                         <a
                             class="email-link"
                             href="mailto:biuro@zpci.pl"
                         >
                             biuro@zpci.pl
                         </a>
-
                     </p>
 
                     <div class="buttons">
@@ -1835,14 +1980,14 @@
                             class="button"
                             href="zapis-na-szkolenie.html"
                         >
-                            Zapisz si&#281; na szkolenie
+                            Zapisz się na szkolenie
                         </a>
 
                         <a
                             class="button button-secondary"
                             href="../kontakt.html"
                         >
-                            Przejd&#378; do kontaktu
+                            Przejdź do kontaktu
                         </a>
 
                     </div>
@@ -1857,14 +2002,14 @@
                         class="button button-secondary"
                         href="../szkoleniakursy.html"
                     >
-                        Powr&oacute;t do listy szkole&#324;
+                        Powrót do listy szkoleń
                     </a>
 
                     <a
                         class="button button-secondary"
                         href="../index.html"
                     >
-                        Powr&oacute;t do strony g&#322;&oacute;wnej
+                        Powrót do strony głównej
                     </a>
 
                 </div>
@@ -1894,10 +2039,11 @@
     </footer>
 
     <script>
+        const yearElement = document.getElementById("year");
 
-        document.getElementById("year").textContent =
-            new Date().getFullYear();
-
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
     </script>
 
 </body>
