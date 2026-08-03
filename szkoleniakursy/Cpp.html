@@ -27,6 +27,17 @@
     href="https://www.zpci.pl/szkoleniakursy/cpp.html"
 >
 
+<link
+    rel="icon"
+    type="image/png"
+    href="../images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
+>
+
+<link
+    rel="apple-touch-icon"
+    href="../images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
+>
+
 <!-- OPEN GRAPH -->
 
 <meta property="og:type" content="website">
@@ -58,6 +69,11 @@
     content="Szkolenie z programowania w języku C++ w ZPCI"
 >
 
+<meta
+    property="og:image:type"
+    content="image/png"
+>
+
 <!-- X / TWITTER -->
 
 <meta name="twitter:card" content="summary_large_image">
@@ -75,6 +91,11 @@
 <meta
     name="twitter:image"
     content="https://www.zpci.pl/images/szkolenieC++.png"
+>
+
+<meta
+    name="twitter:image:alt"
+    content="Szkolenie C++ – programowanie od podstaw w ZPCI"
 >
 
 <!-- DANE STRUKTURALNE -->
@@ -97,6 +118,39 @@
                 "addressLocality": "Szczecin",
                 "addressRegion": "zachodniopomorskie",
                 "addressCountry": "PL"
+            },
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.zpci.pl/images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://www.zpci.pl/#website",
+            "url": "https://www.zpci.pl/",
+            "name": "Zachodniopomorskie Centrum Informatyki",
+            "alternateName": "ZPCI",
+            "inLanguage": "pl-PL",
+            "publisher": {
+                "@id": "https://www.zpci.pl/#organization"
+            }
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://www.zpci.pl/szkoleniakursy/cpp.html#webpage",
+            "url": "https://www.zpci.pl/szkoleniakursy/cpp.html",
+            "name": "Szkolenie C++ Szczecin – programowanie od podstaw",
+            "description": "Praktyczne szkolenie C++ w Szczecinie obejmujące algorytmy, zmienne, funkcje, tablice, programowanie obiektowe, klasy, dziedziczenie i tworzenie aplikacji.",
+            "inLanguage": "pl-PL",
+            "isPartOf": {
+                "@id": "https://www.zpci.pl/#website"
+            },
+            "about": {
+                "@id": "https://www.zpci.pl/szkoleniakursy/cpp.html#course"
+            },
+            "primaryImageOfPage": {
+                "@type": "ImageObject",
+                "url": "https://www.zpci.pl/images/szkolenieC++.png"
             }
         },
         {
@@ -274,6 +328,69 @@ select {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
+}
+
+
+/* ==================================================
+   LOGO ZPCI
+================================================== */
+
+.header-brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 25px;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.brand-logo {
+    width: 96px;
+    height: 96px;
+    flex: 0 0 96px;
+    border: 4px solid rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    background: var(--white);
+    object-fit: contain;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.header-brand:hover .brand-logo {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+}
+
+.brand-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.brand-name {
+    max-width: 620px;
+    font-size: clamp(21px, 3vw, 31px);
+    font-weight: 900;
+    line-height: 1.15;
+}
+
+.brand-subtitle {
+    margin-top: 6px;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.header-brand:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 7px;
+    border-radius: 20px;
 }
 
 .organization-name {
@@ -744,6 +861,30 @@ footer p {
         padding: 32px 15px;
     }
 
+    .header-brand {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .brand-logo {
+        width: 84px;
+        height: 84px;
+        flex-basis: 84px;
+    }
+
+    .brand-copy {
+        align-items: center;
+        text-align: center;
+    }
+
+    .brand-name {
+        font-size: 22px;
+    }
+
+    .brand-subtitle {
+        font-size: 12px;
+    }
+
     .organization-name {
         font-size: 0.82rem;
     }
@@ -858,7 +999,15 @@ footer p {
         color: #000000;
     }
 
-    .organization-name,
+    .brand-logo {
+        width: 72px;
+        height: 72px;
+        border: 1px solid #cccccc;
+        box-shadow: none;
+    }
+
+    .brand-name,
+    .brand-subtitle,
     .site-header h1,
     .header-description {
         color: #000000;
@@ -939,9 +1088,35 @@ footer p {
 
     <div class="header-content">
 
-        <p class="organization-name">
-            Zachodniopomorskie Centrum Informatyki
-        </p>
+        <a
+            class="header-brand"
+            href="../index.html"
+            aria-label="ZPCI – przejdź do strony głównej"
+        >
+
+            <img
+                class="brand-logo"
+                src="../images/Logo+zdjecia/Logotypy/2_Logotypy_okrag.png"
+                alt="Logo Zachodniopomorskiego Centrum Informatyki"
+                width="96"
+                height="96"
+                loading="eager"
+                decoding="async"
+            >
+
+            <span class="brand-copy">
+
+                <span class="brand-name">
+                    Zachodniopomorskie Centrum Informatyki
+                </span>
+
+                <span class="brand-subtitle">
+                    Szkolenia informatyczne i usługi IT
+                </span>
+
+            </span>
+
+        </a>
 
         <h1>Szkolenie C++ – programowanie od podstaw</h1>
 
@@ -1606,8 +1781,11 @@ footer p {
 
 <script>
 
-document.getElementById("year").textContent =
-    new Date().getFullYear();
+const yearElement = document.getElementById("year");
+
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+}
 
 </script>
 
